@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — NW Kali</title>
+  <meta name="description" content="NW Kali was founded by Sifu Christopher Clarke, Full Instructor under Master Inosanto since 1998. Private FMA and JKD instruction since 1987." />
+  <style>
+    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
+    :root {
+      --white:       #FFFFFF;
+      --navy:        #1C1F2E;
+      --linen:       #F7F5F0;
+      --charcoal:    #111111;
+      --crimson:     #8B1A1A;
+      --crimson-mid: #C0392B;
+      --border-light: 1px solid #ddd;
+      --border-dark:  1px solid rgba(255,255,255,0.08);
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+
+    /* ─── RESET & BASE ────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    p { font-weight: 300; }
+
+    /* ─── TYPOGRAPHY ──────────────────────────────────────── */
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      color: var(--crimson-mid);
+    }
+
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    h1 { font-size: 64px; letter-spacing: -2px; }
+    h2 { font-size: 42px; }
+    h2.allcaps { text-transform: uppercase; }
+    h3 { font-size: 28px; }
+
+    .crimson-rule {
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--crimson);
+      margin-bottom: 1.25rem;
+    }
+    .crimson-rule--below {
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--crimson);
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .read-more {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--crimson);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-top: 1rem;
+      transition: color 0.15s;
+    }
+    .read-more:hover { color: #6e1414; }
+
+    /* ─── BUTTONS ─────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 26px;
+      letter-spacing: 0.04em;
+    }
+    .btn--primary:hover { background: #6e1414; }
+    .btn--ghost {
+      display: inline-block;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 400;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-top: 0.75rem;
+      transition: color 0.15s;
+    }
+    .btn--ghost:hover { color: var(--white); }
+
+    /* ─── LAYOUT ──────────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; }
+    .centered  { max-width: 760px; margin: 0 auto; text-align: center; }
+
+    section { padding: var(--pad-v) var(--pad-h); }
+    section + section { border-top: var(--border-light); }
+    .section--navy     { background: var(--navy); color: var(--white); }
+    .section--linen    { background: var(--linen); }
+    .section--charcoal { background: var(--charcoal); color: var(--white); }
+    .section--navy + section,
+    section + .section--navy,
+    .section--charcoal + section,
+    section + .section--charcoal { border-top: none; }
+
+    /* ─── IMAGE PLACEHOLDERS ──────────────────────────────── */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+    .img-placeholder--light {
+      background: #ebe8e3;
+      border: 1px dashed #ccc;
+      color: #aaa;
+      min-height: 280px;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+    .nav-flag { font-size: 22px; line-height: 1; flex-shrink: 0; }
+    .nav-logo {
+      font-weight: 900;
+      font-style: italic;
+      font-size: 17px;
+      letter-spacing: -0.5px;
+      color: var(--charcoal);
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a.active { color: var(--crimson); }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      white-space: nowrap;
+      margin-left: auto;
+    }
+
+    /* ─── SEC 1 — THE SCHOOL ──────────────────────────────── */
+    #sec1 { background: var(--white); border-top: none; }
+    #sec1 .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #sec1 h1 { font-size: 64px; letter-spacing: -2px; color: var(--charcoal); margin-bottom: 0.5rem; }
+    .sec1-subtitle {
+      font-size: 20px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--crimson);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+    #sec1 p { font-size: 15px; color: #444; max-width: 420px; }
+    .about-watermark {
+      font-size: 96px;
+      font-weight: 900;
+      font-style: italic;
+      color: #e8e4de;
+      letter-spacing: -4px;
+      line-height: 1;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* ─── SEC 2 — INOSANTO LINEAGE ────────────────────────── */
+    #sec2 { background: var(--navy); padding: 0; }
+    .sec2-grid {
+      display: grid;
+      grid-template-columns: 38% 62%;
+      min-height: 520px;
+    }
+    .sec2-text {
+      padding: var(--pad-v) var(--pad-h);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #sec2 h2 {
+      font-size: 42px;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      line-height: 1.05;
+    }
+    #sec2 p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    #sec2 p:last-child { margin-bottom: 0; }
+    .sec2-image { min-height: 520px; }
+
+    /* ─── SEC 3 — CHRISTOPHER CLARKE ─────────────────────── */
+    #sec3 { background: var(--white); }
+    #sec3 .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #sec3 h2 { font-size: 42px; color: var(--charcoal); margin-bottom: 0.4rem; }
+    .clarke-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      font-style: italic;
+      color: #555;
+      margin-bottom: 0;
+    }
+    #sec3 p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .image-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .image-stack .img-top {
+      min-height: 420px;
+    }
+    .image-stack .img-bottom {
+      min-height: 180px;
+    }
+
+    /* ─── SEC 4 — TWO TRACKS ──────────────────────────────── */
+    #sec4 { background: var(--white); border-top: var(--border-light); }
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+    }
+    .track-card {
+      padding: 2.5rem;
+      border-top: 3px solid var(--crimson);
+    }
+    .track-card--linen { background: var(--linen); }
+    .track-card--navy  { background: var(--navy); border-left: 1px solid rgba(255,255,255,0.08); }
+    .track-card--navy h2 { color: var(--white); }
+    .track-card--navy p  { color: rgba(255,255,255,0.7); }
+    .track-eyebrow {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--crimson-mid);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .track-card h2 { font-size: 36px; color: var(--charcoal); margin-bottom: 1rem; }
+    .track-card p { font-size: 14px; line-height: 1.8; margin-bottom: 1.5rem; }
+    .track-link {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--crimson);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+    .track-link:hover { color: #6e1414; }
+    .track-card--navy .track-link { color: rgba(255,255,255,0.6); }
+    .track-card--navy .track-link:hover { color: var(--white); }
+
+    /* ─── SEC 5 — FAQ ─────────────────────────────────────── */
+    #sec5 { background: var(--linen); }
+    #sec5 .centered { margin-bottom: 3rem; }
+    #sec5 h2 {
+      font-size: 42px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+    }
+    #sec5 .subtext {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.75;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid #ddd;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      padding: 2rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .faq-item:nth-child(odd) { border-right: 1px solid #ddd; }
+    .faq-item:nth-last-child(-n+2) { border-bottom: none; }
+    .faq-q {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .faq-a {
+      font-size: 13px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    /* ─── SEC 6 — THE ARTS ────────────────────────────────── */
+    #sec6 { background: var(--white); }
+    #sec6 .container { max-width: 800px; }
+    .art-section {
+      padding-bottom: 3.5rem;
+      margin-bottom: 3.5rem;
+      border-bottom: 2px solid var(--crimson);
+    }
+    .art-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .art-section .eyebrow { margin-bottom: 0.5rem; }
+    .art-section h2 {
+      font-size: 36px;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+    .art-section p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.85;
+    }
+    .art-placeholder {
+      font-size: 13px;
+      font-style: italic;
+      color: #bbb;
+      border: 1px dashed #ddd;
+      padding: 1.5rem;
+      margin-top: 0.75rem;
+    }
+
+    /* ─── SEC 7 — VIDEO + CTA ─────────────────────────────── */
+    #sec7 { background: var(--navy); padding: 0; }
+    .sec7-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
+    }
+    .video-panel {
+      background: #0a0c14;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 3rem;
+      min-height: 440px;
+    }
+    .play-btn {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .play-btn:hover { border-color: rgba(255,255,255,0.8); }
+    .play-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: rgba(255,255,255,0.7);
+      margin-left: 3px;
+    }
+    .video-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+    .sec7-text {
+      padding: var(--pad-v) var(--pad-h);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .sec7-text .eyebrow { margin-bottom: 0.5rem; }
+    .sec7-text h2 {
+      font-size: 42px;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .sec7-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.25rem;
+    }
+    .sec7-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.45);
+    }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-nav-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.15s;
+    }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ─── SCROLL ARROW ────────────────────────────────────── */
+    .scroll-arrow {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(28,31,46,0.75);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 50;
+      backdrop-filter: blur(4px);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .scroll-arrow:hover { background: rgba(28,31,46,0.95); }
+    .scroll-arrow svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 2; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
+      h1 { font-size: 44px; }
+      h2 { font-size: 32px; }
+      #sec1 .two-col,
+      #sec3 .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sec2-grid { grid-template-columns: 1fr; }
+      .sec2-image { min-height: 280px; }
+      .tracks-grid { grid-template-columns: 1fr; }
+      .track-card--navy { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-item:nth-child(odd) { border-right: none; }
+      .faq-item:nth-last-child(-n+2) { border-bottom: 1px solid #ddd; }
+      .faq-item:last-child { border-bottom: none; }
+      .sec7-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-flag">🇵🇭</span>
+      <a href="/" class="nav-logo">NW KALI</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/legacy/">Legacy</a></li>
+        <li><a href="/praxis/">Praxis</a></li>
+        <li><a href="/about/" class="active">About</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/gear/">Gear</a></li>
+      </ul>
+      <span class="nav-phone">844-JKD-KALI</span>
+    </div>
+  </nav>
+
+  <!-- ─── SEC 1 — THE SCHOOL ────────────────────────────── -->
+  <section id="sec1">
+    <div class="two-col">
+      <div>
+        <span class="crimson-rule"></span>
+        <span class="eyebrow">NW Kali</span>
+        <h1>The School</h1>
+        <p class="sec1-subtitle">Lineage. Method. Purpose.</p>
+        <p>NW Kali was founded by Sifu/Guro Christopher Clarke — a published author and one of the longest-standing authentic FMA / JKD instructors in the Pacific Northwest, teaching group classes, private instruction, and seminars across Oregon, Washington, and beyond since 1987.</p>
+      </div>
+      <div>
+        <div class="about-watermark">ABOUT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 2 — INOSANTO LINEAGE ──────────────────────── -->
+  <section id="sec2" class="section--navy">
+    <div class="sec2-grid">
+      <div class="sec2-text">
+        <span class="eyebrow">Inosanto Lineage</span>
+        <h2>Inosanto Lineage. Northwest Roots.</h2>
+        <p>Having first met and trained with Master Dan Inosanto while still in high school, Sifu Clarke began sharing Kali, Jun Fan Gung Fu, and Muay Thai at Portland State University in 1987. He first invited Master Inosanto to Portland in 1992, opening the first Kali / JKD school in the region under the Inosanto lineage — and the first commercial Muay Thai school in Portland — that same year.</p>
+      </div>
+      <div class="sec2-image img-placeholder">
+        <!-- Landscape photo with Guro Dan Inosanto — fills panel edge to edge -->
+        Photo with Guro Dan Inosanto
+      </div>
+    </div>
+  </section>
+
+  <section id="sec3">
+    <div class="two-col" style="grid-template-columns:55% 45%;gap:4rem;align-items:start;max-width:1200px;margin:0 auto;">
+      <div>
+        <span class="eyebrow">Your Instructor</span>
+        <h2>Sifu / Guro Christopher Clarke</h2>
+        <p class="clarke-subtitle">Master Instructor</p>
+        <span class="crimson-rule--below"></span>
+        <p>Clarke has been teaching and sharing the Inosanto method in the Northwest since 1987 — a tenure that spans the full arc of the modern FMA / JKD awakening in the United States.</p>
+        <p style="margin-top:1rem;">For decades, Sifu Clarke has assisted in teaching all levels of law enforcement throughout Oregon, Washington, and California — from recruits to seasoned officers, agency instructors, and tactical personnel.</p>
+        <p style="margin-top:1rem;">One of the highest obligations for Clarke and NW Kali is to transmit the true martial arts traditions, philosophies, and cultures of the Inosanto lineage. That transmission is what is offered here — the actual curriculum, taught by an instructor who has studied it for decades.</p>
+        <!-- FULL BIO COPY GOES HERE — see Outstanding Items -->
+      </div>
+      <div class="image-stack">
+        <div class="img-top img-placeholder--light">
+          <!-- Full Contact Magazine Cover · April 1994 — portrait orientation, contained -->
+          <span style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#bbb;text-align:center;">Full Contact Magazine · April 1994</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 3.5 — WHY IT MATTERS ─────────────────────── -->
+  <section id="sec-why" style="background:var(--linen);border-top:var(--border-light);">
+    <div class="centered">
+      <span class="eyebrow">Why It Matters</span>
+      <h2>The Value of Real Training.</h2>
+      <p style="font-size:16px;color:#444;line-height:1.85;margin-top:1rem;max-width:640px;margin-left:auto;margin-right:auto;">Martial arts training develops something that cannot be purchased or shortcut — real physical capability, situational awareness, and a disciplined way of engaging with challenge. At NW Kali, that development happens through direct transmission of proven arts, from a highly qualified instructor committed to your progress.</p>
+    </div>
+  </section>
+
+  <!-- ─── SEC 4 — TWO TRACKS ─────────────────────────────── -->
+  <section id="sec4">
+    <div class="tracks-grid">
+      <div class="track-card track-card--linen">
+        <span class="track-eyebrow">Track One</span>
+        <h2>Praxis</h2>
+        <p>Functional self-defense, armed and unarmed. A direct, outcomes-focused curriculum for professionals and anyone who wants real-world capability — not theory, not sport.</p>
+        <a href="/praxis/" class="track-link">Explore Praxis →</a>
+      </div>
+      <div class="track-card track-card--navy">
+        <span class="track-eyebrow">Track Two</span>
+        <h2>Legacy</h2>
+        <p>The full Inosanto curriculum — skill, depth, and instructor certification. For those committed to studying and ultimately transmitting the complete art.</p>
+        <a href="/legacy/" class="track-link">Explore Legacy →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 5 — FAQ ────────────────────────────────────── -->
+  <section id="sec5" class="section--linen">
+    <div class="centered">
+      <span class="eyebrow">Common Questions</span>
+      <h2 class="allcaps">Everything You Need to Know Before Inquiring.</h2>
+      <p class="subtext">Answers to the questions serious students ask before reaching out.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <p class="faq-q">Do I need prior martial arts experience?</p>
+        <p class="faq-a">No. The curriculum begins at the absolute foundation. Many of the best long-term students started with zero experience — and in some ways, beginning here without ingrained habits from other systems is an advantage.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Do I need to be physically fit before I begin?</p>
+        <p class="faq-a">No. Training itself is the conditioning. Sessions are progressive and adapted to your current level — the physical demands build alongside your skill. Many students begin with no prior fitness background and develop both capability and conditioning through the training itself.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How long does it take to progress through the curriculum?</p>
+        <p class="faq-a">The curriculum is skill-gated, not time-gated. Dedicated students working consistently typically progress through the foundational material within one to two years. Most serious students view it as a lifelong practice, not a course with an end date.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What does a typical session look like?</p>
+        <p class="faq-a">Every session is built around your current level and goals. Sessions typically include technical instruction, partner drilling, attribute development, and pressure testing — all structured around where you are in the curriculum and what you need to develop next.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is the training safe?</p>
+        <p class="faq-a">Yes. NW Kali emphasizes progressive, intelligent training — skills are developed safely and built upon over time. The goal is consistent, long-term development. Students are never pushed beyond their readiness, and safety is treated as a fundamental principle, not an afterthought.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What equipment do I need to get started?</p>
+        <p class="faq-a">Minimal equipment is needed to begin. A pair of rattan eskrima sticks, training knives, and bag gloves cover the basics. Equipment needs develop naturally as you progress — you will not be asked to invest in gear before you are ready for it.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How is this different from Krav Maga?</p>
+        <p class="faq-a">Much of what is taught in Krav Maga is drawn from the same source arts — Boxing, Muay Thai, JKD, and Kali. The difference is lineage, depth, and transmission. NW Kali teaches the originals, not a derivative, with the full philosophical and cultural context intact.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How is this different from MMA?</p>
+        <p class="faq-a">While there is philosophical overlap with cross-training, MMA is structured around competition — weight classes, referees, mats, and rule sets. NW Kali training is structured around real-world application and personal development. The environment, objectives, and context are fundamentally different.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 6 — THE ARTS ───────────────────────────────── -->
+  <section id="sec6">
+    <div class="container">
+
+      <div class="art-section" id="kali">
+        <span class="eyebrow">Filipino Martial Arts</span>
+        <h2>Kali · Eskrima · Arnis</h2>
+        <!-- COPY REQUIRED — see Outstanding Items -->
+        <p class="art-placeholder">Full article copy required — see Outstanding Items.</p>
+      </div>
+
+      <div class="art-section" id="jkd">
+        <span class="eyebrow">Jeet Kune Do</span>
+        <h2>Jun Fan Gung Fu</h2>
+        <!-- COPY REQUIRED — see Outstanding Items -->
+        <p class="art-placeholder">Full article copy required — see Outstanding Items.</p>
+      </div>
+
+      <div class="art-section" id="muay-thai">
+        <span class="eyebrow">Thai Boxing</span>
+        <h2>Muay Thai</h2>
+        <!-- COPY REQUIRED — see Outstanding Items -->
+        <p class="art-placeholder">Full article copy required — see Outstanding Items.</p>
+      </div>
+
+      <div class="art-section" id="silat">
+        <span class="eyebrow">Maphilindo Blend</span>
+        <h2>Silat</h2>
+        <!-- COPY REQUIRED — see Outstanding Items -->
+        <p class="art-placeholder">Full article copy required — see Outstanding Items.</p>
+      </div>
+
+      <div class="art-section" id="panantukan">
+        <span class="eyebrow">Filipino Boxing</span>
+        <h2>Panantukan</h2>
+        <!-- COPY REQUIRED — see Outstanding Items -->
+        <p class="art-placeholder">Full article copy required — see Outstanding Items.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SEC 7 — VIDEO + CTA ───────────────────────────── -->
+  <section id="sec7" class="section--navy">
+    <div class="sec7-grid">
+      <div class="video-panel">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+        </div>
+        <div class="video-label">Video Placeholder — NW Kali Training Footage</div>
+      </div>
+      <div class="sec7-text">
+        <span class="eyebrow">NW Kali</span>
+        <h2>NW Kali</h2>
+        <p class="sec7-subtitle">A closer look</p>
+        <p>See the art in motion — private instruction, real technique, and the standard of training that has defined NW Kali for nearly four decades. When you are ready to begin, the next step is a conversation.</p>
+        <a href="/request/" class="btn btn--primary" style="align-self:flex-start;">Apply for Private Training</a>
+        <a href="/praxis/" class="btn btn--ghost" style="align-self:flex-start;">Explore Praxis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          <a href="tel:8445353254">844-JKD-KALI</a><br>
+          <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/request/">Request Training</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- ─── SCROLL ARROW ──────────────────────────────────── -->
+  <a class="scroll-arrow" href="#sec2" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </a>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+# ─── DECAP CMS CONFIGURATION ─────────────────────────────
+# NW Kali · Insights CMS
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Media uploaded via CMS goes here
+media_folder: "static/images/insights"
+public_folder: "/static/images/insights"
+
+collections:
+  - name: "insights"
+    label: "Insights Articles"
+    folder: "content/insights"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "MMMM YYYY"
+        date_format: "MMMM YYYY"
+        time_format: false
+        required: true
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Lineage",    value: "lineage" }
+          - { label: "Training",   value: "training" }
+          - { label: "Culture",    value: "culture" }
+          - { label: "Philosophy", value: "philosophy" }
+        required: true
+
+      - label: "Summary / Excerpt"
+        name: "summary"
+        widget: "text"
+        hint: "Shown on the Insights index page. Keep to 1–2 sentences."
+        required: true
+
+      - label: "Featured Image"
+        name: "featured_image"
+        widget: "image"
+        required: false
+        hint: "Used as article thumbnail and featured image. Recommended: 1200×800px."
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true
+
+      - label: "CTA Text"
+        name: "cta_text"
+        widget: "string"
+        required: false
+        default: "Apply for Private Training"
+        hint: "Call-to-action button label at end of article."
+
+      - label: "CTA Link"
+        name: "cta_link"
+        widget: "string"
+        required: false
+        default: "/request/"
+        hint: "URL the CTA button points to."

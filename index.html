@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NW Kali — Private Martial Arts Instruction · Oregon & Washington</title>
+  <meta name="description" content="Private martial arts instruction in Oregon & Washington. Kali, JKD, Silat, and Muay Thai — one instructor, one client, no shared classes." />
+  <style>
+    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
+    :root {
+      --white:       #FFFFFF;
+      --navy:        #1C1F2E;
+      --linen:       #F7F5F0;
+      --charcoal:    #111111;
+      --crimson:     #8B1A1A;
+      --crimson-mid: #C0392B;
+      --border-light: 1px solid #ddd;
+      --border-dark:  1px solid rgba(255,255,255,0.06);
+
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+
+    /* ─── RESET & BASE ────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── TYPOGRAPHY HELPERS ──────────────────────────────── */
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .eyebrow--light { color: var(--crimson-mid); }
+    .eyebrow--dark  { color: var(--crimson-mid); }
+
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -1px;
+      line-height: 1.05;
+    }
+    h1 { font-size: 72px; letter-spacing: -3px; }
+    h2 { font-size: 42px; }
+    h3 { font-size: 28px; letter-spacing: -0.5px; }
+
+    p { font-weight: 300; }
+
+    /* ─── BUTTONS ─────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      white-space: nowrap;
+    }
+
+    /* Primary CTA */
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 26px;
+      letter-spacing: 0.04em;
+    }
+    .btn--primary:hover { background: #6e1414; }
+
+    /* Secondary / Track (outline dark) */
+    .btn--secondary {
+      background: transparent;
+      border: 1.5px solid var(--charcoal);
+      color: var(--charcoal);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 22px;
+      letter-spacing: 0.04em;
+    }
+    .btn--secondary:hover { background: var(--charcoal); color: var(--white); }
+
+    /* Ghost (dark bg — underline only) */
+    .btn--ghost {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 400;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn--ghost:hover { color: var(--white); }
+
+    /* ─── IMAGE PLACEHOLDERS ──────────────────────────────── */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      background: rgba(255,255,255,0.05);
+      border: 1px dashed rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
+    .img-placeholder--light {
+      background: #f0ede8;
+      border: 1px dashed #ccc;
+      color: #aaa;
+    }
+
+    /* ─── SECTION BASE ────────────────────────────────────── */
+    section {
+      padding: var(--pad-v) var(--pad-h);
+    }
+    section + section { border-top: var(--border-light); }
+    .section--navy  { background: var(--navy); color: var(--white); }
+    .section--navy + section,
+    section + .section--navy { border-top: none; }
+    .section--linen { background: var(--linen); }
+    .section--charcoal { background: var(--charcoal); color: var(--white); }
+
+    /* two-col layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .two-col--reverse { direction: rtl; }
+    .two-col--reverse > * { direction: ltr; }
+
+    /* centered content */
+    .centered {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* inner container */
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .nav-flag {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .nav-logo {
+      font-weight: 900;
+      font-style: italic;
+      font-size: 17px;
+      letter-spacing: -0.5px;
+      color: var(--charcoal);
+      flex-shrink: 0;
+      margin-right: 0.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a.active { color: var(--crimson); }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* ─── SEC 1 — HERO ────────────────────────────────────── */
+    #hero {
+      background: var(--white);
+      border-top: none;
+    }
+    #hero .two-col { align-items: stretch; gap: 5rem; }
+    #hero .hero-text { padding: 1rem 0; }
+    #hero h1 { margin-bottom: 1rem; color: var(--charcoal); }
+    #hero .hero-sub {
+      font-size: 16px;
+      font-weight: 400;
+      color: #555;
+      letter-spacing: 0.01em;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+    .discipline-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .discipline-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--charcoal);
+    }
+    .discipline-bullet {
+      width: 7px;
+      height: 7px;
+      background: var(--crimson);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-bottom: -1px;
+    }
+    .discipline-name { font-weight: 700; font-size: 14px; letter-spacing: 0.03em; }
+    .discipline-sub { color: #666; font-size: 14px; }
+
+    #hero .img-placeholder {
+      min-height: 440px;
+      font-size: 10px;
+    }
+
+    /* ─── SEC 2 — CAPABILITY ──────────────────────────────── */
+    #capability .two-col { gap: 5rem; }
+    #capability h2 { color: var(--white); margin-bottom: 1.25rem; }
+    #capability p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 480px; }
+    .btn-group { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .cap-note {
+      margin-top: 1.5rem;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─── SEC 3 — CHOOSE YOUR TRAINING ────────────────────── */
+    #choose { background: var(--white); border-top: var(--border-light); }
+    #choose .section-header {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    #choose h2 { margin-top: 0.5rem; margin-bottom: 0.75rem; }
+    #choose .choose-sub {
+      color: #555;
+      max-width: 520px;
+      font-size: 14px;
+    }
+    .track-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1.5px solid var(--charcoal);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .track-card {
+      padding: 2.5rem 2.5rem 2.5rem;
+      border-right: 1.5px solid var(--charcoal);
+    }
+    .track-card:last-child { border-right: none; }
+    .track-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--crimson-mid);
+      margin-bottom: 0.4rem;
+    }
+    .track-card h3 { margin-bottom: 0.25rem; }
+    .track-tagline {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+    .track-features {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+    .track-feature {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--charcoal);
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #e8e5e0;
+    }
+    .track-feature:first-child { border-top: 1px solid #e8e5e0; }
+    .track-feature-bullet {
+      width: 7px;
+      height: 7px;
+      background: var(--crimson);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── SEC 4 — INSTRUCTOR ──────────────────────────────── */
+    #instructor { background: var(--navy); }
+    #instructor .two-col--reverse { gap: 5rem; align-items: center; }
+    #instructor h2 { color: var(--white); margin-bottom: 1.25rem; }
+    #instructor p { color: rgba(255,255,255,0.72); max-width: 480px; line-height: 1.8; }
+    #instructor .img-placeholder { min-height: 420px; }
+
+    /* ─── SEC 5 — WHY TRAIN ───────────────────────────────── */
+    #why { background: var(--linen); border-top: var(--border-light); }
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .why-col h3 {
+      padding-bottom: 0.75rem;
+      border-bottom: 1.5px solid var(--crimson);
+      margin-bottom: 1rem;
+      color: var(--charcoal);
+    }
+    .why-col p { font-size: 14px; color: #444; line-height: 1.8; }
+
+    /* ─── SEC 6 — FORMAT / HOW IT WORKS ──────────────────── */
+    #format {
+      padding: 0;
+      border-top: none;
+    }
+    .format-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .format-panel {
+      padding: var(--pad-v) var(--pad-h);
+    }
+    .format-panel--navy { background: var(--navy); color: var(--white); }
+    .format-panel--linen { background: var(--linen); color: var(--charcoal); }
+    .format-panel--navy h2 { color: var(--white); margin-bottom: 1.5rem; }
+    .format-panel--linen h2 { color: var(--charcoal); margin-bottom: 1.5rem; }
+
+    .format-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .format-item {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .format-item::before {
+      content: '+';
+      color: rgba(255,255,255,0.4);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-list { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid #e0ddd8;
+    }
+    .step:first-child { border-top: 1px solid #e0ddd8; }
+    .step-num {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--crimson-mid);
+      letter-spacing: -1px;
+      flex-shrink: 0;
+      line-height: 1;
+      padding-top: 2px;
+      min-width: 36px;
+    }
+    .step-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.7;
+      padding-top: 4px;
+    }
+    .step-text strong { font-weight: 700; color: var(--charcoal); }
+
+    /* ─── SEC 7 — TESTIMONIALS ───────────────────────────── */
+    #testimonials { background: var(--white); border-top: var(--border-light); }
+    #testimonials .eyebrow--light { margin-bottom: 1rem; }
+    #testimonials h2 { margin-bottom: 2.5rem; }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      border: 1px solid #e5e2dd;
+      padding: 2rem;
+      background: var(--white);
+    }
+    .testimonial-quote {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.25rem;
+    }
+    .testimonial-attr {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e2dd;
+    }
+
+    /* ─── SEC 8 — CTA ─────────────────────────────────────── */
+    #cta { background: var(--charcoal); color: var(--white); text-align: center; border-top: none; }
+    #cta .eyebrow--dark { margin-bottom: 1rem; }
+    #cta h2 { color: var(--white); margin-bottom: 1rem; }
+    #cta p { color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2rem; font-size: 15px; }
+    .cta-note {
+      margin-top: 1.25rem;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.45);
+    }
+    .footer-brand-meta a {
+      color: rgba(255,255,255,0.45);
+      transition: color 0.15s;
+    }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-nav-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.15s;
+    }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,0.2);
+      transition: color 0.15s;
+    }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ─── SCROLL ARROW ────────────────────────────────────── */
+    .scroll-arrow {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(28,31,46,0.75);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 50;
+      backdrop-filter: blur(4px);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .scroll-arrow:hover { background: rgba(28,31,46,0.95); }
+    .scroll-arrow svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 2; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      :root {
+        --pad-v: 3.5rem;
+        --pad-h: 1.75rem;
+      }
+      h1 { font-size: 40px; }
+      h2 { font-size: 32px; }
+
+      .two-col,
+      .two-col--reverse {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        direction: ltr;
+      }
+      .two-col--reverse > * { direction: ltr; }
+
+      .track-grid {
+        grid-template-columns: 1fr;
+      }
+      .track-card { border-right: none; border-bottom: 1.5px solid var(--charcoal); }
+      .track-card:last-child { border-bottom: none; }
+
+      .three-col { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .format-grid { grid-template-columns: 1fr; }
+
+      .testimonial-grid { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-flag">🇵🇭</span>
+      <a href="/" class="nav-logo">NW KALI</a>
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/praxis/">Praxis</a></li>
+        <li><a href="/legacy/">Legacy</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li><a href="/gear/">Gear</a></li>
+      </ul>
+      <span class="nav-phone">844-JKD-KALI</span>
+    </div>
+  </nav>
+
+  <!-- ─── SEC 1 — HERO ───────────────────────────────────── -->
+  <section id="hero">
+    <div class="two-col">
+      <div class="hero-text">
+        <h1>NW KALI</h1>
+        <p class="hero-sub">
+          Self Defense, Integrated EDC Skills and Legacy FMA / JKD<br>
+          in OR &amp; WA since 1987
+        </p>
+        <ul class="discipline-list">
+          <li class="discipline-item">
+            <span class="discipline-bullet"></span>
+            <span>
+              <span class="discipline-name">Filipino Martial Arts</span>
+              <span class="discipline-sub"> · Kali · Eskrima · Arnis</span>
+            </span>
+          </li>
+          <li class="discipline-item">
+            <span class="discipline-bullet"></span>
+            <span>
+              <span class="discipline-name">Jun Fan Martial Arts</span>
+              <span class="discipline-sub"> · Jeet Kune Do</span>
+            </span>
+          </li>
+          <li class="discipline-item">
+            <span class="discipline-bullet"></span>
+            <span>
+              <span class="discipline-name">Maphilndo Martial Arts</span>
+              <span class="discipline-sub"> · Silat · Kuntao</span>
+            </span>
+          </li>
+          <li class="discipline-item">
+            <span class="discipline-bullet"></span>
+            <span>
+              <span class="discipline-name">Thai Martial Arts</span>
+              <span class="discipline-sub"> · Muay Thai</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="img-placeholder">[ Baybayin Script Image ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 2 — CAPABILITY ─────────────────────────────── -->
+  <section id="capability" class="section--navy">
+    <div class="two-col">
+      <div>
+        <span class="eyebrow eyebrow--dark">Private Martial Arts Instruction · Oregon &amp; Washington</span>
+        <h2>Capability That Cannot Be Taken Away.</h2>
+        <p>
+          Private, personalized training in Filipino Martial Arts, JKD, Silat, and Muay Thai. One instructor. One client. No shared classes, no rotating schedules, no compromise. Whether you want real-world self-defense capability (Praxis) or the complete martial arts curriculum from foundations to instructor rank (Legacy) — training is built around you.
+        </p>
+        <div class="btn-group">
+          <a href="/request/" class="btn btn--primary">Apply for Private Training</a>
+          <a href="/legacy/" class="btn btn--ghost">Explore the Curriculum</a>
+        </div>
+        <p class="cap-note">Currently accepting a limited number of new private clients.</p>
+      </div>
+      <div>
+        <div class="img-placeholder">[ Hero_jab.jpg ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 3 — CHOOSE YOUR TRAINING ──────────────────── -->
+  <section id="choose">
+    <div class="section-header container">
+      <span class="eyebrow eyebrow--light">Two Paths. One Standard.</span>
+      <h2>Choose Your Training Focus.</h2>
+      <p class="choose-sub">Both tracks are taught privately, one-on-one, by the same instructor, with the same standard of quality. The difference is your objective.</p>
+    </div>
+
+    <div class="track-grid">
+      <!-- Praxis -->
+      <div class="track-card">
+        <div class="track-label">Praxis · Applied Self-Defense</div>
+        <h3>Real-World Capability. Immediately Applicable.</h3>
+        <p class="track-tagline">A concise, outcomes-focused curriculum distilled from Kali, Panantukan, JKD, Silat, and Muay Thai. What works, why it works, and how to access it under pressure.</p>
+        <ul class="track-features">
+          <li class="track-feature"><span class="track-feature-bullet"></span>EDC tools integrated from day one</li>
+          <li class="track-feature"><span class="track-feature-bullet"></span>All experience levels welcome</li>
+          <li class="track-feature"><span class="track-feature-bullet"></span>Practical, direct, and immediately usable</li>
+          <li class="track-feature"><span class="track-feature-bullet"></span>Ideal for professionals, law enforcement, and guardians</li>
+        </ul>
+        <a href="/praxis/" class="btn btn--secondary">Explore Praxis →</a>
+      </div>
+
+      <!-- Legacy -->
+      <div class="track-card">
+        <div class="track-label">Legacy · The Full Curriculum</div>
+        <h3>The Complete Art. Trained Correctly.</h3>
+        <p class="track-tagline">The authentic phase curriculum of the Inosanto lineage — all of it, not a condensed version. Filipino Martial Arts, JKD, Maphilindo Silat, and Muay Thai, taught progressively and safely.</p>
+        <ul class="track-features">
+          <li class="track-feature"><span class="track-feature-bullet"></span>Depth and cultivation — the full system</li>
+          <li class="track-feature"><span class="track-feature-bullet"></span>Traditions, philosophy, and culture transmitted alongside techniques</li>
+          <li class="track-feature"><span class="track-feature-bullet"></span>Authentic lineage curriculum with structured progression</li>
+          <li class="track-feature"><span class="track-feature-bullet"></span>Beginner through advanced — foundations to Guro</li>
+        </ul>
+        <a href="/legacy/" class="btn btn--secondary">Explore Legacy →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 4 — INSTRUCTOR ─────────────────────────────── -->
+  <section id="instructor" class="section--navy">
+    <div class="two-col two-col--reverse">
+      <div>
+        <div class="img-placeholder">[ Gloves / Training Image ]</div>
+      </div>
+      <div>
+        <span class="eyebrow eyebrow--dark">Your Instructor</span>
+        <h2>Lineage Matters. So Does 37 Years of Application.</h2>
+        <p>
+          An instructor in the Inosanto method of FMA / JKD since 1987, Sifu/Guro Clarke opened the first Kali / JKD school in Portland, OR under the Inosanto lineage — and the first commercial Muay Thai school in Portland. In 1998 Sifu Clarke was awarded the rank of Full Instructor under Master Inosanto. For decades he has assisted in teaching all levels of law enforcement throughout Oregon, Washington, and California.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 5 — WHY TRAIN ──────────────────────────────── -->
+  <section id="why" class="section--linen">
+    <div class="container" style="margin-bottom:2.5rem;">
+      <span class="eyebrow eyebrow--light">Why Train With NW Kali</span>
+      <h2>More Than Self Defense.</h2>
+    </div>
+    <div class="three-col">
+      <div class="why-col">
+        <h3>Real Skills That Work.</h3>
+        <p>Functional techniques, not drills for their own sake. Skills suited for real-life situations, refined until they are yours.</p>
+      </div>
+      <div class="why-col">
+        <h3>Fitness You Will Actually Use.</h3>
+        <p>Striking, conditioning, movement, drilling, and the full-body demands of partner training produce real physical change. Training is the workout.</p>
+      </div>
+      <div class="why-col">
+        <h3>A Practice for Life.</h3>
+        <p>The arts taught at NW Kali convey philosophy and ethos, and a way of engaging with challenge that extends far beyond the training floor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 6 — FORMAT ─────────────────────────────────── -->
+  <section id="format">
+    <div class="format-grid">
+
+      <!-- Left: The Format (Navy) -->
+      <div class="format-panel format-panel--navy">
+        <span class="eyebrow eyebrow--dark">The Format</span>
+        <h2>One Instructor. One Client. No Compromise.</h2>
+        <p style="color:rgba(255,255,255,0.65);font-size:14px;margin-bottom:1.75rem;">Every session is built around your specific goals, your current level, and your schedule. No shared classes. No rotating instructors. No filler sessions.</p>
+        <ul class="format-list">
+          <li class="format-item">One-on-one, fully personalized instruction</li>
+          <li class="format-item">Training adapted to your pace and goals</li>
+          <li class="format-item">Fully private — no class schedules, no waiting</li>
+          <li class="format-item">Praxis or Legacy track — or a blend of both</li>
+          <li class="format-item">Discreet, professional environment</li>
+        </ul>
+      </div>
+
+      <!-- Right: How It Works (Linen) -->
+      <div class="format-panel format-panel--linen">
+        <span class="eyebrow eyebrow--light">How It Works</span>
+        <h2>How It Works</h2>
+        <div class="step-list">
+          <div class="step">
+            <span class="step-num">01</span>
+            <p class="step-text"><strong>Submit an inquiry.</strong> No commitment — just a conversation.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <p class="step-text"><strong>We talk.</strong> Understand your goals, assess your starting point, confirm fit.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <p class="step-text"><strong>Begin.</strong> Your first session is an assessment. Everything after builds on it.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SEC 7 — TESTIMONIALS ──────────────────────────── -->
+  <section id="testimonials">
+    <div class="container">
+      <span class="eyebrow eyebrow--light">What Clients Say</span>
+      <h2>Results From People Who Train Here.</h2>
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"I have trained FMA for 20 years. The instruction at NW Kali is the best and Sifu Clarke is someone who genuinely is committed to sharing the art and transmitting the Inosanto Legacy."</p>
+          <div class="testimonial-attr">M.D.</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"As a law enforcement officer, I know I need to consistently train to be safe and effective in the street — that's why I continue studying at NW Kali."</p>
+          <div class="testimonial-attr">J.P. · Law Enforcement</div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">"Private instruction means the training is built around my schedule and progress, not a class. The progress has been faster than anything I experienced in a group setting."</p>
+          <div class="testimonial-attr">M.M. · Executive</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEC 8 — BEGIN TRAINING ─────────────────────────── -->
+  <section id="cta" class="section--charcoal">
+    <div class="centered">
+      <span class="eyebrow eyebrow--dark">Limited Availability</span>
+      <h2>Begin Your Training.</h2>
+      <p>NW Kali accepts a limited number of private clients at any time. If you are ready to develop real capability, the next step is a brief conversation.</p>
+      <a href="/request/" class="btn btn--primary">Apply for Private Training</a>
+      <p class="cta-note">Serious inquiries only.</p>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          <a href="tel:8445353254">844-JKD-KALI</a><br>
+          <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/request/">Request Training</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- ─── SCROLL ARROW ──────────────────────────────────── -->
+  <a class="scroll-arrow" href="#capability" aria-label="Scroll down">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </a>
+
+</body>
+</html>
