@@ -6,7 +6,6 @@
   <title>Legacy — The Full Curriculum · NW Kali</title>
   <meta name="description" content="The complete Inosanto FMA/JKD curriculum from foundations to instructor rank. Private, one-on-one instruction in Oregon & Washington." />
   <style>
-    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
     :root {
       --white:       #FFFFFF;
       --navy:        #1C1F2E;
@@ -19,8 +18,6 @@
       --pad-v: 5rem;
       --pad-h: 3rem;
     }
-
-    /* ─── RESET & BASE ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -35,8 +32,6 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     p { font-weight: 300; }
-
-    /* ─── TYPOGRAPHY ──────────────────────────────────────── */
     .eyebrow {
       display: block;
       font-size: 10px;
@@ -47,7 +42,6 @@
       color: var(--crimson-mid);
     }
     .eyebrow--dark { color: var(--crimson-mid); }
-
     h1, h2, h3 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
@@ -59,8 +53,6 @@
     h2 { font-size: 42px; }
     h2.allcaps { text-transform: uppercase; letter-spacing: -1px; }
     h3 { font-size: 28px; }
-
-    /* ─── BUTTONS ─────────────────────────────────────────── */
     .btn {
       display: inline-block;
       font-family: Arial, Helvetica, sans-serif;
@@ -88,7 +80,6 @@
       text-underline-offset: 3px;
     }
     .btn--ghost:hover { color: var(--white); }
-
     .read-more {
       display: inline-block;
       font-size: 13px;
@@ -100,7 +91,6 @@
       transition: color 0.15s;
     }
     .read-more:hover { color: #6e1414; }
-
     .btn-group {
       display: flex;
       align-items: center;
@@ -108,45 +98,17 @@
       flex-wrap: wrap;
       margin-top: 1.75rem;
     }
-
-    /* ─── IMAGE PLACEHOLDERS ──────────────────────────────── */
-    .img-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 360px;
-      background: rgba(255,255,255,0.04);
-      border: 1px dashed rgba(255,255,255,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.2);
-    }
-    .img-placeholder--light {
-      background: #ebe8e3;
-      border: 1px dashed #ccc;
-      color: #aaa;
-    }
-
-    /* ─── LAYOUT HELPERS ──────────────────────────────────── */
     .container { max-width: 1200px; margin: 0 auto; }
     .centered  { max-width: 720px; margin: 0 auto; text-align: center; }
-
     section { padding: var(--pad-v) var(--pad-h); }
     section + section { border-top: var(--border-light); }
-
     .section--navy     { background: var(--navy);     color: var(--white); }
     .section--linen    { background: var(--linen); }
     .section--charcoal { background: var(--charcoal); color: var(--white); }
-
     .section--navy + section,
     section + .section--navy,
     .section--charcoal + section,
     section + .section--charcoal { border-top: none; }
-
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -157,7 +119,7 @@
     }
 
     /* ─── NAV ─────────────────────────────────────────────── */
-    nav {
+    header nav {
       background: var(--white);
       border-bottom: var(--border-light);
       padding: 0 var(--pad-h);
@@ -172,15 +134,6 @@
       max-width: 1200px;
       margin: 0 auto;
       gap: 1.5rem;
-    }
-    .nav-flag { font-size: 22px; line-height: 1; flex-shrink: 0; }
-    .nav-logo {
-      font-weight: 900;
-      font-style: italic;
-      font-size: 17px;
-      letter-spacing: -0.5px;
-      color: var(--charcoal);
-      flex-shrink: 0;
     }
     .nav-links {
       display: flex;
@@ -212,8 +165,6 @@
       color: var(--charcoal);
       white-space: nowrap;
     }
-
-    /* ─── SEC 1 — THE FULL CURRICULUM ────────────────────── */
     #sec1 { background: var(--white); border-top: none; }
     #sec1 .two-col { align-items: center; gap: 5rem; }
     #sec1 h1 { font-size: 64px; letter-spacing: -2px; margin-bottom: 0.5rem; color: var(--charcoal); }
@@ -226,24 +177,10 @@
       letter-spacing: -0.5px;
     }
     #sec1 p { font-size: 15px; color: #444; max-width: 440px; }
-    .watermark-box {
-      width: 100%;
-      min-height: 340px;
-      background: #f0ede8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #bbb;
-    }
-
-    /* ─── SEC 2 — HERO ────────────────────────────────────── */
     #sec2 { background: var(--navy); }
     #sec2 .inner { max-width: 860px; }
     #sec2 h2 {
-      font-size: 52px;
+      font-size: 42px;
       text-transform: uppercase;
       letter-spacing: -1px;
       color: var(--white);
@@ -270,8 +207,6 @@
       color: rgba(255,255,255,0.35);
       letter-spacing: 0.03em;
     }
-
-    /* ─── SEC 3 — TRADITIONS ──────────────────────────────── */
     #sec3 { background: var(--charcoal); }
     #sec3 .two-col { align-items: start; gap: 4rem; }
     #sec3 h2 {
@@ -282,7 +217,6 @@
       line-height: 1.0;
     }
     #sec3 p { color: rgba(255,255,255,0.65); font-size: 14px; line-height: 1.85; }
-
     .level-cards { display: flex; flex-direction: column; gap: 0.75rem; }
     .level-card {
       background: #1a1a1a;
@@ -302,33 +236,36 @@
       color: rgba(255,255,255,0.55);
       line-height: 1.6;
     }
-
-    /* ─── SEC 4 — FOUR DISCIPLINES HEADER ────────────────── */
     #sec4 { background: var(--linen); border-top: var(--border-light); }
     #sec4 .centered { max-width: 680px; }
-    #sec4 h2 {
-      text-transform: uppercase;
-      font-size: 42px;
-      margin-bottom: 1rem;
-    }
+    #sec4 h2 { text-transform: uppercase; font-size: 42px; margin-bottom: 1rem; }
     #sec4 p { font-size: 15px; color: #555; line-height: 1.75; }
 
     /* ─── DISCIPLINE ROWS ─────────────────────────────────── */
     .discipline-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 400px;
+      min-height: 500px;
       border-top: var(--border-light);
+      
     }
-    .discipline-row--linen { background: var(--linen); }
     .discipline-photo {
-      min-height: 360px;
+      height: 500px;
+      overflow: hidden;
+    }
+    .discipline-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
     .discipline-content {
       padding: 3.5rem 3rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background: var(--white);
     }
     .discipline-content .eyebrow { margin-bottom: 0.5rem; }
     .discipline-content h2 {
@@ -344,14 +281,8 @@
       color: var(--crimson);
       margin-bottom: 1rem;
     }
-    .discipline-content p {
-      font-size: 14px;
-      color: #444;
-      line-height: 1.8;
-      max-width: 420px;
-    }
+    .discipline-content p { font-size: 14px; color: #444; line-height: 1.8; max-width: 420px; }
 
-    /* ─── SEC 10 — PHASE JOURNEY ──────────────────────────── */
     #sec10 { background: var(--navy); }
     #sec10 .eyebrow { text-align: center; }
     #sec10 h2 {
@@ -369,7 +300,6 @@
       margin: 0 auto 3.5rem;
       line-height: 1.8;
     }
-
     .phase-track {
       display: flex;
       align-items: flex-start;
@@ -431,34 +361,9 @@
       color: rgba(255,255,255,0.5);
       line-height: 1.65;
     }
-
-    .phase-footer {
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 1rem 2rem;
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-    }
-
-    /* ─── SEC 11 — CTA ────────────────────────────────────── */
     #sec11 { background: var(--charcoal); text-align: center; }
-    #sec11 h2 {
-      text-transform: uppercase;
-      color: var(--white);
-      font-size: 42px;
-      margin-bottom: 1rem;
-    }
-    #sec11 p {
-      color: rgba(255,255,255,0.6);
-      max-width: 580px;
-      margin: 0 auto 2rem;
-      font-size: 15px;
-    }
+    #sec11 h2 { text-transform: uppercase; color: var(--white); font-size: 42px; margin-bottom: 1rem; }
+    #sec11 p { color: rgba(255,255,255,0.6); max-width: 580px; margin: 0 auto 2rem; font-size: 15px; }
     .cta-footnote {
       margin-top: 1.25rem;
       font-size: 12px;
@@ -466,8 +371,6 @@
       color: rgba(255,255,255,0.3);
       letter-spacing: 0.03em;
     }
-
-    /* ─── FOOTER ──────────────────────────────────────────── */
     footer {
       background: #1C1C1C;
       color: rgba(255,255,255,0.55);
@@ -488,12 +391,7 @@
       letter-spacing: -1px;
       margin-bottom: 0.75rem;
     }
-    .footer-brand-meta {
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.45);
-    }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
     .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
     .footer-brand-meta a:hover { color: var(--white); }
     .footer-nav-label {
@@ -504,13 +402,8 @@
       color: rgba(255,255,255,0.25);
       margin-bottom: 1rem;
     }
-    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-nav-links a {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      transition: color 0.15s;
-    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
     .footer-nav-links a:hover { color: var(--white); }
     .footer-bottom {
       max-width: 1200px;
@@ -526,8 +419,6 @@
     }
     .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
-
-    /* ─── SCROLL ARROW ────────────────────────────────────── */
     .scroll-arrow {
       position: fixed;
       bottom: 2rem;
@@ -549,8 +440,6 @@
     }
     .scroll-arrow:hover { background: rgba(28,31,46,0.95); }
     .scroll-arrow svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 2; }
-
-    /* ─── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 1024px) {
       :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
       h1 { font-size: 44px; }
@@ -558,7 +447,7 @@
       #sec2 h2 { font-size: 36px; }
       .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .discipline-row { grid-template-columns: 1fr; }
-      .discipline-photo { min-height: 240px; }
+      .discipline-photo { height: 280px; }
       .phase-track { flex-direction: column; align-items: center; gap: 2rem; }
       .phase-track::before { display: none; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -571,25 +460,27 @@
 <body>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-flag">🇵🇭</span>
-      <a href="/" class="nav-logo">NW KALI</a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/legacy/" class="active">Legacy</a></li>
-        <li><a href="/praxis/">Praxis</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/insights/">Insights</a></li>
-        <li><a href="/gear/">Gear</a></li>
-      </ul>
-      <div class="nav-right">
-        <span class="nav-phone">844-JKD-KALI</span>
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/" class="active">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <div class="nav-right">
+          <span class="nav-phone">844-JKD-KALI</span>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- ─── SEC 1 — THE FULL CURRICULUM ───────────────────── -->
+  <!-- ─── SEC 1 ───────────────────────────────────────────── -->
   <section id="sec1">
     <div class="two-col">
       <div>
@@ -599,12 +490,14 @@
         <p>From beginning through advanced curriculum — with the primary aims of practical self-defense and perpetuating the authentic arts.</p>
       </div>
       <div>
-        <div class="watermark-box">NW Kali Logo Watermark</div>
+        <div style="display:flex;align-items:center;justify-content:flex-start;padding-left:2rem;">
+          <img src="/images/NW Kali Logo.jpeg" alt="NW Kali Logo" style="width:75%;opacity:0.10;" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── SEC 2 — HERO ───────────────────────────────────── -->
+  <!-- ─── SEC 2 ───────────────────────────────────────────── -->
   <section id="sec2" class="section--navy">
     <div class="inner container">
       <span class="eyebrow eyebrow--dark">Legacy Track · The Full Curriculum</span>
@@ -620,7 +513,7 @@
     </div>
   </section>
 
-  <!-- ─── SEC 3 — TRADITIONS ─────────────────────────────── -->
+  <!-- ─── SEC 3 ───────────────────────────────────────────── -->
   <section id="sec3" class="section--charcoal">
     <div class="two-col">
       <div>
@@ -647,7 +540,7 @@
     </div>
   </section>
 
-  <!-- ─── SEC 4 — FOUR DISCIPLINES HEADER ───────────────── -->
+  <!-- ─── SEC 4 ───────────────────────────────────────────── -->
   <section id="sec4" class="section--linen">
     <div class="centered">
       <span class="eyebrow">What You Will Study</span>
@@ -656,83 +549,81 @@
     </div>
   </section>
 
-  <!-- ─── SEC 5 — KALI · ESKRIMA (photo left) ───────────── -->
-  <div class="discipline-row">
-    <div class="discipline-photo img-placeholder--light">
-      <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#bbb;">Kali · Eskrima Photo</div>
-    </div>
-    <div class="discipline-content">
-      <span class="eyebrow">Filipino Martial Arts</span>
-      <h2>Kali — Eskrima</h2>
-      <p class="discipline-subtitle">Bolos, Batons, and Suntokan</p>
-      <p>Kali is a comprehensive blade art that transfers to whatever you are holding — or your empty hand. Known for fluid motion, rapid strikes, and improvised weapons. Along with disarms, locks, and throws, Filipino Martial Arts offer a practical, no-nonsense approach to self-defense with or without a weapon.</p>
-      <a href="/about/#kali" class="read-more">Read more →</a>
-    </div>
+<!-- ─── SEC 5 — KALI ───────────────────────────────────── -->
+<div class="discipline-row">
+  <div class="discipline-photo">
+    <img src="/images/Legacy Kali image.jpg" alt="Kali Eskrima Training" />
   </div>
-
-  <!-- ─── SEC 6 — JUN FAN GUNG FU (photo right) ─────────── -->
-  <div class="discipline-row discipline-row--linen">
-    <div class="discipline-content">
-      <span class="eyebrow">Jun Fan Martial Arts</span>
-      <h2>Jun Fan Gung Fu</h2>
-      <p class="discipline-subtitle">American Chinese Art of Self-Defense</p>
-      <p>Lee Jun Fan Gung Fu — named after its founder Bruce Lee — combines Boxing, Kickboxing, and modified Wing Chun. An organic mixed-martial art curriculum conceived in the mid-1960s that emphasizes efficiency, simplicity, and effectiveness. The forerunner to modern MMA, designed for real self-defense.</p>
-      <a href="/about/#jkd" class="read-more">Read more →</a>
-    </div>
-    <div class="discipline-photo img-placeholder--light">
-      <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#bbb;">Jun Fan · Jab Photo</div>
-    </div>
+  <div class="discipline-content">
+    <span class="eyebrow">Filipino Martial Arts</span>
+    <h2>Kali — Eskrima</h2>
+    <p class="discipline-subtitle">Bolos, Batons, and Suntokan</p>
+    <p>Kali is a comprehensive blade art that transfers to whatever you are holding — or your empty hand. Known for fluid motion, rapid strikes, and improvised weapons. Along with disarms, locks, and throws, Filipino Martial Arts offer a practical, no-nonsense approach to self-defense with or without a weapon.</p>
+    <a href="/about/#kali" class="read-more">Read more →</a>
   </div>
+</div>
 
-  <!-- ─── SEC 7 — MUAY THAI (photo left) ────────────────── -->
-  <div class="discipline-row">
-    <div class="discipline-photo img-placeholder--light">
-      <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#bbb;">Muay Thai Photo</div>
-    </div>
-    <div class="discipline-content">
-      <span class="eyebrow">Thai Martial Arts</span>
-      <h2>Muay Thai</h2>
-      <p class="discipline-subtitle">Fantastic Fitness and Fight Skills</p>
-      <p>Thai Boxing is a full-contact striking discipline and a demanding physical workout for the entire body. We emphasize safety and proper technique — developing boxing punches, elbow strikes, knee blows, clinch work, and devastating kicks. Everyone can benefit from Muay Thai training, whether or not competition is the goal.</p>
-      <a href="/about/#muay-thai" class="read-more">Read more →</a>
-    </div>
+<!-- ─── SEC 6 — JUN FAN ─────────────────────────────────── -->
+<div class="discipline-row">
+  <div class="discipline-content">
+    <span class="eyebrow">Jun Fan Martial Arts</span>
+    <h2>Jun Fan Gung Fu</h2>
+    <p class="discipline-subtitle">American Chinese Art of Self-Defense</p>
+    <p>Lee Jun Fan Gung Fu — named after its founder Bruce Lee — combines Boxing, Kickboxing, and modified Wing Chun. An organic mixed-martial art curriculum conceived in the mid-1960s that emphasizes efficiency, simplicity, and effectiveness. The forerunner to modern MMA, designed for real self-defense.</p>
+    <a href="/about/#jkd" class="read-more">Read more →</a>
   </div>
-
-  <!-- ─── SEC 8 — SILAT (photo right) ───────────────────── -->
-  <div class="discipline-row discipline-row--linen">
-    <div class="discipline-content">
-      <span class="eyebrow">Maphilindo Martial Arts</span>
-      <h2>Silat</h2>
-      <p class="discipline-subtitle">Martial Methods of Majapahit</p>
-      <p>Maphilindo Silat is a serious close-quarter self-defense system with heavy elbow and knee strikes, balance disruption, sweeps, and throws. Known also as Pukulan, Kuntao, or Bersilat, Silat hails from Malaysia, the Philippines, and Indonesia — and integrates fluidly with the empty-hand work of Kali and the striking of Muay Thai.</p>
-      <a href="/about/#silat" class="read-more">Read more →</a>
-    </div>
-    <div class="discipline-photo img-placeholder--light">
-      <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#bbb;">Silat Photo</div>
-    </div>
+  <div class="discipline-photo">
+    <img src="/images/Legacy Jun Fan image.jpeg" alt="Jun Fan Gung Fu"/>
   </div>
+</div>
 
-  <!-- ─── SEC 9 — PANANTUKAN (photo left) ───────────────── -->
-  <div class="discipline-row">
-    <div class="discipline-photo img-placeholder--light">
-      <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#bbb;">Panantukan Photo</div>
-    </div>
-    <div class="discipline-content">
-      <span class="eyebrow">Filipino Boxing</span>
-      <h2>Panantukan</h2>
-      <p class="discipline-subtitle">Limb Destruction and Dirty Boxing</p>
-      <p>Panantukan is the Filipino boxing system drawn from the empty-hand portion of Kali — known as Pangamut, meaning "of the hand." Popularized as Dirty Boxing in modern MMA, Panantukan blends orthodox and eclectic striking using fists, hammer-fists, open-hand strikes, elbows, knees, shins, and even the head — a complete and battle-tested approach to empty-hand combat.</p>
-      <a href="/about/#panantukan" class="read-more">Read more →</a>
-    </div>
+<!-- ─── SEC 7 — MUAY THAI ───────────────────────────────── -->
+<div class="discipline-row">
+  <div class="discipline-photo" style="height:900px;">
+    <img src="/images/Legacy Muay Thai Image.jpeg" alt="Muay Thai Training" style="object-position: top center;" />
   </div>
+  <div class="discipline-content">
+    <span class="eyebrow">Thai Martial Arts</span>
+    <h2>Muay Thai</h2>
+    <p class="discipline-subtitle">Fantastic Fitness and Fight Skills</p>
+    <p>Thai Boxing is a full-contact striking discipline and a demanding physical workout for the entire body. We emphasize safety and proper technique — developing boxing punches, elbow strikes, knee blows, clinch work, and devastating kicks. Everyone can benefit from Muay Thai training, whether or not competition is the goal.</p>
+    <a href="/about/#muay-thai" class="read-more">Read more →</a>
+  </div>
+</div>
 
-  <!-- ─── SEC 10 — PHASE JOURNEY ─────────────────────────── -->
+<!-- ─── SEC 8 — SILAT ───────────────────────────────────── -->
+<div class="discipline-row">
+  <div class="discipline-content">
+    <span class="eyebrow">Maphilindo Martial Arts</span>
+    <h2>Silat</h2>
+    <p class="discipline-subtitle">Martial Methods of Majapahit</p>
+    <p>Maphilindo Silat is a serious close-quarter self-defense system with heavy elbow and knee strikes, balance disruption, sweeps, and throws. Known also as Pukulan, Kuntao, or Bersilat, Silat hails from Malaysia, the Philippines, and Indonesia — and integrates fluidly with the empty-hand work of Kali and the striking of Muay Thai.</p>
+    <a href="/about/#silat" class="read-more">Read more →</a>
+  </div>
+  <div class="discipline-photo">
+    <img src="/images/Legacy Silat Image.jpeg" alt="Silat Training" />
+  </div>
+</div>
+
+<!-- ─── SEC 9 — PANANTUKAN ──────────────────────────────── -->
+<div class="discipline-row">
+  <div class="discipline-photo">
+    <img src="/images/Legacy Panantukan.jpg" alt="Panantukan Filipino Boxing" />
+  </div>
+  <div class="discipline-content">
+    <span class="eyebrow">Filipino Boxing</span>
+    <h2>Panantukan</h2>
+    <p class="discipline-subtitle">Limb Destruction and Dirty Boxing</p>
+    <p>Panantukan is the Filipino boxing system drawn from the empty-hand portion of Kali — known as Pangamut, meaning "of the hand." Popularized as Dirty Boxing in modern MMA, Panantukan blends orthodox and eclectic striking using fists, hammer-fists, open-hand strikes, elbows, knees, shins, and even the head — a complete and battle-tested approach to empty-hand combat.</p>
+    <a href="/about/#panantukan" class="read-more">Read more →</a>
+  </div>
+</div>
+  <!-- ─── SEC 10 — PHASE JOURNEY ──────────────────────────── -->
   <section id="sec10" class="section--navy">
     <div class="container">
       <span class="eyebrow">Your Path</span>
       <h2>A Structured Journey. Skill You Can Take Anywhere.</h2>
       <p class="subtext">The Legacy curriculum instills the fundamental mechanics and movements to navigate between ranges and disciplines — to understand the strengths as well as limitations in varying environments.</p>
-
       <div class="phase-track">
         <div class="phase-step">
           <div class="phase-circle"><span class="phase-num">01</span></div>
@@ -752,7 +643,7 @@
         <div class="phase-step">
           <div class="phase-circle"><span class="phase-num">04</span></div>
           <div class="phase-label">Cultivation</div>
-          <p class="phase-body">Polish and refinement of self, technique, and thought. Leading by example and mentoring. Refinement of personal expression in the disciplines.</p>
+          <p class="phase-body">Polish and refinement of self, technique, and thought. Leading by example and mentoring.</p>
         </div>
         <div class="phase-step">
           <div class="phase-circle"><span class="phase-num">05</span></div>
@@ -760,11 +651,10 @@
           <p class="phase-body">Accredited and recognized instructor certification. Curriculum stewardship.</p>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ─── SEC 11 — CTA ───────────────────────────────────── -->
+  <!-- ─── SEC 11 — CTA ────────────────────────────────────── -->
   <section id="sec11" class="section--charcoal">
     <div class="centered">
       <span class="eyebrow eyebrow--dark">Legacy Track</span>
@@ -775,7 +665,7 @@
     </div>
   </section>
 
-  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
@@ -789,8 +679,8 @@
         <div class="footer-nav-label">Site</div>
         <nav class="footer-nav-links">
           <a href="/">Home</a>
-          <a href="/praxis/">Praxis</a>
           <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
@@ -804,7 +694,6 @@
     </div>
   </footer>
 
-  <!-- ─── SCROLL ARROW ──────────────────────────────────── -->
   <a class="scroll-arrow" href="#sec2" aria-label="Scroll down">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <polyline points="6 9 12 15 18 9"></polyline>

@@ -6,7 +6,6 @@
   <title>Training Gear — NW Kali</title>
   <meta name="description" content="Branded apparel, equipment and training gear, and rattan eskrima sticks from NW Kali — for serious Filipino Martial Arts practitioners." />
   <style>
-    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
     :root {
       --white:       #FFFFFF;
       --navy:        #1C1F2E;
@@ -19,8 +18,6 @@
       --pad-v: 5rem;
       --pad-h: 3rem;
     }
-
-    /* ─── RESET & BASE ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -35,8 +32,6 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     p { font-weight: 300; }
-
-    /* ─── TYPOGRAPHY ──────────────────────────────────────── */
     .eyebrow {
       display: block;
       font-size: 10px;
@@ -47,7 +42,6 @@
       color: var(--crimson-mid);
     }
     .eyebrow--muted { color: rgba(255,255,255,0.3); }
-
     h1, h2, h3 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
@@ -59,8 +53,6 @@
     h2 { font-size: 42px; }
     h2.allcaps { text-transform: uppercase; }
     h3 { font-size: 20px; }
-
-    /* ─── BUTTONS ─────────────────────────────────────────── */
     .btn {
       display: inline-block;
       font-family: Arial, Helvetica, sans-serif;
@@ -78,11 +70,7 @@
     }
     .btn--primary:hover { background: #6e1414; }
     .btn--primary:disabled,
-    .btn--primary.disabled {
-      background: #aaa;
-      cursor: not-allowed;
-      pointer-events: none;
-    }
+    .btn--primary.disabled { background: #aaa; cursor: not-allowed; pointer-events: none; }
     .btn--ghost {
       background: transparent;
       color: rgba(255,255,255,0.6);
@@ -93,18 +81,9 @@
       text-underline-offset: 3px;
     }
     .btn--ghost:hover { color: var(--white); }
-    .btn-group {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 1.75rem;
-    }
-
-    /* ─── LAYOUT ──────────────────────────────────────────── */
+    .btn-group { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.75rem; }
     .container { max-width: 1200px; margin: 0 auto; }
     .centered  { max-width: 760px; margin: 0 auto; text-align: center; }
-
     section { padding: var(--pad-v) var(--pad-h); }
     section + section { border-top: var(--border-light); }
     .section--navy     { background: var(--navy);     color: var(--white); }
@@ -114,7 +93,6 @@
     section + .section--navy,
     .section--charcoal + section,
     section + .section--charcoal { border-top: none; }
-
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -125,7 +103,7 @@
     }
 
     /* ─── NAV ─────────────────────────────────────────────── */
-    nav {
+    header nav {
       background: var(--white);
       border-bottom: var(--border-light);
       padding: 0 var(--pad-h);
@@ -174,29 +152,11 @@
       white-space: nowrap;
       margin-left: auto;
     }
-
-    /* ─── SEC 1 — HEADER ──────────────────────────────────── */
     #sec1 { background: var(--white); border-top: none; padding-bottom: 3rem; }
-    #sec1 .sec1-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    #sec1 .sec1-inner { max-width: 1200px; margin: 0 auto; }
     #sec1 h1 { color: var(--charcoal); margin-bottom: 0.4rem; }
-    .sec1-subtitle {
-      font-size: 16px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--crimson);
-      letter-spacing: -0.5px;
-    }
-    .crimson-rule {
-      width: 40px;
-      height: 2px;
-      background: var(--crimson);
-      margin-bottom: 1.5rem;
-    }
-
-    /* ─── SEC 2 — INTRO STRIP ─────────────────────────────── */
+    .sec1-subtitle { font-size: 16px; font-weight: 900; font-style: italic; color: var(--crimson); letter-spacing: -0.5px; }
+    .crimson-rule { width: 40px; height: 2px; background: var(--crimson); margin-bottom: 1.5rem; }
     #sec2 { background: var(--navy); padding: 3rem var(--pad-h); }
     .intro-strip {
       max-width: 1200px;
@@ -217,36 +177,17 @@
       padding-left: 1.5rem;
       max-width: 600px;
     }
-    .intro-meta {
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .intro-meta-line {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      line-height: 2;
-    }
-    .intro-meta-line span {
-      color: rgba(255,255,255,0.75);
-    }
-
-    /* ─── PRODUCT GRIDS ───────────────────────────────────── */
+    .intro-meta { text-align: right; flex-shrink: 0; }
+    .intro-meta-line { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); line-height: 2; }
+    .intro-meta-line span { color: rgba(255,255,255,0.75); }
     .product-section-header {
       max-width: 1200px;
       margin: 0 auto 3rem;
       padding-bottom: 1.25rem;
       border-bottom: var(--border-light);
     }
-    .product-section-header h2 {
-      font-size: 28px;
-      color: var(--charcoal);
-      text-transform: uppercase;
-    }
+    .product-section-header h2 { font-size: 28px; color: var(--charcoal); text-transform: uppercase; }
     .product-section-header--linen h2 { color: var(--charcoal); }
-
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -254,8 +195,13 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    /* ─── PRODUCT CARD ────────────────────────────────────── */
+    .product-grid--two {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
     .product-card {
       background: var(--white);
       border: 1px solid #ddd;
@@ -264,7 +210,6 @@
       position: relative;
     }
     .section--linen .product-card { background: var(--white); }
-
     .product-badge {
       position: absolute;
       top: 1rem;
@@ -276,10 +221,8 @@
       padding: 4px 10px;
       z-index: 2;
     }
-    .product-badge--new       { background: var(--crimson);  color: var(--white); }
-    .product-badge--bestseller{ background: var(--navy);     color: var(--white); }
-    .product-badge--soon      { background: #888;            color: var(--white); }
-
+    .product-badge--new        { background: var(--crimson); color: var(--white); }
+    .product-badge--bestseller { background: var(--navy);    color: var(--white); }
     .product-image {
       height: 260px;
       display: flex;
@@ -292,114 +235,22 @@
     }
     .product-image--light { background: #e8e4de; color: #bbb; }
     .product-image--dark  { background: var(--navy); color: rgba(255,255,255,0.2); }
-    .product-image--soon  { background: #f0f0f0; color: #ccc; }
+    .product-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .product-body h3 { font-size: 17px; color: var(--charcoal); text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1.15; }
+    .product-desc { font-size: 13px; color: #555; line-height: 1.75; flex: 1; margin-bottom: 1.25rem; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: auto; }
+    .product-price { font-size: 22px; font-weight: 900; font-style: italic; color: var(--charcoal); letter-spacing: -0.5px; }
 
-    .product-body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .product-body h3 {
-      font-size: 17px;
-      color: var(--charcoal);
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      line-height: 1.15;
-    }
-    .product-desc {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.75;
-      flex: 1;
-      margin-bottom: 1.25rem;
-    }
-    .product-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: auto;
-    }
-    .product-price {
-      font-size: 22px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--charcoal);
-      letter-spacing: -0.5px;
-    }
-    .product-price--soon {
-      font-size: 13px;
-      font-weight: 300;
-      font-style: normal;
-      color: #aaa;
-      letter-spacing: 0.05em;
-    }
+    /* Shopify Buy Button container styling */
+    .shopify-buy-btn-wrapper { display: flex; align-items: center; }
 
-    /* Shopify embed placeholder button */
-    .shopify-btn-placeholder {
-      display: inline-block;
-      background: var(--crimson);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 10px 20px;
-      letter-spacing: 0.04em;
-      cursor: pointer;
-      border: none;
-      transition: background 0.18s;
-    }
-    .shopify-btn-placeholder:hover { background: #6e1414; }
-    .shopify-btn-placeholder.coming-soon {
-      background: #ccc;
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-
-    /* ─── SEC 5 — SHOPIFY EXPLAINER ───────────────────────── */
     #sec5 { background: var(--white); }
-    .explainer-box {
-      max-width: 780px;
-      margin: 0 auto;
-      border: 1px solid #ddd;
-      padding: 2.5rem 3rem;
-    }
-    .explainer-box h3 {
-      font-size: 18px;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-    }
-    .explainer-box p {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.8;
-    }
-    .explainer-steps {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .explainer-step {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      font-size: 13px;
-      color: #444;
-      line-height: 1.6;
-    }
-    .explainer-step-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--crimson-mid);
-      letter-spacing: 0.1em;
-      flex-shrink: 0;
-      margin-top: 0.15em;
-    }
-
-    /* ─── SEC 6 — NOTIFY + NAV STRIP ─────────────────────── */
+    .explainer-box { max-width: 780px; margin: 0 auto; border: 1px solid #ddd; padding: 2.5rem 3rem; }
+    .explainer-box h3 { font-size: 18px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 1rem; }
+    .explainer-box p { font-size: 13px; color: #555; line-height: 1.8; }
+    .explainer-steps { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .explainer-step { display: flex; gap: 1rem; align-items: flex-start; font-size: 13px; color: #444; line-height: 1.6; }
+    .explainer-step-num { font-size: 11px; font-weight: 700; color: var(--crimson-mid); letter-spacing: 0.1em; flex-shrink: 0; margin-top: 0.15em; }
     #sec6 { background: var(--navy); padding: 4rem var(--pad-h); border-top: none; }
     .notify-strip {
       max-width: 1200px;
@@ -409,27 +260,10 @@
       gap: 4rem;
       align-items: start;
     }
-    .notify-divider {
-      background: rgba(255,255,255,0.1);
-      height: 100%;
-      min-height: 80px;
-    }
-    .notify-left h3 {
-      font-size: 22px;
-      color: var(--white);
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .notify-left p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-    }
-    .notify-form {
-      display: flex;
-      gap: 0;
-    }
+    .notify-divider { background: rgba(255,255,255,0.1); height: 100%; min-height: 80px; }
+    .notify-left h3 { font-size: 22px; color: var(--white); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .notify-left p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.25rem; }
+    .notify-form { display: flex; gap: 0; }
     .notify-input {
       flex: 1;
       font-family: Arial, Helvetica, sans-serif;
@@ -458,13 +292,7 @@
       white-space: nowrap;
     }
     .notify-btn:hover { background: #6e1414; }
-    .notify-confirm {
-      display: none;
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      font-style: italic;
-      margin-top: 0.75rem;
-    }
+    .notify-confirm { display: none; font-size: 13px; color: rgba(255,255,255,0.6); font-style: italic; margin-top: 0.75rem; }
     .notify-right h3 {
       font-size: 13px;
       font-weight: 700;
@@ -474,28 +302,10 @@
       color: rgba(255,255,255,0.3);
       margin-bottom: 1.25rem;
     }
-    .notify-nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .notify-nav-links a {
-      font-size: 14px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.55);
-      transition: color 0.15s;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+    .notify-nav-links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .notify-nav-links a { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.55); transition: color 0.15s; display: flex; align-items: center; gap: 0.5rem; }
     .notify-nav-links a:hover { color: var(--white); }
-    .notify-nav-links a::before {
-      content: '→';
-      font-size: 12px;
-      color: var(--crimson);
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────────── */
+    .notify-nav-links a::before { content: '→'; font-size: 12px; color: var(--crimson); }
     footer {
       background: #1C1C1C;
       color: rgba(255,255,255,0.55);
@@ -508,37 +318,13 @@
       max-width: 1200px;
       margin: 0 auto 2.5rem;
     }
-    .footer-brand-name {
-      font-size: 28px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--white);
-      letter-spacing: -1px;
-      margin-bottom: 0.75rem;
-    }
-    .footer-brand-meta {
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.45);
-    }
+    .footer-brand-name { font-size: 28px; font-weight: 900; font-style: italic; color: var(--white); letter-spacing: -1px; margin-bottom: 0.75rem; }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
     .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
     .footer-brand-meta a:hover { color: var(--white); }
-    .footer-nav-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      margin-bottom: 1rem;
-    }
-    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-nav-links a {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      transition: color 0.15s;
-    }
+    .footer-nav-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1rem; }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
     .footer-nav-links a:hover { color: var(--white); }
     .footer-bottom {
       max-width: 1200px;
@@ -554,14 +340,13 @@
     }
     .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
-
-    /* ─── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 1024px) {
       :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
       h1 { font-size: 44px; }
       h2 { font-size: 32px; }
       .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .product-grid { grid-template-columns: 1fr 1fr; }
+      .product-grid--two { grid-template-columns: 1fr 1fr; max-width: 100%; }
       .intro-strip { grid-template-columns: 1fr; gap: 2rem; }
       .intro-meta { text-align: left; }
       .notify-strip { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -573,6 +358,7 @@
     }
     @media (max-width: 640px) {
       .product-grid { grid-template-columns: 1fr; }
+      .product-grid--two { grid-template-columns: 1fr; }
       .notify-form { flex-direction: column; }
       .notify-btn { width: 100%; }
     }
@@ -581,21 +367,23 @@
 <body>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-flag">🇵🇭</span>
-      <a href="/" class="nav-logo">NW KALI</a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/legacy/">Legacy</a></li>
-        <li><a href="/praxis/">Praxis</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/insights/">Insights</a></li>
-        <li><a href="/gear/" class="active">Gear</a></li>
-      </ul>
-      <span class="nav-phone">844-JKD-KALI</span>
-    </div>
-  </nav>
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/gear/" class="active">Gear</a></li>
+        </ul>
+        <span class="nav-phone">844-JKD-KALI</span>
+      </div>
+    </nav>
+  </header>
 
   <!-- ─── SEC 1 — HEADER ─────────────────────────────────── -->
   <section id="sec1">
@@ -610,9 +398,7 @@
   <!-- ─── SEC 2 — INTRO STRIP ────────────────────────────── -->
   <section id="sec2" class="section--navy">
     <div class="intro-strip">
-      <div class="intro-quote">
-        Quality Gear for Quality Training.
-      </div>
+      <div class="intro-quote">Quality Gear for Quality Training.</div>
       <div class="intro-meta">
         <div class="intro-meta-line">Fulfilled via <span>Shopify</span></div>
         <div class="intro-meta-line">Ships within <span>5 business days</span></div>
@@ -629,30 +415,32 @@
     </div>
     <div class="product-grid">
 
-      <!-- T-Shirt 1 -->
+      <!-- Grey Full-Back Short Sleeve Tee -->
       <div class="product-card">
-        <div class="product-image product-image--dark">[ Product Photo ]</div>
+        <img src="/images/daans back.jpeg" alt="NW Kali Training Tee" style="width:100%;height:260px;object-fit:cover;display:block;" />
         <div class="product-body">
-          <h3>NW Kali Training Tee 1</h3>
-          <p class="product-desc">Heavyweight cotton tee. NW Kali mark on chest, Baybayin script on back. Black. Sizes S–XXL.</p>
+          <h3>NW Kali Training Tee</h3>
+          <p class="product-desc">Short sleeve tee in heather grey. 100% cotton. NW Kali mark on the chest, American flag on the right sleeve, and a full NW Kali graphic on the back. Available in sizes M–2XL.</p>
           <div class="product-footer">
             <div class="product-price">$30</div>
-            <!-- SHOPIFY BUY BUTTON — replace placeholder below with embed code -->
-            <button class="shopify-btn-placeholder">Add to Cart</button>
+            <div class="shopify-buy-btn-wrapper">
+              <div id='product-component-1777428884093'></div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- T-Shirt 2 -->
+      <!-- Long Sleeve Tee -->
       <div class="product-card">
-        <div class="product-image product-image--light">[ Product Photo ]</div>
+        <div class="product-image product-image--dark">[ Product Photo ]</div>
         <div class="product-body">
-          <h3>NW Kali Training Tee 2</h3>
-          <p class="product-desc">Heavyweight cotton tee. NW Kali mark on chest. Black. Sizes S–XXL.</p>
+          <h3>NW Kali Long Sleeve Tee</h3>
+          <p class="product-desc">Long sleeve tee. Black. NW Kali mark on the chest. Available in sizes M–2XL.</p>
           <div class="product-footer">
-            <div class="product-price">$30</div>
-            <!-- SHOPIFY BUY BUTTON — replace placeholder below with embed code -->
-            <button class="shopify-btn-placeholder">Add to Cart</button>
+            <div class="product-price">$40</div>
+            <div class="shopify-buy-btn-wrapper">
+              <div id='product-component-1777429332759'></div>
+            </div>
           </div>
         </div>
       </div>
@@ -662,11 +450,12 @@
         <div class="product-image product-image--dark">[ Product Photo ]</div>
         <div class="product-body">
           <h3>NW Kali Hoodie</h3>
-          <p class="product-desc">Midweight pullover hoodie. NW Kali mark on chest. Black. Sizes S–XXL.</p>
+          <p class="product-desc">Midweight pullover hoodie. Black. NW Kali mark on the chest. Available in sizes M–2XL.</p>
           <div class="product-footer">
             <div class="product-price">$45</div>
-            <!-- SHOPIFY BUY BUTTON — replace placeholder below with embed code -->
-            <button class="shopify-btn-placeholder">Add to Cart</button>
+            <div class="shopify-buy-btn-wrapper">
+              <div id='product-component-1777429306879'></div>
+            </div>
           </div>
         </div>
       </div>
@@ -680,47 +469,35 @@
       <span class="eyebrow">Training Tools & Accessories</span>
       <h2 class="allcaps">Equipment</h2>
     </div>
-    <div class="product-grid">
+    <div class="product-grid--two">
 
-      <!-- Rattan Sticks -->
+      <!-- Rattan Training Sticks -->
       <div class="product-card">
         <span class="product-badge product-badge--bestseller">Bestseller</span>
-        <div class="product-image product-image--light">[ Product Photo ]</div>
+        <img src="/images/rattan copy.jpeg" alt="NW Kali Rattan Training Sticks" style="width:100%;height:260px;object-fit:cover;display:block;" />
         <div class="product-body">
           <h3>NW Kali Rattan Training Sticks</h3>
-          <p class="product-desc">28" rattan eskrima sticks. Sold as a pair — the standard tool for all stick work in the curriculum.</p>
+          <p class="product-desc">28" rattan eskrima sticks, sold as a pair. The standard tool for all stick work in the NW Kali curriculum — used from your first class through advanced training. Rattan is the traditional material: lightweight, durable, and forgiving on impact.</p>
           <div class="product-footer">
-            <div class="product-price">$30</div>
-            <!-- SHOPIFY BUY BUTTON — replace placeholder below with embed code -->
-            <button class="shopify-btn-placeholder">Add to Cart</button>
+            <div class="product-price">$35</div>
+            <div class="shopify-buy-btn-wrapper">
+              <div id='product-component-1777428959864'></div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Morale Patch -->
       <div class="product-card">
-        <div class="product-image product-image--dark">[ Product Photo ]</div>
+        <img src="/images/patch.jpeg" alt="NW Kali Morale Patch" style="width:100%;height:260px;object-fit:cover;display:block;" />
         <div class="product-body">
           <h3>NW Kali Morale Patch</h3>
-          <p class="product-desc">Embroidered NW Kali patch. Black with gray lettering. Hook-and-loop backing. Works on bags, gear, and kit. Represent the lineage.</p>
+          <p class="product-desc">Embroidered NW Kali patch. Black with gray lettering and the NW Kali mark. Hook-and-loop backing fits any bag, pack, or kit. Represent the lineage.</p>
           <div class="product-footer">
-            <div class="product-price">$5</div>
-            <!-- SHOPIFY BUY BUTTON — replace placeholder below with embed code -->
-            <button class="shopify-btn-placeholder">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Coming Soon -->
-      <div class="product-card">
-        <span class="product-badge product-badge--soon">Coming Soon</span>
-        <div class="product-image product-image--soon">[ More Designs ]</div>
-        <div class="product-body">
-          <h3>Additional T-Shirt Designs</h3>
-          <p class="product-desc">More NW Kali apparel designs in development. Check back soon.</p>
-          <div class="product-footer">
-            <div class="product-price product-price--soon">Available Soon</div>
-            <button class="shopify-btn-placeholder coming-soon">Coming Soon</button>
+            <div class="product-price">$6</div>
+            <div class="shopify-buy-btn-wrapper">
+              <div id='product-component-1777428817266'></div>
+            </div>
           </div>
         </div>
       </div>
@@ -753,7 +530,6 @@
   <!-- ─── SEC 6 — NOTIFY + NAV STRIP ───────────────────── -->
   <section id="sec6">
     <div class="notify-strip">
-
       <div class="notify-left">
         <h3>First to Know.</h3>
         <p>New gear, training events, and what's happening at NW Kali — delivered directly to your inbox.</p>
@@ -767,21 +543,13 @@
           <input type="hidden" name="form-name" value="gear-notify" />
           <p style="display:none;"><input name="bot-field" /></p>
           <div class="notify-form">
-            <input
-              type="email"
-              name="email"
-              class="notify-input"
-              placeholder="your@email.com"
-              required
-            />
+            <input type="email" name="email" class="notify-input" placeholder="your@email.com" required />
             <button type="submit" class="notify-btn">Notify Me</button>
           </div>
         </form>
         <p class="notify-confirm" id="notify-confirm">You're on the list. We'll be in touch.</p>
       </div>
-
       <div class="notify-divider"></div>
-
       <div class="notify-right">
         <h3>Explore the Training</h3>
         <nav class="notify-nav-links">
@@ -792,7 +560,6 @@
           <a href="/request/">Request Private Training</a>
         </nav>
       </div>
-
     </div>
   </section>
 
@@ -811,8 +578,8 @@
         <div class="footer-nav-label">Site</div>
         <nav class="footer-nav-links">
           <a href="/">Home</a>
-          <a href="/praxis/">Praxis</a>
           <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
@@ -826,12 +593,126 @@
     </div>
   </footer>
 
+  <!-- ─── SHOPIFY BUY BUTTON SCRIPTS ───────────────────── -->
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  (function () {
+    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+    if (window.ShopifyBuy) {
+      if (window.ShopifyBuy.UI) {
+        ShopifyBuyInit();
+      } else {
+        loadScript();
+      }
+    } else {
+      loadScript();
+    }
+    function loadScript() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = scriptURL;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+      script.onload = ShopifyBuyInit;
+    }
+    function ShopifyBuyInit() {
+      var client = ShopifyBuy.buildClient({
+        domain: 'y0f4ky-vg.myshopify.com',
+        storefrontAccessToken: 'fe0ea6502b31d3d0b98599d4641c6e85',
+      });
+      var ui = ShopifyBuy.UI.init(client);
+      var commonOptions = {
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              },
+              "button": {
+                "background-color": "#8B1A1A",
+                "font-family": "Arial, Helvetica, sans-serif",
+                "font-size": "12px",
+                "font-weight": "700",
+                "letter-spacing": "0.04em",
+                ":hover": { "background-color": "#6e1414" },
+                ":focus": { "background-color": "#6e1414" }
+              }
+            },
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false
+            },
+            "text": { "button": "Add to Cart" }
+          },
+          "modalProduct": {
+            "contents": {
+              "img": false,
+              "imgWithCarousel": true,
+              "button": false,
+              "buttonWithQuantity": true
+            },
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px"
+                }
+              }
+            },
+            "text": { "button": "Add to Cart" }
+          },
+          "cart": {
+            "text": { "total": "Subtotal", "button": "Checkout" }
+          },
+          "toggle": {}
+        }
+      };
+
+      // Grey Full-Back Short Sleeve Tee
+      ui.createComponent('product', Object.assign({}, commonOptions, {
+        id: '10160885629012',
+        node: document.getElementById('product-component-1777428884093')
+      }));
+
+      // Long Sleeve Tee
+      ui.createComponent('product', Object.assign({}, commonOptions, {
+        id: '10160890380372',
+        node: document.getElementById('product-component-1777429332759')
+      }));
+
+      // Hoodie
+      ui.createComponent('product', Object.assign({}, commonOptions, {
+        id: '10160891232340',
+        node: document.getElementById('product-component-1777429306879')
+      }));
+
+      // Rattan Training Sticks
+      ui.createComponent('product', Object.assign({}, commonOptions, {
+        id: '10160878878804',
+        node: document.getElementById('product-component-1777428959864')
+      }));
+
+      // Morale Patch
+      ui.createComponent('product', Object.assign({}, commonOptions, {
+        id: '10160873734228',
+        node: document.getElementById('product-component-1777428817266')
+      }));
+    }
+  })();
+  /*]]>*/
+  </script>
+
   <script>
     function handleNotify(e) {
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
-
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -842,7 +723,6 @@
         document.getElementById('notify-confirm').style.display = 'block';
       })
       .catch(() => {
-        // Fallback — still show confirm so UX isn't broken
         form.style.display = 'none';
         document.getElementById('notify-confirm').style.display = 'block';
       });

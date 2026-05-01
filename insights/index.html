@@ -6,7 +6,6 @@
   <title>Insights — Training · Lineage · Application · NW Kali</title>
   <meta name="description" content="Training philosophy, lineage, and martial arts culture from NW Kali — private Kali and JKD instruction in Oregon & Washington." />
   <style>
-    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
     :root {
       --white:       #FFFFFF;
       --navy:        #1C1F2E;
@@ -19,8 +18,6 @@
       --pad-v: 5rem;
       --pad-h: 3rem;
     }
-
-    /* ─── RESET & BASE ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -35,8 +32,6 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     p { font-weight: 300; }
-
-    /* ─── TYPOGRAPHY ──────────────────────────────────────── */
     .eyebrow {
       display: block;
       font-size: 10px;
@@ -46,10 +41,7 @@
       margin-bottom: 1.2rem;
       color: var(--crimson-mid);
     }
-    .eyebrow--muted {
-      color: rgba(255,255,255,0.3);
-    }
-
+    .eyebrow--muted { color: rgba(255,255,255,0.3); }
     h1, h2, h3 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
@@ -61,8 +53,6 @@
     h2 { font-size: 42px; }
     h2.allcaps { text-transform: uppercase; }
     h3 { font-size: 22px; }
-
-    /* ─── BUTTONS ─────────────────────────────────────────── */
     .btn {
       display: inline-block;
       font-family: Arial, Helvetica, sans-serif;
@@ -100,18 +90,9 @@
       text-underline-offset: 3px;
     }
     .btn--ghost:hover { color: var(--white); }
-    .btn-group {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 1.75rem;
-    }
-
-    /* ─── LAYOUT ──────────────────────────────────────── */
+    .btn-group { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.75rem; }
     .container { max-width: 1200px; margin: 0 auto; }
     .centered  { max-width: 760px; margin: 0 auto; text-align: center; }
-
     section { padding: var(--pad-v) var(--pad-h); }
     section + section { border-top: var(--border-light); }
     .section--navy     { background: var(--navy);     color: var(--white); }
@@ -121,7 +102,6 @@
     section + .section--navy,
     .section--charcoal + section,
     section + .section--charcoal { border-top: none; }
-
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -130,8 +110,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    /* ─── IMAGE PLACEHOLDERS ──────────────────────────────── */
     .img-placeholder {
       width: 100%;
       min-height: 320px;
@@ -151,12 +129,10 @@
       border: 1px dashed rgba(255,255,255,0.12);
       color: rgba(255,255,255,0.2);
     }
-    .img-placeholder--article {
-      min-height: 220px;
-    }
+    .img-placeholder--article { min-height: 220px; }
 
     /* ─── NAV ─────────────────────────────────────────────── */
-    nav {
+    header nav {
       background: var(--white);
       border-bottom: var(--border-light);
       padding: 0 var(--pad-h);
@@ -205,38 +181,13 @@
       white-space: nowrap;
       margin-left: auto;
     }
-
-    /* ─── SEC 1 — HEADER ──────────────────────────────────── */
     #sec1 { background: var(--white); border-top: none; }
     #sec1 .two-col { align-items: center; gap: 4rem; }
     #sec1 h1 { color: var(--charcoal); margin-bottom: 0.5rem; }
-    .sec1-subtitle {
-      font-size: 20px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--crimson);
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.5px;
-    }
+    .sec1-subtitle { font-size: 20px; font-weight: 900; font-style: italic; color: var(--crimson); margin-bottom: 1.25rem; letter-spacing: -0.5px; }
     #sec1 p { font-size: 15px; color: #444; max-width: 420px; }
-    .insights-watermark {
-      font-size: 80px;
-      font-weight: 900;
-      font-style: italic;
-      color: #e8e4de;
-      letter-spacing: -4px;
-      line-height: 1;
-      text-align: center;
-      user-select: none;
-    }
-    .crimson-rule {
-      width: 40px;
-      height: 2px;
-      background: var(--crimson);
-      margin-bottom: 1.5rem;
-    }
-
-    /* ─── SEC 2 — CATEGORY FILTER ─────────────────────────── */
+    .insights-watermark { font-size: 80px; font-weight: 900; font-style: italic; color: #e8e4de; letter-spacing: -4px; line-height: 1; text-align: center; user-select: none; }
+    .crimson-rule { width: 40px; height: 2px; background: var(--crimson); margin-bottom: 1.5rem; }
     #sec2 { background: var(--linen); padding: 2rem var(--pad-h); }
     .filter-inner {
       max-width: 1200px;
@@ -246,14 +197,7 @@
       gap: 0.75rem;
       flex-wrap: wrap;
     }
-    .filter-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #888;
-      margin-right: 0.5rem;
-    }
+    .filter-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #888; margin-right: 0.5rem; }
     .filter-pill {
       display: inline-block;
       font-size: 11px;
@@ -268,13 +212,7 @@
       transition: all 0.15s;
     }
     .filter-pill:hover { border-color: var(--charcoal); color: var(--charcoal); }
-    .filter-pill.active {
-      background: var(--crimson);
-      border-color: var(--crimson);
-      color: var(--white);
-    }
-
-    /* ─── SEC 3 — FEATURED ARTICLE ────────────────────────── */
+    .filter-pill.active { background: var(--crimson); border-color: var(--crimson); color: var(--white); }
     #sec3 { background: var(--white); }
     #sec3 .two-col { align-items: stretch; gap: 0; }
     .featured-image {
@@ -289,44 +227,12 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.2);
     }
-    .featured-content {
-      background: var(--linen);
-      padding: 3.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .featured-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-    .article-category {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--crimson-mid);
-    }
-    .article-date {
-      font-size: 11px;
-      font-weight: 300;
-      color: #888;
-    }
-    .featured-content h2 {
-      font-size: 34px;
-      color: var(--charcoal);
-      margin-bottom: 1.25rem;
-      line-height: 1.08;
-    }
-    .featured-excerpt {
-      font-size: 14px;
-      font-weight: 300;
-      color: #444;
-      line-height: 1.8;
-      margin-bottom: 1.75rem;
-    }
+    .featured-content { background: var(--linen); padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .featured-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .article-category { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--crimson-mid); }
+    .article-date { font-size: 11px; font-weight: 300; color: #888; }
+    .featured-content h2 { font-size: 34px; color: var(--charcoal); margin-bottom: 1.25rem; line-height: 1.08; }
+    .featured-excerpt { font-size: 14px; font-weight: 300; color: #444; line-height: 1.8; margin-bottom: 1.75rem; }
     .read-link {
       font-size: 12px;
       font-weight: 700;
@@ -338,18 +244,9 @@
       transition: color 0.15s;
     }
     .read-link:hover { color: #6e1414; }
-
-    /* ─── SEC 4 — ARTICLE GRID ────────────────────────────── */
     #sec4 { background: var(--white); border-top: var(--border-light); }
-    #sec4 .section-header {
-      max-width: 1200px;
-      margin: 0 auto 3rem;
-    }
-    #sec4 .section-header h2 {
-      font-size: 28px;
-      color: var(--charcoal);
-      text-transform: uppercase;
-    }
+    #sec4 .section-header { max-width: 1200px; margin: 0 auto 3rem; }
+    #sec4 .section-header h2 { font-size: 28px; color: var(--charcoal); text-transform: uppercase; }
     .article-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -359,11 +256,7 @@
       background: #ddd;
       border: 1.5px solid #ddd;
     }
-    .article-card {
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-    }
+    .article-card { background: var(--white); display: flex; flex-direction: column; }
     .article-thumb {
       height: 200px;
       display: flex;
@@ -376,55 +269,15 @@
     }
     .article-thumb--light { background: #e8e4de; color: #bbb; }
     .article-thumb--dark  { background: var(--navy); color: rgba(255,255,255,0.2); }
-    .article-body {
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .article-body .article-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .article-body h3 {
-      font-size: 18px;
-      color: var(--charcoal);
-      margin-bottom: 0.75rem;
-      line-height: 1.15;
-    }
-    .article-body p {
-      font-size: 13px;
-      color: #555;
-      line-height: 1.75;
-      flex: 1;
-      margin-bottom: 1.25rem;
-    }
-
-    /* ─── SEC 5 — CTA STRIP ───────────────────────────────── */
+    .article-body { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; }
+    .article-body .article-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .article-body h3 { font-size: 18px; color: var(--charcoal); margin-bottom: 0.75rem; line-height: 1.15; }
+    .article-body p { font-size: 13px; color: #555; line-height: 1.75; flex: 1; margin-bottom: 1.25rem; }
     #sec5 { background: var(--navy); }
     #sec5 .two-col { align-items: center; gap: 4rem; max-width: 1200px; margin: 0 auto; }
-    .cta-strip-left h2 {
-      font-size: 38px;
-      color: var(--white);
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .cta-strip-left p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.8;
-      max-width: 440px;
-    }
-    .cta-strip-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────────── */
+    .cta-strip-left h2 { font-size: 38px; color: var(--white); text-transform: uppercase; margin-bottom: 0.75rem; }
+    .cta-strip-left p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 440px; }
+    .cta-strip-right { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
     footer {
       background: #1C1C1C;
       color: rgba(255,255,255,0.55);
@@ -437,37 +290,13 @@
       max-width: 1200px;
       margin: 0 auto 2.5rem;
     }
-    .footer-brand-name {
-      font-size: 28px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--white);
-      letter-spacing: -1px;
-      margin-bottom: 0.75rem;
-    }
-    .footer-brand-meta {
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.45);
-    }
+    .footer-brand-name { font-size: 28px; font-weight: 900; font-style: italic; color: var(--white); letter-spacing: -1px; margin-bottom: 0.75rem; }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
     .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
     .footer-brand-meta a:hover { color: var(--white); }
-    .footer-nav-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      margin-bottom: 1rem;
-    }
-    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-nav-links a {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      transition: color 0.15s;
-    }
+    .footer-nav-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1rem; }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
     .footer-nav-links a:hover { color: var(--white); }
     .footer-bottom {
       max-width: 1200px;
@@ -483,8 +312,6 @@
     }
     .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
-
-    /* ─── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 1024px) {
       :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
       h1 { font-size: 44px; }
@@ -503,21 +330,23 @@
 <body>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-flag">🇵🇭</span>
-      <a href="/" class="nav-logo">NW KALI</a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/legacy/">Legacy</a></li>
-        <li><a href="/praxis/">Praxis</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/insights/" class="active">Insights</a></li>
-        <li><a href="/gear/">Gear</a></li>
-      </ul>
-      <span class="nav-phone">844-JKD-KALI</span>
-    </div>
-  </nav>
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/" class="active">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <span class="nav-phone">844-JKD-KALI</span>
+      </div>
+    </nav>
+  </header>
 
   <!-- ─── SEC 1 — HEADER ─────────────────────────────────── -->
   <section id="sec1">
@@ -550,9 +379,7 @@
   <!-- ─── SEC 3 — FEATURED ARTICLE ──────────────────────── -->
   <section id="sec3">
     <div class="two-col">
-      <div class="featured-image">
-        [ Featured Article Image ]
-      </div>
+      <div class="featured-image">[ Featured Article Image ]</div>
       <div class="featured-content">
         <div class="featured-meta">
           <span class="article-category">Lineage</span>
@@ -572,7 +399,6 @@
     </div>
     <div class="article-grid">
 
-      <!-- Article 1 -->
       <div class="article-card" data-category="training">
         <div class="article-thumb article-thumb--light">[ Article Image ]</div>
         <div class="article-body">
@@ -586,7 +412,6 @@
         </div>
       </div>
 
-      <!-- Article 2 -->
       <div class="article-card" data-category="culture">
         <div class="article-thumb article-thumb--dark">[ Article Image ]</div>
         <div class="article-body">
@@ -600,7 +425,6 @@
         </div>
       </div>
 
-      <!-- Article 3 -->
       <div class="article-card" data-category="philosophy">
         <div class="article-thumb article-thumb--light">[ Article Image ]</div>
         <div class="article-body">
@@ -614,7 +438,6 @@
         </div>
       </div>
 
-      <!-- Article 4 -->
       <div class="article-card" data-category="lineage">
         <div class="article-thumb article-thumb--dark">[ Article Image ]</div>
         <div class="article-body">
@@ -628,7 +451,6 @@
         </div>
       </div>
 
-      <!-- Article 5 -->
       <div class="article-card" data-category="lineage">
         <div class="article-thumb article-thumb--light">[ Article Image ]</div>
         <div class="article-body">
@@ -642,7 +464,6 @@
         </div>
       </div>
 
-      <!-- Article 6 -->
       <div class="article-card" data-category="training">
         <div class="article-thumb article-thumb--dark">[ Article Image ]</div>
         <div class="article-body">
@@ -689,8 +510,8 @@
         <div class="footer-nav-label">Site</div>
         <nav class="footer-nav-links">
           <a href="/">Home</a>
-          <a href="/praxis/">Praxis</a>
           <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
@@ -708,13 +529,11 @@
   <script>
     const pills = document.querySelectorAll('.filter-pill');
     const cards = document.querySelectorAll('.article-card');
-
     pills.forEach(pill => {
       pill.addEventListener('click', e => {
         e.preventDefault();
         pills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
-
         const filter = pill.dataset.filter;
         cards.forEach(card => {
           if (filter === 'all' || card.dataset.category === filter) {

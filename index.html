@@ -11,7 +11,6 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <style>
-    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
     :root {
       --white:       #FFFFFF;
       --navy:        #1C1F2E;
@@ -21,16 +20,11 @@
       --crimson-mid: #C0392B;
       --border-light: 1px solid #ddd;
       --border-dark:  1px solid rgba(255,255,255,0.06);
-
       --pad-v: 5rem;
       --pad-h: 3rem;
     }
-
-    /* ─── RESET & BASE ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 300;
@@ -39,12 +33,9 @@
       color: var(--charcoal);
       background: var(--white);
     }
-
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
-
-    /* ─── TYPOGRAPHY HELPERS ──────────────────────────────── */
     .eyebrow {
       display: block;
       font-size: 10px;
@@ -55,7 +46,6 @@
     }
     .eyebrow--light { color: var(--crimson-mid); }
     .eyebrow--dark  { color: var(--crimson-mid); }
-
     h1, h2, h3 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
@@ -66,10 +56,7 @@
     h1 { font-size: 72px; letter-spacing: -3px; }
     h2 { font-size: 42px; }
     h3 { font-size: 28px; letter-spacing: -0.5px; }
-
     p { font-weight: 300; }
-
-    /* ─── BUTTONS ─────────────────────────────────────────── */
     .btn {
       display: inline-block;
       font-family: Arial, Helvetica, sans-serif;
@@ -77,8 +64,6 @@
       transition: background 0.18s, color 0.18s, border-color 0.18s;
       white-space: nowrap;
     }
-
-    /* Primary CTA */
     .btn--primary {
       background: var(--crimson);
       color: var(--white);
@@ -88,8 +73,6 @@
       letter-spacing: 0.04em;
     }
     .btn--primary:hover { background: #6e1414; }
-
-    /* Secondary / Track (outline dark) */
     .btn--secondary {
       background: transparent;
       border: 1.5px solid var(--charcoal);
@@ -100,8 +83,6 @@
       letter-spacing: 0.04em;
     }
     .btn--secondary:hover { background: var(--charcoal); color: var(--white); }
-
-    /* Ghost (dark bg — underline only) */
     .btn--ghost {
       background: transparent;
       border: none;
@@ -113,8 +94,6 @@
       text-underline-offset: 3px;
     }
     .btn--ghost:hover { color: var(--white); }
-
-    /* ─── IMAGE PLACEHOLDERS ──────────────────────────────── */
     .img-placeholder {
       width: 100%;
       height: 100%;
@@ -135,19 +114,13 @@
       border: 1px dashed #ccc;
       color: #aaa;
     }
-
-    /* ─── SECTION BASE ────────────────────────────────────── */
-    section {
-      padding: var(--pad-v) var(--pad-h);
-    }
+    section { padding: var(--pad-v) var(--pad-h); }
     section + section { border-top: var(--border-light); }
     .section--navy  { background: var(--navy); color: var(--white); }
     .section--navy + section,
     section + .section--navy { border-top: none; }
     .section--linen { background: var(--linen); }
     .section--charcoal { background: var(--charcoal); color: var(--white); }
-
-    /* two-col layout */
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -158,19 +131,9 @@
     }
     .two-col--reverse { direction: rtl; }
     .two-col--reverse > * { direction: ltr; }
-
-    /* centered content */
-    .centered {
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    /* inner container */
+    .centered { max-width: 680px; margin: 0 auto; text-align: center; }
     .container { max-width: 1200px; margin: 0 auto; }
-
-    /* ─── NAV ─────────────────────────────────────────────── */
-    nav {
+    header nav {
       background: var(--white);
       border-bottom: var(--border-light);
       padding: 0 var(--pad-h);
@@ -186,11 +149,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .nav-flag {
-      font-size: 22px;
-      line-height: 1;
-      flex-shrink: 0;
-    }
+    .nav-flag { font-size: 22px; line-height: 1; flex-shrink: 0; }
     .nav-logo {
       font-weight: 900;
       font-style: italic;
@@ -200,12 +159,7 @@
       flex-shrink: 0;
       margin-right: 0.5rem;
     }
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      flex: 1;
-      justify-content: center;
-    }
+    .nav-links { display: flex; gap: 1.8rem; flex: 1; justify-content: center; }
     .nav-links a {
       font-size: 12px;
       font-weight: 700;
@@ -224,12 +178,7 @@
       margin-left: auto;
       white-space: nowrap;
     }
-
-    /* ─── SEC 1 — HERO ────────────────────────────────────── */
-    #hero {
-      background: var(--white);
-      border-top: none;
-    }
+    #hero { background: var(--white); border-top: none; }
     #hero .two-col { align-items: stretch; gap: 5rem; }
     #hero .hero-text { padding: 1rem 0; }
     #hero h1 { margin-bottom: 1rem; color: var(--charcoal); }
@@ -261,13 +210,7 @@
     }
     .discipline-name { font-weight: 700; font-size: 14px; letter-spacing: 0.03em; }
     .discipline-sub { color: #666; font-size: 14px; }
-
-    #hero .img-placeholder {
-      min-height: 440px;
-      font-size: 10px;
-    }
-
-    /* ─── SEC 2 — CAPABILITY ──────────────────────────────── */
+    #hero .img-placeholder { min-height: 440px; font-size: 10px; }
     #capability .two-col { gap: 5rem; }
     #capability h2 { color: var(--white); margin-bottom: 1.25rem; }
     #capability p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 480px; }
@@ -279,19 +222,10 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-
-    /* ─── SEC 3 — CHOOSE YOUR TRAINING ────────────────────── */
     #choose { background: var(--white); border-top: var(--border-light); }
-    #choose .section-header {
-      max-width: 1200px;
-      margin: 0 auto 3rem;
-    }
+    #choose .section-header { max-width: 1200px; margin: 0 auto 3rem; }
     #choose h2 { margin-top: 0.5rem; margin-bottom: 0.75rem; }
-    #choose .choose-sub {
-      color: #555;
-      max-width: 520px;
-      font-size: 14px;
-    }
+    #choose .choose-sub { color: #555; max-width: 520px; font-size: 14px; }
     .track-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -300,10 +234,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .track-card {
-      padding: 2.5rem 2.5rem 2.5rem;
-      border-right: 1.5px solid var(--charcoal);
-    }
+    .track-card { padding: 2.5rem; border-right: 1.5px solid var(--charcoal); }
     .track-card:last-child { border-right: none; }
     .track-label {
       font-size: 10px;
@@ -314,17 +245,8 @@
       margin-bottom: 0.4rem;
     }
     .track-card h3 { margin-bottom: 0.25rem; }
-    .track-tagline {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-    }
-    .track-features {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 2rem;
-    }
+    .track-tagline { font-size: 13px; color: #555; margin-bottom: 1.5rem; font-weight: 300; }
+    .track-features { display: flex; flex-direction: column; margin-bottom: 2rem; }
     .track-feature {
       font-size: 13px;
       font-weight: 300;
@@ -336,22 +258,12 @@
       border-bottom: 1px solid #e8e5e0;
     }
     .track-feature:first-child { border-top: 1px solid #e8e5e0; }
-    .track-feature-bullet {
-      width: 7px;
-      height: 7px;
-      background: var(--crimson);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* ─── SEC 4 — INSTRUCTOR ──────────────────────────────── */
+    .track-feature-bullet { width: 7px; height: 7px; background: var(--crimson); border-radius: 50%; flex-shrink: 0; }
     #instructor { background: var(--navy); }
     #instructor .two-col--reverse { gap: 5rem; align-items: center; }
     #instructor h2 { color: var(--white); margin-bottom: 1.25rem; }
     #instructor p { color: rgba(255,255,255,0.72); max-width: 480px; line-height: 1.8; }
     #instructor .img-placeholder { min-height: 420px; }
-
-    /* ─── SEC 5 — WHY TRAIN ───────────────────────────────── */
     #why { background: var(--linen); border-top: var(--border-light); }
     .three-col {
       display: grid;
@@ -360,31 +272,15 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .why-col h3 {
-      padding-bottom: 0.75rem;
-      border-bottom: 1.5px solid var(--crimson);
-      margin-bottom: 1rem;
-      color: var(--charcoal);
-    }
+    .why-col h3 { padding-bottom: 0.75rem; border-bottom: 1.5px solid var(--crimson); margin-bottom: 1rem; color: var(--charcoal); }
     .why-col p { font-size: 14px; color: #444; line-height: 1.8; }
-
-    /* ─── SEC 6 — FORMAT / HOW IT WORKS ──────────────────── */
-    #format {
-      padding: 0;
-      border-top: none;
-    }
-    .format-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .format-panel {
-      padding: var(--pad-v) var(--pad-h);
-    }
+    #format { padding: 0; border-top: none; }
+    .format-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .format-panel { padding: var(--pad-v) var(--pad-h); }
     .format-panel--navy { background: var(--navy); color: var(--white); }
     .format-panel--linen { background: var(--linen); color: var(--charcoal); }
     .format-panel--navy h2 { color: var(--white); margin-bottom: 1.5rem; }
     .format-panel--linen h2 { color: var(--charcoal); margin-bottom: 1.5rem; }
-
     .format-list { display: flex; flex-direction: column; gap: 0.7rem; }
     .format-item {
       font-size: 14px;
@@ -394,13 +290,7 @@
       gap: 0.75rem;
       align-items: flex-start;
     }
-    .format-item::before {
-      content: '+';
-      color: rgba(255,255,255,0.4);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
+    .format-item::before { content: '+'; color: rgba(255,255,255,0.4); font-weight: 700; flex-shrink: 0; }
     .step-list { display: flex; flex-direction: column; gap: 0; }
     .step {
       display: flex;
@@ -421,16 +311,8 @@
       padding-top: 2px;
       min-width: 36px;
     }
-    .step-text {
-      font-size: 14px;
-      font-weight: 300;
-      color: #444;
-      line-height: 1.7;
-      padding-top: 4px;
-    }
+    .step-text { font-size: 14px; font-weight: 300; color: #444; line-height: 1.7; padding-top: 4px; }
     .step-text strong { font-weight: 700; color: var(--charcoal); }
-
-    /* ─── SEC 7 — TESTIMONIALS ───────────────────────────── */
     #testimonials { background: var(--white); border-top: var(--border-light); }
     #testimonials .eyebrow--light { margin-bottom: 1rem; }
     #testimonials h2 { margin-bottom: 2.5rem; }
@@ -441,19 +323,8 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .testimonial-card {
-      border: 1px solid #e5e2dd;
-      padding: 2rem;
-      background: var(--white);
-    }
-    .testimonial-quote {
-      font-size: 14px;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.8;
-      color: #333;
-      margin-bottom: 1.25rem;
-    }
+    .testimonial-card { border: 1px solid #e5e2dd; padding: 2rem; background: var(--white); }
+    .testimonial-quote { font-size: 14px; font-weight: 300; font-style: italic; line-height: 1.8; color: #333; margin-bottom: 1.25rem; }
     .testimonial-attr {
       font-size: 11px;
       font-weight: 700;
@@ -463,21 +334,11 @@
       padding-top: 1rem;
       border-top: 1px solid #e5e2dd;
     }
-
-    /* ─── SEC 8 — CTA ─────────────────────────────────────── */
     #cta { background: var(--charcoal); color: var(--white); text-align: center; border-top: none; }
     #cta .eyebrow--dark { margin-bottom: 1rem; }
     #cta h2 { color: var(--white); margin-bottom: 1rem; }
     #cta p { color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 2rem; font-size: 15px; }
-    .cta-note {
-      margin-top: 1.25rem;
-      font-size: 11px;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────────── */
+    .cta-note { margin-top: 1.25rem; font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; }
     footer {
       background: #1C1C1C;
       color: rgba(255,255,255,0.55);
@@ -490,44 +351,13 @@
       max-width: 1200px;
       margin: 0 auto 2.5rem;
     }
-    .footer-brand-name {
-      font-size: 28px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--white);
-      letter-spacing: -1px;
-      margin-bottom: 0.75rem;
-    }
-    .footer-brand-meta {
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.45);
-    }
-    .footer-brand-meta a {
-      color: rgba(255,255,255,0.45);
-      transition: color 0.15s;
-    }
+    .footer-brand-name { font-size: 28px; font-weight: 900; font-style: italic; color: var(--white); letter-spacing: -1px; margin-bottom: 0.75rem; }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
     .footer-brand-meta a:hover { color: var(--white); }
-    .footer-nav-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      margin-bottom: 1rem;
-    }
-    .footer-nav-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .footer-nav-links a {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      transition: color 0.15s;
-    }
+    .footer-nav-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1rem; }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
     .footer-nav-links a:hover { color: var(--white); }
     .footer-bottom {
       max-width: 1200px;
@@ -541,13 +371,8 @@
       color: rgba(255,255,255,0.2);
       letter-spacing: 0.05em;
     }
-    .footer-bottom a {
-      color: rgba(255,255,255,0.2);
-      transition: color 0.15s;
-    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
-
-    /* ─── SCROLL ARROW ────────────────────────────────────── */
     .scroll-arrow {
       position: fixed;
       bottom: 2rem;
@@ -569,39 +394,20 @@
     }
     .scroll-arrow:hover { background: rgba(28,31,46,0.95); }
     .scroll-arrow svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 2; }
-
-    /* ─── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 1024px) {
-      :root {
-        --pad-v: 3.5rem;
-        --pad-h: 1.75rem;
-      }
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
       h1 { font-size: 40px; }
       h2 { font-size: 32px; }
-
-      .two-col,
-      .two-col--reverse {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        direction: ltr;
-      }
+      .two-col, .two-col--reverse { grid-template-columns: 1fr; gap: 2.5rem; direction: ltr; }
       .two-col--reverse > * { direction: ltr; }
-
-      .track-grid {
-        grid-template-columns: 1fr;
-      }
+      .track-grid { grid-template-columns: 1fr; }
       .track-card { border-right: none; border-bottom: 1.5px solid var(--charcoal); }
       .track-card:last-child { border-bottom: none; }
-
       .three-col { grid-template-columns: 1fr; gap: 2.5rem; }
-
       .format-grid { grid-template-columns: 1fr; }
-
       .testimonial-grid { grid-template-columns: 1fr; }
-
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-
       .nav-links { display: none; }
     }
   </style>
@@ -609,21 +415,23 @@
 <body>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-flag">🇵🇭</span>
-      <a href="/" class="nav-logo">NW KALI</a>
-      <ul class="nav-links">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="/praxis/">Praxis</a></li>
-        <li><a href="/legacy/">Legacy</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/insights/">Insights</a></li>
-        <li><a href="/gear/">Gear</a></li>
-      </ul>
-      <span class="nav-phone">844-JKD-KALI</span>
-    </div>
-  </nav>
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <span class="nav-phone">844-JKD-KALI</span>
+      </div>
+    </nav>
+  </header>
 
   <!-- ─── SEC 1 — HERO ───────────────────────────────────── -->
   <section id="hero">
@@ -666,7 +474,7 @@
         </ul>
       </div>
       <div>
-        <div class="img-placeholder">[ Baybayin Script Image ]</div>
+        <img src="/images/Home kali image sec 1.jpg" alt="NW Kali Training" />
       </div>
     </div>
   </section>
@@ -687,7 +495,7 @@
         <p class="cap-note">Currently accepting a limited number of new private clients.</p>
       </div>
       <div>
-        <div class="img-placeholder">[ Hero_jab.jpg ]</div>
+        <img src="/images/Home sec 2 Hero_jab.png" alt="NW Kali Training" />
       </div>
     </div>
   </section>
@@ -699,9 +507,7 @@
       <h2>Choose Your Training Focus.</h2>
       <p class="choose-sub">Both tracks are taught privately, one-on-one, by the same instructor, with the same standard of quality. The difference is your objective.</p>
     </div>
-
     <div class="track-grid">
-      <!-- Praxis -->
       <div class="track-card">
         <div class="track-label">Praxis · Applied Self-Defense</div>
         <h3>Real-World Capability. Immediately Applicable.</h3>
@@ -714,8 +520,6 @@
         </ul>
         <a href="/praxis/" class="btn btn--secondary">Explore Praxis →</a>
       </div>
-
-      <!-- Legacy -->
       <div class="track-card">
         <div class="track-label">Legacy · The Full Curriculum</div>
         <h3>The Complete Art. Trained Correctly.</h3>
@@ -735,7 +539,7 @@
   <section id="instructor" class="section--navy">
     <div class="two-col two-col--reverse">
       <div>
-        <div class="img-placeholder">[ Gloves / Training Image ]</div>
+        <img src="/images/Gloves Sec 3.png" alt="NW Kali Training" />
       </div>
       <div>
         <span class="eyebrow eyebrow--dark">Your Instructor</span>
@@ -772,8 +576,6 @@
   <!-- ─── SEC 6 — FORMAT ─────────────────────────────────── -->
   <section id="format">
     <div class="format-grid">
-
-      <!-- Left: The Format (Navy) -->
       <div class="format-panel format-panel--navy">
         <span class="eyebrow eyebrow--dark">The Format</span>
         <h2>One Instructor. One Client. No Compromise.</h2>
@@ -786,8 +588,6 @@
           <li class="format-item">Discreet, professional environment</li>
         </ul>
       </div>
-
-      <!-- Right: How It Works (Linen) -->
       <div class="format-panel format-panel--linen">
         <span class="eyebrow eyebrow--light">How It Works</span>
         <h2>How It Works</h2>
@@ -806,7 +606,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -816,22 +615,18 @@
       <span class="eyebrow eyebrow--light">What Clients Say</span>
       <h2>Results From People Who Train Here.</h2>
       <div class="testimonial-grid">
-
         <div class="testimonial-card">
           <p class="testimonial-quote">"I have trained FMA for 20 years. The instruction at NW Kali is the best and Sifu Clarke is someone who genuinely is committed to sharing the art and transmitting the Inosanto Legacy."</p>
           <div class="testimonial-attr">M.D.</div>
         </div>
-
         <div class="testimonial-card">
           <p class="testimonial-quote">"As a law enforcement officer, I know I need to consistently train to be safe and effective in the street — that's why I continue studying at NW Kali."</p>
           <div class="testimonial-attr">J.P. · Law Enforcement</div>
         </div>
-
         <div class="testimonial-card">
           <p class="testimonial-quote">"Private instruction means the training is built around my schedule and progress, not a class. The progress has been faster than anything I experienced in a group setting."</p>
           <div class="testimonial-attr">M.M. · Executive</div>
         </div>
-
       </div>
     </div>
   </section>
@@ -850,7 +645,6 @@
   <!-- ─── FOOTER ─────────────────────────────────────────── -->
   <footer>
     <div class="footer-inner">
-
       <div class="footer-brand">
         <div class="footer-brand-name">NW KALI</div>
         <div class="footer-brand-meta">
@@ -858,22 +652,19 @@
           <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
         </div>
       </div>
-
       <div class="footer-nav">
         <div class="footer-nav-label">Site</div>
         <nav class="footer-nav-links">
           <a href="/">Home</a>
-          <a href="/praxis/">Praxis</a>
           <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
           <a href="/request/">Request Training</a>
         </nav>
       </div>
-
     </div>
-
     <div class="footer-bottom">
       <span>© 2026 NW Kali · All Rights Reserved</span>
       <a href="/privacy/">Privacy Policy</a>

@@ -6,7 +6,6 @@
   <title>Praxis — Applied Self-Defense · NW Kali</title>
   <meta name="description" content="Applied self-defense training in Kali, JKD, Silat, and Muay Thai. Practical, private, immediately usable — Oregon & Washington." />
   <style>
-    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
     :root {
       --white:       #FFFFFF;
       --navy:        #1C1F2E;
@@ -19,8 +18,6 @@
       --pad-v: 5rem;
       --pad-h: 3rem;
     }
-
-    /* ─── RESET & BASE ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -35,8 +32,6 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     p { font-weight: 300; }
-
-    /* ─── TYPOGRAPHY ──────────────────────────────────────── */
     .eyebrow {
       display: block;
       font-size: 10px;
@@ -46,7 +41,6 @@
       margin-bottom: 1.2rem;
       color: var(--crimson-mid);
     }
-
     h1, h2, h3 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
@@ -54,13 +48,11 @@
       line-height: 1.05;
       letter-spacing: -1px;
     }
-    h1 { font-size: 64px; letter-spacing: -2px; }
+    h1 { font-size: 42px; letter-spacing: -2px; }
     h2 { font-size: 42px; }
     h2.allcaps { text-transform: uppercase; }
     h3 { font-size: 22px; }
     h3.allcaps { text-transform: uppercase; letter-spacing: -0.5px; }
-
-    /* ─── BUTTONS ─────────────────────────────────────────── */
     .btn {
       display: inline-block;
       font-family: Arial, Helvetica, sans-serif;
@@ -94,11 +86,8 @@
       flex-wrap: wrap;
       margin-top: 1.75rem;
     }
-
-    /* ─── LAYOUT ──────────────────────────────────────────── */
     .container { max-width: 1200px; margin: 0 auto; }
     .centered  { max-width: 760px; margin: 0 auto; text-align: center; }
-
     section { padding: var(--pad-v) var(--pad-h); }
     section + section { border-top: var(--border-light); }
     .section--navy     { background: var(--navy);     color: var(--white); }
@@ -108,7 +97,6 @@
     section + .section--navy,
     .section--charcoal + section,
     section + .section--charcoal { border-top: none; }
-
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -117,8 +105,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    /* ─── IMAGE PLACEHOLDERS ──────────────────────────────── */
     .img-placeholder {
       width: 100%;
       min-height: 400px;
@@ -135,7 +121,7 @@
     }
 
     /* ─── NAV ─────────────────────────────────────────────── */
-    nav {
+    header nav {
       background: var(--white);
       border-bottom: var(--border-light);
       padding: 0 var(--pad-h);
@@ -184,8 +170,6 @@
       white-space: nowrap;
       margin-left: auto;
     }
-
-    /* ─── SEC 1 — APPLIED SELF-DEFENSE ───────────────────── */
     #sec1 { background: var(--white); border-top: none; }
     #sec1 .two-col { align-items: center; gap: 4rem; }
     #sec1 h1 { color: var(--charcoal); margin-bottom: 0.5rem; }
@@ -199,17 +183,16 @@
     }
     #sec1 p { font-size: 15px; color: #444; max-width: 400px; }
     .praxis-watermark {
-      font-size: 96px;
+      font-size: 80px;
       font-weight: 900;
       font-style: italic;
-      color: #e8e4de;
+      color: #ede9e3;
       letter-spacing: -4px;
       line-height: 1;
       text-align: center;
       user-select: none;
+      opacity: 0.6;
     }
-
-    /* ─── SEC 2 — HERO ────────────────────────────────────── */
     #sec2 { background: var(--navy); }
     #sec2 .two-col { align-items: start; gap: 4rem; }
     #sec2 h2 {
@@ -233,22 +216,10 @@
       font-style: italic;
       color: rgba(255,255,255,0.35);
     }
-
-    /* ─── SEC 3 — AWARENESS. OPTIONS. ABILITY. ───────────── */
     #sec3 { background: var(--charcoal); }
     #sec3 .centered { max-width: 760px; margin-bottom: 3rem; }
-    #sec3 h2 {
-      font-size: 42px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-    #sec3 .subtext {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.8;
-    }
-
+    #sec3 h2 { font-size: 42px; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
+    #sec3 .subtext { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; }
     .framework-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -269,47 +240,18 @@
       color: var(--crimson-mid);
       margin-bottom: 0.6rem;
     }
-    .framework-card h3 {
-      font-size: 20px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-      line-height: 1.1;
-    }
-    .framework-card p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-    }
-
-    /* ─── SEC 4 — BUILT FOR ───────────────────────────────── */
+    .framework-card h3 { font-size: 20px; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; line-height: 1.1; }
+    .framework-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.75; }
     #sec4 { background: var(--linen); }
     #sec4 .two-col { align-items: start; gap: 5rem; }
-    #sec4 h2 {
-      font-size: 36px;
-      color: var(--charcoal);
-      margin-bottom: 1.5rem;
-    }
+    #sec4 h2 { font-size: 36px; color: var(--charcoal); margin-bottom: 1.5rem; }
     .blockquote {
       border-left: 3px solid var(--crimson);
       padding: 1rem 1.5rem;
       margin-bottom: 0;
     }
-    .blockquote p {
-      font-size: 16px;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--charcoal);
-      line-height: 1.6;
-    }
-    .blockquote .sub {
-      font-size: 13px;
-      font-weight: 300;
-      font-style: normal;
-      color: #555;
-      margin-top: 0.5rem;
-    }
-
+    .blockquote p { font-size: 16px; font-weight: 700; font-style: italic; color: var(--charcoal); line-height: 1.6; }
+    .blockquote .sub { font-size: 13px; font-weight: 300; font-style: normal; color: #555; margin-top: 0.5rem; }
     .who-trains h3 {
       font-size: 10px;
       font-weight: 700;
@@ -331,29 +273,11 @@
       align-items: flex-start;
     }
     .who-item:first-of-type { border-top: 1px solid #ddd; }
-    .who-item::before {
-      content: '✦';
-      color: var(--crimson);
-      flex-shrink: 0;
-      font-size: 10px;
-      margin-top: 0.3em;
-    }
-
-    /* ─── SEC 5 — THREE DOMAINS ───────────────────────────── */
+    .who-item::before { content: '✦'; color: var(--crimson); flex-shrink: 0; font-size: 10px; margin-top: 0.3em; }
     #sec5 { background: var(--linen); border-top: var(--border-light); }
     #sec5 .centered { margin-bottom: 3rem; }
-    #sec5 h2 {
-      font-size: 42px;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-    }
-    #sec5 .subtext {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.8;
-    }
-
+    #sec5 h2 { font-size: 42px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 1rem; }
+    #sec5 .subtext { font-size: 14px; color: #555; line-height: 1.8; }
     .domains-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -361,11 +285,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .domain-card {
-      background: var(--white);
-      border: 1px solid #ddd;
-      padding: 2rem;
-    }
+    .domain-card { background: var(--white); border: 1px solid #ddd; padding: 2rem; }
     .domain-eyebrow {
       font-size: 10px;
       font-weight: 700;
@@ -374,27 +294,11 @@
       color: var(--crimson-mid);
       margin-bottom: 0.75rem;
     }
-    .domain-card h3 {
-      font-size: 20px;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 0.75rem;
-      line-height: 1.1;
-    }
-    .domain-card p {
-      font-size: 13px;
-      color: #444;
-      line-height: 1.75;
-    }
-    /* ─── SEC 6 — THE STAKES ──────────────────────────────── */
+    .domain-card h3 { font-size: 20px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.75rem; line-height: 1.1; }
+    .domain-card p { font-size: 13px; color: #444; line-height: 1.75; }
     #sec6 { background: var(--navy); }
     #sec6 .two-col { align-items: start; gap: 4rem; }
-
-    .stat-card {
-      background: #0f1220;
-      padding: 2.5rem 2rem;
-      max-width: 280px;
-    }
+    .stat-card { background: #0f1220; padding: 2.5rem 2rem; max-width: 280px; }
     .stat-badge {
       display: inline-block;
       background: var(--crimson);
@@ -406,46 +310,11 @@
       padding: 4px 10px;
       margin-bottom: 1.5rem;
     }
-    .stat-number {
-      font-size: 80px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--white);
-      letter-spacing: -3px;
-      line-height: 0.9;
-    }
-    .stat-unit {
-      font-size: 28px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--crimson-mid);
-      letter-spacing: -1px;
-      margin-bottom: 1.25rem;
-    }
-    .stat-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 0.75rem;
-      line-height: 1.5;
-    }
-    .stat-source {
-      font-size: 11px;
-      font-weight: 300;
-      font-style: italic;
-      color: rgba(255,255,255,0.3);
-      line-height: 1.6;
-    }
-
-    .stakes-right h2 {
-      font-size: 42px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      line-height: 1.0;
-    }
+    .stat-number { font-size: 80px; font-weight: 900; font-style: italic; color: var(--white); letter-spacing: -3px; line-height: 0.9; }
+    .stat-unit { font-size: 28px; font-weight: 900; font-style: italic; color: var(--crimson-mid); letter-spacing: -1px; margin-bottom: 1.25rem; }
+    .stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; line-height: 1.5; }
+    .stat-source { font-size: 11px; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.3); line-height: 1.6; }
+    .stakes-right h2 { font-size: 42px; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem; line-height: 1.0; }
     .stakes-list { display: flex; flex-direction: column; }
     .stakes-item {
       font-size: 14px;
@@ -467,22 +336,10 @@
       flex-shrink: 0;
       margin-top: 0.45em;
     }
-
-    /* ─── SEC 7 — SIMPLE. PRIVATE. PERSONALIZED. ─────────── */
     #sec7 { background: var(--linen); }
     #sec7 .centered { margin-bottom: 3.5rem; }
-    #sec7 h2 {
-      font-size: 42px;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 0.75rem;
-    }
-    #sec7 .subtext {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.8;
-    }
-
+    #sec7 h2 { font-size: 42px; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.75rem; }
+    #sec7 .subtext { font-size: 14px; color: #555; line-height: 1.8; }
     .process-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -491,54 +348,13 @@
       margin: 0 auto;
       text-align: center;
     }
-    .process-step {}
-    .process-num {
-      font-size: 52px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--crimson-mid);
-      letter-spacing: -2px;
-      line-height: 1;
-      margin-bottom: 0.75rem;
-    }
-    .process-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      margin-bottom: 0.75rem;
-    }
-    .process-body {
-      font-size: 13px;
-      font-weight: 300;
-      color: #555;
-      line-height: 1.75;
-    }
-
-    /* ─── SEC 8 — CTA ─────────────────────────────────────── */
+    .process-num { font-size: 52px; font-weight: 900; font-style: italic; color: var(--crimson-mid); letter-spacing: -2px; line-height: 1; margin-bottom: 0.75rem; }
+    .process-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 0.75rem; }
+    .process-body { font-size: 13px; font-weight: 300; color: #555; line-height: 1.75; }
     #sec8 { background: var(--charcoal); text-align: center; }
-    #sec8 h2 {
-      font-size: 42px;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-    #sec8 p {
-      color: rgba(255,255,255,0.6);
-      max-width: 560px;
-      margin: 0 auto 2rem;
-      font-size: 15px;
-      line-height: 1.75;
-    }
-    .cta-footnote {
-      margin-top: 1.25rem;
-      font-size: 12px;
-      font-style: italic;
-      color: rgba(255,255,255,0.3);
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────────── */
+    #sec8 h2 { font-size: 42px; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
+    #sec8 p { color: rgba(255,255,255,0.6); max-width: 560px; margin: 0 auto 2rem; font-size: 15px; line-height: 1.75; }
+    .cta-footnote { margin-top: 1.25rem; font-size: 12px; font-style: italic; color: rgba(255,255,255,0.3); }
     footer {
       background: #1C1C1C;
       color: rgba(255,255,255,0.55);
@@ -551,37 +367,12 @@
       max-width: 1200px;
       margin: 0 auto 2.5rem;
     }
-    .footer-brand-name {
-      font-size: 28px;
-      font-weight: 900;
-      font-style: italic;
-      color: var(--white);
-      letter-spacing: -1px;
-      margin-bottom: 0.75rem;
-    }
-    .footer-brand-meta {
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.45);
-    }
+    .footer-brand-name { font-size: 28px; font-weight: 900; font-style: italic; color: var(--white); letter-spacing: -1px; margin-bottom: 0.75rem; }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
     .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
     .footer-brand-meta a:hover { color: var(--white); }
-    .footer-nav-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      margin-bottom: 1rem;
-    }
-    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .footer-nav-links a {
-      font-size: 13px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      transition: color 0.15s;
-    }
+    .footer-nav-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1rem; }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
     .footer-nav-links a:hover { color: var(--white); }
     .footer-bottom {
       max-width: 1200px;
@@ -597,8 +388,6 @@
     }
     .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
-
-    /* ─── SCROLL ARROW ────────────────────────────────────── */
     .scroll-arrow {
       position: fixed;
       bottom: 2rem;
@@ -620,8 +409,6 @@
     }
     .scroll-arrow:hover { background: rgba(28,31,46,0.95); }
     .scroll-arrow svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 2; }
-
-    /* ─── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 1024px) {
       :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
       h1 { font-size: 44px; }
@@ -640,21 +427,23 @@
 <body>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-flag">🇵🇭</span>
-      <a href="/" class="nav-logo">NW KALI</a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/legacy/">Legacy</a></li>
-        <li><a href="/praxis/" class="active">Praxis</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/insights/">Insights</a></li>
-        <li><a href="/gear/">Gear</a></li>
-      </ul>
-      <span class="nav-phone">844-JKD-KALI</span>
-    </div>
-  </nav>
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/" class="active">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <span class="nav-phone">844-JKD-KALI</span>
+      </div>
+    </nav>
+  </header>
 
   <!-- ─── SEC 1 — APPLIED SELF-DEFENSE ─────────────────── -->
   <section id="sec1">
@@ -686,7 +475,7 @@
         <p class="sec2-footnote">Limited private training spots available. Serious inquiries only.</p>
       </div>
       <div>
-        <div class="img-placeholder">Section Image Placeholder</div>
+        <img src="/images/praxispic.jpg" alt="Praxis Training" />
       </div>
     </div>
   </section>
@@ -699,25 +488,21 @@
       <p class="subtext">Most violent encounters are over before law enforcement arrives. What determines your outcome in those moments is what you trained before them. The Praxis framework builds three capabilities in sequence.</p>
     </div>
     <div class="framework-grid">
-
       <div class="framework-card">
         <div class="framework-label">01 — Awareness</div>
         <h3 class="allcaps">Read the Room</h3>
         <p>Recognize threat indicators before they escalate. Training develops a calibrated situational awareness that changes how you move through the world — not paranoia, but calibration.</p>
       </div>
-
       <div class="framework-card">
         <div class="framework-label">02 — Options</div>
         <h3 class="allcaps">Know Your Responses</h3>
         <p>Know your available responses for any scenario — with or without tools in hand — and the judgment to choose between them under stress. Indecision in the moment is not a skill gap. It is a training gap.</p>
       </div>
-
       <div class="framework-card">
         <div class="framework-label">03 — Ability</div>
         <h3 class="allcaps">Execute Under Pressure</h3>
         <p>Execute your chosen response effectively. Not drill speed — internalized, stress-tested, body-memory capability. The difference between knowing a technique and owning it is repetition under realistic conditions.</p>
       </div>
-
     </div>
   </section>
 
@@ -752,25 +537,21 @@
       <p class="subtext">The Praxis curriculum is organized around three interconnected training domains. Each builds on the others — and all are taught from day one.</p>
     </div>
     <div class="domains-grid">
-
       <div class="domain-card">
         <div class="domain-eyebrow">Empty Hand</div>
         <h3 class="allcaps">Effective With Nothing In Your Hands</h3>
         <p>Striking at all ranges — long, medium, and close — drawn from Panantukan, Jun Fan kickboxing, Maphilindo Silat, and Muay Thai. Clinch control, balance disruption, and high-percentage responses to the most common attack patterns.</p>
       </div>
-
       <div class="domain-card">
         <div class="domain-eyebrow">Everyday Carry</div>
         <h3 class="allcaps">Train With the Tools You Actually Carry</h3>
         <p>If you carry a folding knife, a flashlight, a pen, or a firearm — you are carrying a tool you should know how to use under pressure. Praxis integrates EDC tool deployment, retention, and application with the same empty-hand framework.</p>
       </div>
-
       <div class="domain-card">
         <div class="domain-eyebrow">Improvised Tools</div>
         <h3 class="allcaps">Any Object Becomes a Force Multiplier</h3>
         <p>One of the core insights of Filipino Martial Arts is the "Kali transfer" principle: if you can use a stick effectively, you can use virtually any rigid object as a tool. Praxis applies this to environmental awareness and improvised defensive tools.</p>
       </div>
-
     </div>
   </section>
 
@@ -849,8 +630,8 @@
         <div class="footer-nav-label">Site</div>
         <nav class="footer-nav-links">
           <a href="/">Home</a>
-          <a href="/praxis/">Praxis</a>
           <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
