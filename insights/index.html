@@ -6,6 +6,7 @@
   <title>Insights — Training · Lineage · Application · NW Kali</title>
   <meta name="description" content="Training philosophy, lineage, and martial arts culture from NW Kali — private Kali and JKD instruction in Oregon & Washington." />
   <style>
+    /* ─── CUSTOM PROPERTIES ───────────────────────────────── */
     :root {
       --white:       #FFFFFF;
       --navy:        #1C1F2E;
@@ -18,6 +19,8 @@
       --pad-v: 5rem;
       --pad-h: 3rem;
     }
+
+    /* ─── RESET & BASE ────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -32,6 +35,8 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     p { font-weight: 300; }
+
+    /* ─── TYPOGRAPHY ──────────────────────────────────────── */
     .eyebrow {
       display: block;
       font-size: 10px;
@@ -41,7 +46,10 @@
       margin-bottom: 1.2rem;
       color: var(--crimson-mid);
     }
-    .eyebrow--muted { color: rgba(255,255,255,0.3); }
+    .eyebrow--muted {
+      color: rgba(255,255,255,0.3);
+    }
+
     h1, h2, h3 {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 900;
@@ -53,6 +61,8 @@
     h2 { font-size: 42px; }
     h2.allcaps { text-transform: uppercase; }
     h3 { font-size: 22px; }
+
+    /* ─── BUTTONS ─────────────────────────────────────────── */
     .btn {
       display: inline-block;
       font-family: Arial, Helvetica, sans-serif;
@@ -90,9 +100,18 @@
       text-underline-offset: 3px;
     }
     .btn--ghost:hover { color: var(--white); }
-    .btn-group { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.75rem; }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    /* ─── LAYOUT ──────────────────────────────────────── */
     .container { max-width: 1200px; margin: 0 auto; }
     .centered  { max-width: 760px; margin: 0 auto; text-align: center; }
+
     section { padding: var(--pad-v) var(--pad-h); }
     section + section { border-top: var(--border-light); }
     .section--navy     { background: var(--navy);     color: var(--white); }
@@ -102,6 +121,7 @@
     section + .section--navy,
     .section--charcoal + section,
     section + .section--charcoal { border-top: none; }
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -110,6 +130,8 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
+    /* ─── IMAGE PLACEHOLDERS ──────────────────────────────── */
     .img-placeholder {
       width: 100%;
       min-height: 320px;
@@ -129,10 +151,12 @@
       border: 1px dashed rgba(255,255,255,0.12);
       color: rgba(255,255,255,0.2);
     }
-    .img-placeholder--article { min-height: 220px; }
+    .img-placeholder--article {
+      min-height: 200px;
+    }
 
     /* ─── NAV ─────────────────────────────────────────────── */
-    header nav {
+    nav {
       background: var(--white);
       border-bottom: var(--border-light);
       padding: 0 var(--pad-h);
@@ -181,13 +205,38 @@
       white-space: nowrap;
       margin-left: auto;
     }
+
+    /* ─── SEC 1 — HEADER ──────────────────────────────────── */
     #sec1 { background: var(--white); border-top: none; }
     #sec1 .two-col { align-items: center; gap: 4rem; }
     #sec1 h1 { color: var(--charcoal); margin-bottom: 0.5rem; }
-    .sec1-subtitle { font-size: 20px; font-weight: 900; font-style: italic; color: var(--crimson); margin-bottom: 1.25rem; letter-spacing: -0.5px; }
+    .sec1-subtitle {
+      font-size: 20px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--crimson);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+    }
     #sec1 p { font-size: 15px; color: #444; max-width: 420px; }
-    .insights-watermark { font-size: 80px; font-weight: 900; font-style: italic; color: #e8e4de; letter-spacing: -4px; line-height: 1; text-align: center; user-select: none; }
-    .crimson-rule { width: 40px; height: 2px; background: var(--crimson); margin-bottom: 1.5rem; }
+    .insights-watermark {
+      font-size: 80px;
+      font-weight: 900;
+      font-style: italic;
+      color: #e8e4de;
+      letter-spacing: -4px;
+      line-height: 1;
+      text-align: center;
+      user-select: none;
+    }
+    .crimson-rule {
+      width: 40px;
+      height: 2px;
+      background: var(--crimson);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── SEC 2 — CATEGORY FILTER ─────────────────────────── */
     #sec2 { background: var(--linen); padding: 2rem var(--pad-h); }
     .filter-inner {
       max-width: 1200px;
@@ -197,7 +246,14 @@
       gap: 0.75rem;
       flex-wrap: wrap;
     }
-    .filter-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #888; margin-right: 0.5rem; }
+    .filter-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      margin-right: 0.5rem;
+    }
     .filter-pill {
       display: inline-block;
       font-size: 11px;
@@ -212,27 +268,66 @@
       transition: all 0.15s;
     }
     .filter-pill:hover { border-color: var(--charcoal); color: var(--charcoal); }
-    .filter-pill.active { background: var(--crimson); border-color: var(--crimson); color: var(--white); }
+    .filter-pill.active {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      color: var(--white);
+    }
+
+    /* ─── SEC 3 — FEATURED ARTICLE ────────────────────────── */
     #sec3 { background: var(--white); }
     #sec3 .two-col { align-items: stretch; gap: 0; }
     .featured-image {
-      background: var(--navy);
+      overflow: hidden;
       min-height: 420px;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .featured-content {
+      background: var(--linen);
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-category {
       font-size: 10px;
-      font-weight: 400;
+      font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.2);
+      color: var(--crimson-mid);
     }
-    .featured-content { background: var(--linen); padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
-    .featured-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
-    .article-category { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--crimson-mid); }
-    .article-date { font-size: 11px; font-weight: 300; color: #888; }
-    .featured-content h2 { font-size: 34px; color: var(--charcoal); margin-bottom: 1.25rem; line-height: 1.08; }
-    .featured-excerpt { font-size: 14px; font-weight: 300; color: #444; line-height: 1.8; margin-bottom: 1.75rem; }
+    .article-date {
+      font-size: 11px;
+      font-weight: 300;
+      color: #888;
+    }
+    .featured-content h2 {
+      font-size: 34px;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+      line-height: 1.08;
+    }
+    .featured-excerpt {
+      font-size: 14px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 1.75rem;
+    }
     .read-link {
       font-size: 12px;
       font-weight: 700;
@@ -244,9 +339,18 @@
       transition: color 0.15s;
     }
     .read-link:hover { color: #6e1414; }
+
+    /* ─── SEC 4 — ARTICLE GRID ────────────────────────────── */
     #sec4 { background: var(--white); border-top: var(--border-light); }
-    #sec4 .section-header { max-width: 1200px; margin: 0 auto 3rem; }
-    #sec4 .section-header h2 { font-size: 28px; color: var(--charcoal); text-transform: uppercase; }
+    #sec4 .section-header {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    #sec4 .section-header h2 {
+      font-size: 28px;
+      color: var(--charcoal);
+      text-transform: uppercase;
+    }
     .article-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -256,7 +360,11 @@
       background: #ddd;
       border: 1.5px solid #ddd;
     }
-    .article-card { background: var(--white); display: flex; flex-direction: column; }
+    .article-card {
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
     .article-thumb {
       height: 200px;
       display: flex;
@@ -266,18 +374,65 @@
       font-weight: 400;
       letter-spacing: 0.15em;
       text-transform: uppercase;
+      overflow: hidden;
+    }
+    .article-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .article-thumb--light { background: #e8e4de; color: #bbb; }
     .article-thumb--dark  { background: var(--navy); color: rgba(255,255,255,0.2); }
-    .article-body { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; }
-    .article-body .article-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
-    .article-body h3 { font-size: 18px; color: var(--charcoal); margin-bottom: 0.75rem; line-height: 1.15; }
-    .article-body p { font-size: 13px; color: #555; line-height: 1.75; flex: 1; margin-bottom: 1.25rem; }
+    .article-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .article-body .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-body h3 {
+      font-size: 18px;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+    }
+    .article-body p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.75;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ─── SEC 5 — CTA STRIP ───────────────────────────────── */
     #sec5 { background: var(--navy); }
     #sec5 .two-col { align-items: center; gap: 4rem; max-width: 1200px; margin: 0 auto; }
-    .cta-strip-left h2 { font-size: 38px; color: var(--white); text-transform: uppercase; margin-bottom: 0.75rem; }
-    .cta-strip-left p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 440px; }
-    .cta-strip-right { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .cta-strip-left h2 {
+      font-size: 38px;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .cta-strip-left p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      max-width: 440px;
+    }
+    .cta-strip-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
     footer {
       background: #1C1C1C;
       color: rgba(255,255,255,0.55);
@@ -290,13 +445,37 @@
       max-width: 1200px;
       margin: 0 auto 2.5rem;
     }
-    .footer-brand-name { font-size: 28px; font-weight: 900; font-style: italic; color: var(--white); letter-spacing: -1px; margin-bottom: 0.75rem; }
-    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.45);
+    }
     .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
     .footer-brand-meta a:hover { color: var(--white); }
-    .footer-nav-label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 1rem; }
-    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
-    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-nav-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.15s;
+    }
     .footer-nav-links a:hover { color: var(--white); }
     .footer-bottom {
       max-width: 1200px;
@@ -312,6 +491,8 @@
     }
     .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
     .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 1024px) {
       :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
       h1 { font-size: 44px; }
@@ -330,23 +511,21 @@
 <body>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
-  <header>
-    <nav>
-      <div class="nav-inner">
-        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
-        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/legacy/">Legacy</a></li>
-          <li><a href="/praxis/">Praxis</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/insights/" class="active">Insights</a></li>
-          <li><a href="/gear/">Gear</a></li>
-        </ul>
-        <span class="nav-phone">844-JKD-KALI</span>
-      </div>
-    </nav>
-  </header>
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-flag">🇵🇭</span>
+      <a href="/" class="nav-logo">NW KALI</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/praxis/">Praxis</a></li>
+        <li><a href="/legacy/">Legacy</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/insights/" class="active">Insights</a></li>
+        <li><a href="/gear/">Gear</a></li>
+      </ul>
+      <span class="nav-phone">844-JKD-KALI</span>
+    </div>
+  </nav>
 
   <!-- ─── SEC 1 — HEADER ─────────────────────────────────── -->
   <section id="sec1">
@@ -379,15 +558,16 @@
   <!-- ─── SEC 3 — FEATURED ARTICLE ──────────────────────── -->
   <section id="sec3">
     <div class="two-col">
-      <div class="featured-image">[ Featured Article Image ]</div>
+      <div class="featured-image">
+        <img src="/images/Ino_Books.png" alt="The Essential Dan Inosanto Collection — four foundational books on Filipino Martial Arts and Jeet Kune Do" />
+      </div>
       <div class="featured-content">
         <div class="featured-meta">
           <span class="article-category">Lineage</span>
-          <span class="article-date">April 2026</span>
         </div>
-        <h2>What It Means to Train in the Inosanto Method</h2>
-        <p class="featured-excerpt">Most people who train martial arts never encounter a lineage-based curriculum. They train techniques — isolated, context-free, platform-agnostic. The Inosanto method is something different. It is a transmission, not a transaction.</p>
-        <a href="/insights/inosanto-method/" class="read-link">Read Article →</a>
+        <h2>The Essential Dan Inosanto Collection: Books That Defined Modern Martial Arts Before It Was Modern</h2>
+        <p class="featured-excerpt">Long before "mixed martial arts" became a mainstream concept, and well before Filipino Martial Arts gained global visibility, Dan Inosanto was quietly documenting and transmitting a different way of thinking about combat. His published works represent a bridge between traditional systems and what would later become modern cross-training.</p>
+        <a href="/insights/dan-inosanto-books/" class="read-link">Read Article →</a>
       </div>
     </div>
   </section>
@@ -399,81 +579,87 @@
     </div>
     <div class="article-grid">
 
+      <!-- Article 1: Legacy vs Praxis -->
       <div class="article-card" data-category="training">
-        <div class="article-thumb article-thumb--light">[ Article Image ]</div>
+        <div class="article-thumb article-thumb--light">[ Image Placeholder ]</div>
         <div class="article-body">
           <div class="article-meta">
             <span class="article-category">Training</span>
-            <span class="article-date">March 2026</span>
           </div>
-          <h3>Why Private Instruction Produces Better Results</h3>
-          <p>The case for one-on-one training is not about exclusivity — it is about efficiency. Here is what the research and four decades of instruction confirm.</p>
-          <a href="/insights/private-instruction/" class="read-link">Read more →</a>
+          <h3>Legacy vs. Praxis: How to Choose the Right Martial Arts Training Path at NW Kali</h3>
+          <p>At NW Kali, training is structured around two distinct paths: Praxis and Legacy. Both draw from the same foundational arts, but they are built for different people with different goals.</p>
+          <a href="/insights/martial-arts-training-path/" class="read-link">Read more →</a>
         </div>
       </div>
 
-      <div class="article-card" data-category="culture">
-        <div class="article-thumb article-thumb--dark">[ Article Image ]</div>
+      <!-- Article 2: Skill Is Perishable -->
+      <div class="article-card" data-category="training">
+        <div class="article-thumb article-thumb--light">[ Image Placeholder ]</div>
         <div class="article-body">
           <div class="article-meta">
-            <span class="article-category">Culture</span>
-            <span class="article-date">February 2026</span>
+            <span class="article-category">Training</span>
           </div>
-          <h3>The Kali Transfer: Why Weapons Training Makes You Better Unarmed</h3>
-          <p>One of the foundational insights of Filipino Martial Arts — and one of the most misunderstood principles in modern self-defense training.</p>
-          <a href="/insights/kali-transfer/" class="read-link">Read more →</a>
+          <h3>Skill Is Perishable — What That Means for Your Training</h3>
+          <p>Every martial artist understands, at least intuitively, that skill fades. What is less commonly understood is why this happens at a neurological level — and how training can be structured to deliberately counteract it.</p>
+          <a href="/insights/martial-arts-skill-retention/" class="read-link">Read more →</a>
         </div>
       </div>
 
+      <!-- Article 3: Private vs Group -->
+      <div class="article-card" data-category="training">
+        <div class="article-thumb article-thumb--light">[ Image Placeholder ]</div>
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-category">Training</span>
+          </div>
+          <h3>Private Training vs Group Classes: What Actually Produces Results</h3>
+          <p>Most people approach martial arts training as a class-based activity. But if the objective is not participation — if the objective is results — then the comparison changes.</p>
+          <a href="/insights/private-martial-arts-training/" class="read-link">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Article 4: Force, Law, Armed Citizen -->
       <div class="article-card" data-category="philosophy">
-        <div class="article-thumb article-thumb--light">[ Article Image ]</div>
+        <div class="article-thumb article-thumb--dark">
+          <img src="/images/Self_Defense.jpeg" alt="Force, law, and self-defense — understanding use of force for the armed citizen" />
+        </div>
         <div class="article-body">
           <div class="article-meta">
             <span class="article-category">Philosophy</span>
-            <span class="article-date">January 2026</span>
           </div>
-          <h3>Skill Is Perishable. What That Actually Means for Your Training.</h3>
-          <p>Every martial artist knows that training lapses cost you. Few understand the neurological mechanism behind why — or how to train against it deliberately.</p>
-          <a href="/insights/perishable-skill/" class="read-link">Read more →</a>
+          <h3>Force, Law, and the Armed Citizen: What Every Student of Self-Defense Should Understand</h3>
+          <p>Understanding the law as it relates to the use of force is not optional. Technique without legal context is incomplete. Knowing how to stop a threat is only half of what you need to develop.</p>
+          <a href="/insights/self-defense-use-of-force-law/" class="read-link">Read more →</a>
         </div>
       </div>
 
+      <!-- Article 5: Filipino Martial Arts Weapons of War (reprint) -->
       <div class="article-card" data-category="lineage">
-        <div class="article-thumb article-thumb--dark">[ Article Image ]</div>
+        <div class="article-thumb article-thumb--light">[ Image Placeholder ]</div>
         <div class="article-body">
           <div class="article-meta">
             <span class="article-category">Lineage</span>
-            <span class="article-date">December 2025</span>
+            <span class="article-date">Originally published January 1994</span>
           </div>
-          <h3>Panantukan: The Filipino Boxing Most People Have Never Heard Of</h3>
-          <p>Before Muay Thai became the standard for Southeast Asian striking, Filipino boxing was already developing its own sophisticated empty-hand system.</p>
-          <a href="/insights/panantukan/" class="read-link">Read more →</a>
+          <h3>Filipino Martial Arts: Weapons of War</h3>
+          <p>As long as there has been combat between men, there have been weapons of every imaginable dimension. The importance of weapons in combat was extremely evident in the jungles of Southeast Asia, particularly in the Philippines.</p>
+          <a href="/insights/filipino-martial-arts-weapons/" class="read-link">Read more →</a>
         </div>
       </div>
 
+      <!-- Article 6: Muay Thai (reprint) -->
       <div class="article-card" data-category="lineage">
-        <div class="article-thumb article-thumb--light">[ Article Image ]</div>
+        <div class="article-thumb article-thumb--dark">
+          <img src="/images/TBA-Inverse-2.png" alt="Thai Boxing Association of the USA — Muay Thai history and lineage" />
+        </div>
         <div class="article-body">
           <div class="article-meta">
             <span class="article-category">Lineage</span>
-            <span class="article-date">November 2025</span>
+            <span class="article-date">Originally published June/July 1994</span>
           </div>
-          <h3>Guro Dan Inosanto and the Art of Transmission</h3>
-          <p>What makes a lineage? Not the techniques — those can be copied. It is the relationship between instructor and student, repeated across generations with fidelity.</p>
-          <a href="/insights/guro-inosanto/" class="read-link">Read more →</a>
-        </div>
-      </div>
-
-      <div class="article-card" data-category="training">
-        <div class="article-thumb article-thumb--dark">[ Article Image ]</div>
-        <div class="article-body">
-          <div class="article-meta">
-            <span class="article-category">Training</span>
-            <span class="article-date">October 2025</span>
-          </div>
-          <h3>What EDC Really Means — and How to Train for It</h3>
-          <p>Everyday carry is not a product category. It is a commitment — and a training obligation. Most people who carry tools have never trained with them under pressure.</p>
-          <a href="/insights/edc-training/" class="read-link">Read more →</a>
+          <h3>Muay Thai: Thailand's Brutal National Sport</h3>
+          <p>Few people in this world are as hospitable as the Thais — and fewer put such emphasis on politeness and respect. But as ironic as it sounds, fewer places will you find such an emphasis on brutality.</p>
+          <a href="/insights/muay-thai-history/" class="read-link">Read more →</a>
         </div>
       </div>
 
@@ -510,8 +696,8 @@
         <div class="footer-nav-label">Site</div>
         <nav class="footer-nav-links">
           <a href="/">Home</a>
-          <a href="/legacy/">Legacy</a>
           <a href="/praxis/">Praxis</a>
+          <a href="/legacy/">Legacy</a>
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
@@ -529,11 +715,13 @@
   <script>
     const pills = document.querySelectorAll('.filter-pill');
     const cards = document.querySelectorAll('.article-card');
+
     pills.forEach(pill => {
       pill.addEventListener('click', e => {
         e.preventDefault();
         pills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
+
         const filter = pill.dataset.filter;
         cards.forEach(card => {
           if (filter === 'all' || card.dataset.category === filter) {
