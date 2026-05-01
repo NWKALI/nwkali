@@ -250,14 +250,11 @@
       
     }
     .discipline-photo {
-      height: 500px;
       overflow: hidden;
     }
     .discipline-photo img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+      height: auto;
       display: block;
     }
     .discipline-content {
@@ -447,7 +444,7 @@
       #sec2 h2 { font-size: 36px; }
       .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .discipline-row { grid-template-columns: 1fr; }
-      .discipline-photo { height: 280px; }
+      .discipline-photo { height: auto; }
       .phase-track { flex-direction: column; align-items: center; gap: 2rem; }
       .phase-track::before { display: none; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -579,8 +576,8 @@
 
 <!-- ─── SEC 7 — MUAY THAI ───────────────────────────────── -->
 <div class="discipline-row">
-  <div class="discipline-photo" style="height:900px;">
-    <img src="/images/Legacy Muay Thai Image.jpeg" alt="Muay Thai Training" style="object-position: top center;" />
+  <div class="discipline-photo">
+    <img src="/images/Legacy Muay Thai Image.jpeg" alt="Muay Thai Training" />
   </div>
   <div class="discipline-content">
     <span class="eyebrow">Thai Martial Arts</span>
