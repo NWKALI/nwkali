@@ -251,11 +251,35 @@
     }
     .discipline-photo {
       overflow: hidden;
+      height: 500px;
     }
     .discipline-photo img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+    #sec6 .discipline-photo img {
+      object-position: center;
+    }
+    /* Per-image position overrides */
+    #sec7 .discipline-photo {
+      height: 850px;
+    }
+    #sec7 .discipline-photo img {
+      object-fit: contain;
+      background-color: white;
+      object-position: center;
+    }
+    #sec8 .discipline-photo img {
+      object-position: center top;
+    }
+    #sec9 .discipline-photo img {
+      object-position: center top;
+    }
+    #sec9.discipline-row {
+      padding-bottom: 3rem;
     }
     .discipline-content {
       padding: 3.5rem 3rem;
@@ -547,7 +571,7 @@
   </section>
 
 <!-- ─── SEC 5 — KALI ───────────────────────────────────── -->
-<div class="discipline-row">
+<div class="discipline-row" id="sec5">
   <div class="discipline-photo">
     <img src="/images/Legacy Kali image.jpg" alt="Kali Eskrima Training" />
   </div>
@@ -561,7 +585,7 @@
 </div>
 
 <!-- ─── SEC 6 — JUN FAN ─────────────────────────────────── -->
-<div class="discipline-row">
+<div class="discipline-row" id="sec6">
   <div class="discipline-content">
     <span class="eyebrow">Jun Fan Martial Arts</span>
     <h2>Jun Fan Gung Fu</h2>
@@ -575,7 +599,7 @@
 </div>
 
 <!-- ─── SEC 7 — MUAY THAI ───────────────────────────────── -->
-<div class="discipline-row">
+<div class="discipline-row" id="sec7">
   <div class="discipline-photo">
     <img src="/images/Legacy Muay Thai Image.jpeg" alt="Muay Thai Training" />
   </div>
@@ -589,7 +613,7 @@
 </div>
 
 <!-- ─── SEC 8 — SILAT ───────────────────────────────────── -->
-<div class="discipline-row">
+<div class="discipline-row" id="sec8">
   <div class="discipline-content">
     <span class="eyebrow">Maphilindo Martial Arts</span>
     <h2>Silat</h2>
@@ -603,7 +627,7 @@
 </div>
 
 <!-- ─── SEC 9 — PANANTUKAN ──────────────────────────────── -->
-<div class="discipline-row">
+<div class="discipline-row" id="sec9" style="padding-bottom: 3rem;">
   <div class="discipline-photo">
     <img src="/images/Legacy Panantukan.jpg" alt="Panantukan Filipino Boxing" />
   </div>
