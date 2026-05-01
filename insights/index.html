@@ -156,7 +156,7 @@
     }
 
     /* ─── NAV ─────────────────────────────────────────────── */
-    nav {
+    header nav {
       background: var(--white);
       border-bottom: var(--border-light);
       padding: 0 var(--pad-h);
@@ -511,21 +511,23 @@
 <body>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-flag">🇵🇭</span>
-      <a href="/" class="nav-logo">NW KALI</a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/praxis/">Praxis</a></li>
-        <li><a href="/legacy/">Legacy</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/insights/" class="active">Insights</a></li>
-        <li><a href="/gear/">Gear</a></li>
-      </ul>
-      <span class="nav-phone">844-JKD-KALI</span>
-    </div>
-  </nav>
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/" class="active">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <span class="nav-phone">844-JKD-KALI</span>
+      </div>
+    </nav>
+  </header>
 
   <!-- ─── SEC 1 — HEADER ─────────────────────────────────── -->
   <section id="sec1">
@@ -687,22 +689,21 @@
       <div class="footer-brand">
         <div class="footer-brand-name">NW KALI</div>
         <div class="footer-brand-meta">
-          Private Instruction · Inosanto FMA Lineage · Since 1987<br>
           <a href="tel:8445353254">844-JKD-KALI</a><br>
           <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
         </div>
       </div>
       <div class="footer-nav">
         <div class="footer-nav-label">Site</div>
-        <nav class="footer-nav-links">
+        <div class="footer-nav-links">
           <a href="/">Home</a>
-          <a href="/praxis/">Praxis</a>
           <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
           <a href="/request/">Request Training</a>
-        </nav>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
