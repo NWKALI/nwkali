@@ -5,6 +5,429 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Force, Law, and the Armed Citizen: What Every Student of Self-Defense Should Understand · NW Kali</title>
   <meta name="description" content="Understanding the law as it relates to the use of force is not optional. Technique without legal context is incomplete. Knowing how to stop a threat is only half of what you need to develop." />
+  <style>
+    :root {
+      --white:       #FFFFFF;
+      --navy:        #1C1F2E;
+      --linen:       #F7F5F0;
+      --charcoal:    #111111;
+      --crimson:     #8B1A1A;
+      --crimson-mid: #C0392B;
+      --border-light: 1px solid #ddd;
+      --border-dark:  1px solid rgba(255,255,255,0.08);
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    p { font-weight: 300; }
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      color: var(--crimson-mid);
+    }
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    h1 { font-size: 52px; letter-spacing: -2px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 20px; margin-bottom: 0.5rem; }
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 26px;
+      letter-spacing: 0.04em;
+    }
+    .btn--primary:hover { background: #6e1414; }
+    .btn--ghost {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 400;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn--ghost:hover { color: var(--white); }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    header nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a.active { color: var(--crimson); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      white-space: nowrap;
+    }
+
+    /* ─── ARTICLE HERO ────────────────────────────────────── */
+    .article-hero {
+      background: var(--linen);
+      padding: 4rem var(--pad-h) 3.5rem;
+      border-bottom: var(--border-light);
+    }
+    .article-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--charcoal); }
+    .article-hero h1 {
+      font-size: 46px;
+      letter-spacing: -2px;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+    .article-byline {
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      margin-top: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── ARTICLE BODY ────────────────────────────────────── */
+    .article-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem var(--pad-h);
+    }
+    .article-body p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1.6rem;
+    }
+    .article-body h2 {
+      font-size: 26px;
+      color: var(--charcoal);
+      margin: 2.5rem 0 1rem;
+    }
+    .article-body h3 {
+      font-size: 18px;
+      color: var(--charcoal);
+      margin: 2rem 0 0.5rem;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--crimson);
+      padding: 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 17px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--charcoal);
+      letter-spacing: -0.5px;
+    }
+    .article-note {
+      border-left: 2px solid #ddd;
+      padding: 0.75rem 1.25rem;
+      color: #999;
+      font-size: 13px;
+      margin-top: 3rem;
+      font-style: italic;
+    }
+    .article-bio {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: var(--border-light);
+      font-size: 13px;
+      color: #999;
+      font-style: italic;
+    }
+
+    /* ─── CTA ─────────────────────────────────────────────── */
+    .article-cta {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 4rem var(--pad-h);
+      text-align: center;
+    }
+    .article-cta .eyebrow { color: var(--crimson-mid); }
+    .article-cta h2 {
+      font-size: 42px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 1024px) {
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
+      .article-hero h1 { font-size: 32px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .nav-links { display: none; }
+      .nav-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/" class="active">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <div class="nav-right">
+          <span class="nav-phone">844-JKD-KALI</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ─── ARTICLE HERO ────────────────────────────────────── -->
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <a href="/insights/" class="back-link">← Insights</a>
+      <span class="eyebrow">Philosophy</span>
+      <h1>Force, Law, and the Armed Citizen: What Every Student of Self-Defense Should Understand</h1>
+      <div class="article-byline">Christopher Clarke · NW Kali</div>
+    </div>
+  </div>
+
+  <!-- ─── ARTICLE BODY ────────────────────────────────────── -->
+  <div class="article-body">
+
+    <p>I want to be direct with you about something from the start: understanding the law as it relates to the use of force is not optional in what we do here. It is part of the curriculum. Technique without legal context is incomplete, and I won't teach it that way. Knowing how to stop a threat is only half of what I'm asking you to develop. Knowing when you were legally justified in doing so is the other half — and that knowledge has to be in place before the situation ever arises.</p>
+
+    <p>This perspective isn't incidental to how we train at NW Kali. It comes directly from my own experience teaching and learning from law enforcement for decades — training officers and agency instructors throughout that time.</p>
+
+    <h2>The Legal Standard: Reasonableness, Imminence, and Proportionality</h2>
+
+    <p>In a private self-defense situation, the law does not ask whether you were scared. It asks whether a reasonable person in your position would have believed that force was necessary to prevent imminent harm. This is the cornerstone of self-defense law across the United States, and I want you to be able to articulate its three interlocking requirements clearly.</p>
+
+    <h3>Reasonableness</h3>
+    <p>Your belief that you were in danger must be objectively reasonable — not just sincere. A genuine but unreasonable fear does not, in most jurisdictions, provide a complete legal defense. A court or jury will evaluate your actions through the lens of what a reasonable, prudent person would have perceived and done under the same circumstances. That standard matters, and it should inform how you train.</p>
+
+    <h3>Imminence</h3>
+    <p>The threat must be happening now, or be about to happen. The law is not a license to act on past harm or anticipated future harm — the danger must be present and immediate. This is why I emphasize de-escalation and avoidance. They are not weaknesses. They are legally and tactically sound choices that eliminate the need to justify force in the first place.</p>
+
+    <h3>Proportionality</h3>
+    <p>The force you use must be proportionate to the threat you face. Lethal force is generally only legally justifiable in response to a threat of death or serious bodily harm. Responding to a shove with deadly force — absent other significant factors — is likely to fail the proportionality test, regardless of your technical ability to execute the response. Capability and justification are two separate things. We train both.</p>
+
+    <p>For those of you training in the NW Kali curriculum, this is worth knowing directly: neither Oregon nor Washington imposes a duty to retreat. Oregon's Supreme Court settled the question in <em>State v. Sandoval</em> (2007), holding that you do not have a duty to retreat before using force in self-defense, provided you are in a place where you have a lawful right to be. Washington reaches the same result. That said, laws vary significantly by state. If you train or travel outside the Pacific Northwest, knowing the law where you are is your responsibility.</p>
+
+    <h2>The Second Amendment and the Right to Self-Defense</h2>
+
+    <p>The Second Amendment provides that the right of the people to keep and bear arms shall not be infringed. In 2008, the Supreme Court resolved the core question in <em>District of Columbia v. Heller</em>, holding that the Second Amendment protects an individual right to possess firearms independent of service in a militia — and that this right is most naturally understood as tied to the inherent right of self-defense. <em>McDonald v. City of Chicago</em> (2010) extended that protection against state and local government infringement as well.</p>
+
+    <blockquote>The right to defend yourself is not granted by government. It is recognized by it. That is not a small distinction.</blockquote>
+
+    <p>It shapes how a serious practitioner should think about the entire subject of force — not as a privilege extended by the state, but as a fundamental human right that the law is obligated to protect.</p>
+
+    <h2>Graham v. Connor and the Reasonable Person Standard</h2>
+
+    <p><em>Graham v. Connor</em> (1989) is a case I want to discuss carefully, because it is often misapplied. It is a Supreme Court decision that does not apply directly to private citizens — it governs the conduct of law enforcement. I am not presenting it as civilian case law. I am presenting it because it is the legal framework I have worked within directly, alongside the officers and instructors I have trained with and assisted over the years.</p>
+
+    <p>What the Court established — that the reasonableness of force must be judged from the perspective of a reasonable person on the scene, without the benefit of hindsight, and with full account taken of the tense, uncertain, and rapidly evolving nature of the encounter — reflects the reality of what any use-of-force situation actually looks like on the ground. Civilian self-defense is evaluated under a comparable standard, and the same human realities apply: decisions made in fractions of a second, under stress, with incomplete information.</p>
+
+    <h2>Where Training and Law Intersect</h2>
+
+    <p>Everything I have described above comes together in a single idea: what we build here is not just physical capability. It is judgment. The officers I have trained are required to be not only physically prepared, but legally accountable for every use-of-force decision they made. That environment shaped how I think about instruction, and it is the standard I hold myself and this curriculum to.</p>
+
+    <p>When you train with us, you are not simply learning to fight. You are learning to make sound decisions under stress — decisions that must survive not only the encounter itself, but whatever legal scrutiny may follow.</p>
+
+    <p>The arts we teach at NW Kali — Kali, Jun Fan Gung Fu, Silat, Muay Thai — are tools. But a tool without the wisdom to govern its use is a liability. I want you to develop both the physical capability to respond to a threat, and the legal and ethical framework to know when that response is warranted.</p>
+
+    <blockquote>Force, in the real world, is not a technique. It is a decision. Train accordingly.</blockquote>
+
+    <div class="article-note">The information in this article is intended for educational purposes and reflects general principles of U.S. self-defense law. It does not constitute legal advice. Laws vary significantly by state and jurisdiction. Consult a qualified attorney for guidance specific to your circumstances.</div>
+
+    <div class="article-bio">NW Kali offers private martial arts instruction in Oregon and Washington in Filipino Martial Arts (Kali / Eskrima / Arnis), Jun Fan / Jeet Kune Do, Maphilindo Silat, and Muay Thai. Sifu/Guro Clarke has been an instructor in the Inosanto method since 1987 and holds Full Instructor rank under Master Inosanto.</div>
+
+  </div>
+
+  <!-- ─── CTA ─────────────────────────────────────────────── -->
+  <div class="article-cta">
+    <span class="eyebrow">Capability With Context</span>
+    <h2>Train With Judgment.</h2>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="/private-training/" class="btn btn--primary">Apply for Private Training</a>
+      <a href="/praxis/" class="btn btn--ghost">Explore Praxis →</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          <a href="tel:8445353254">844-JKD-KALI</a><br>
+          <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/request/">Request Training</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Force, Law, and the Armed Citizen: What Every Student of Self-Defense Should Understand · NW Kali</title>
+  <meta name="description" content="Understanding the law as it relates to the use of force is not optional. Technique without legal context is incomplete. Knowing how to stop a threat is only half of what you need to develop." />
   <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
   <style>
