@@ -5,6 +5,401 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muay Thai: Thailand's Brutal National Sport · NW Kali</title>
   <meta name="description" content="Thailand's national sport, called Muay Thai or Thai Boxing, is one of the most formidable martial arts in existence. Originally published June/July 1994." />
+  <style>
+    :root {
+      --white:       #FFFFFF;
+      --navy:        #1C1F2E;
+      --linen:       #F7F5F0;
+      --charcoal:    #111111;
+      --crimson:     #8B1A1A;
+      --crimson-mid: #C0392B;
+      --border-light: 1px solid #ddd;
+      --border-dark:  1px solid rgba(255,255,255,0.08);
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    p { font-weight: 300; }
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      color: var(--crimson-mid);
+    }
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    h1 { font-size: 52px; letter-spacing: -2px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 20px; margin-bottom: 0.5rem; }
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 26px;
+      letter-spacing: 0.04em;
+    }
+    .btn--primary:hover { background: #6e1414; }
+    .btn--ghost {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 400;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn--ghost:hover { color: var(--white); }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    header nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a.active { color: var(--crimson); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      white-space: nowrap;
+    }
+
+    /* ─── ARTICLE HERO ────────────────────────────────────── */
+    .article-hero {
+      background: var(--linen);
+      padding: 4rem var(--pad-h) 3.5rem;
+      border-bottom: var(--border-light);
+    }
+    .article-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--charcoal); }
+    .article-hero h1 {
+      font-size: 46px;
+      letter-spacing: -2px;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+    .article-byline {
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      margin-top: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── ARTICLE BODY ────────────────────────────────────── */
+    .article-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem var(--pad-h);
+    }
+    .article-body p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1.6rem;
+    }
+    .article-body h2 {
+      font-size: 26px;
+      color: var(--charcoal);
+      margin: 2.5rem 0 1rem;
+    }
+    .article-note {
+      border-left: 2px solid #ddd;
+      padding: 0.75rem 1.25rem;
+      color: #999;
+      font-size: 13px;
+      margin-top: 3rem;
+      font-style: italic;
+    }
+
+    /* ─── CTA ─────────────────────────────────────────────── */
+    .article-cta {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 4rem var(--pad-h);
+      text-align: center;
+    }
+    .article-cta .eyebrow { color: var(--crimson-mid); }
+    .article-cta h2 {
+      font-size: 42px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 1024px) {
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
+      .article-hero h1 { font-size: 32px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .nav-links { display: none; }
+      .nav-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/" class="active">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <div class="nav-right">
+          <span class="nav-phone">844-JKD-KALI</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ─── ARTICLE HERO ────────────────────────────────────── -->
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <a href="/insights/" class="back-link">← Insights</a>
+      <span class="eyebrow">Lineage · Originally published June/July 1994</span>
+      <h1>Muay Thai: Thailand's Brutal National Sport</h1>
+      <div class="article-byline">— Christopher Clarke</div>
+    </div>
+  </div>
+
+  <!-- ─── ARTICLE BODY ────────────────────────────────────── -->
+  <div class="article-body">
+
+    <p>When one thinks of Thailand, many things come to mind. The beautiful temples or <em>wats</em>, as they are called, or the monks wearing the traditional saffron robes that abound the society — or maybe one thinks of exotic images of dancers clad in jeweled costumes gracefully intertwining their hands in patterned movements that are centuries old. Surely Thailand evokes memories of beauty and harmony. Few people in this world are as hospitable as the Thais, and fewer put such emphasis on politeness and respect.</p>
+
+    <p>But as ironic as it sounds, fewer places in the world will you find a place that puts such an emphasis on brutality. Thailand's national sport, called Muay Thai or Thai Boxing, is one of the most formidable martial arts in existence.</p>
+
+    <h2>Origins and Structure</h2>
+
+    <p>Originally taught to Royal Siam's conscripts as early as the 1500s, Thai boxing today is an awesome method of self defense. Thai boxing, often called the art of the eight limbs, makes efficient use of knee and elbow strikes, punches, and powerful kicks using the shin bone. The Thais have perfected a means of kicking that is very hard to comprehend unless felt.</p>
+
+    <p>Thai bouts are generally five rounds of three minutes with two minute rests between rounds. A win is decided by: knockout; a technical knockout (fighter is unable to start the next round); or the awarding of points. But many times fights rarely go past the first round.</p>
+
+    <p>Fighters are permitted to grab around the neck and clinch, unlike western boxing, allowing deadly elbow and knee blows to the head and body. Unfortunately, several fighters are killed annually because of such brutal tactics.</p>
+
+    <p>Fighters use a mouth guard, groin protector, and gloves as the only protection. The Thai fighters' gloves are a mere six ounces compared to the ten or twelve ounce gloves used in western boxing.</p>
+
+    <h2>Before the Gloves</h2>
+
+    <p>Before 1937, many more injuries occurred in Muay Thai. Prior to that date gloves were non-existent, and the only piece of protective equipment used was half a coconut or large sea shell to protect the groin. Sometimes the hands were wrapped in hemp rope — other times the fighters agreed to put crushed glass in the rope to make the fight even shorter. Not for the squeamish, to be sure.</p>
+
+    <p>Gloves, interestingly enough, were introduced by a Filipino boxer who was fighting in Thailand. The Filipinos received the idea of gloves from US Navy boxers while stationed in the Philippines.</p>
+
+    <p>Because of the dangers involved in the sport, naturally Thai mothers don't want to see their sons grow up to be boxers. But, just like young men from the ghettos in the US, many times the only ticket out of the "barrio" is making it in the ring.</p>
+
+    <h2>The Stadium Experience</h2>
+
+    <p>Still, Thai boxing is incredibly popular and is attended by thousands weekly at one of two main stadiums in Bangkok, Thailand's capital city.</p>
+
+    <p>Typically the fighters wear red and blue trunks, the favored fighter usually wearing red. Every fight is performed to the sounds of a small orchestra of gongs, drums, and reed instruments that keep the tempo of the fight. Before each bout the fighters perform the <em>ram Muay</em>, a special dance that pays tribute to the fighter's <em>kroo</em> (teacher). Each camp will perform a different dance, and usually a camp will never pit two of its own fighters against each other.</p>
+
+    <h2>Technique</h2>
+
+    <p>The hand work employed in Thai boxing is very much like western boxing. The kicks are usually targeted to three main areas: the neck, ribs, and legs. The primary strategy of a Thai fighter is to kick the legs with heavy shin kicks to weaken the opponent and create other openings for attack. Fighters occasionally break femur bones with the round kick, hence the term "heavy" kick. Because of the power, blocking with the arms is avoided. Evasion is preferred, while at times fighters often shield shin kicks with their own shins. Seasoned Thai boxers are used to such contact and have built up a tolerance to seemingly un-tolerable pain. The other main kick used is the foot jab or push kick. It is used to set up the shin kick or defend an opponent's shin kick or boxing attack.</p>
+
+    <p>The knee can be used to counter boxing or kicking attacks depending on the distance. The elbows are used in a variety of ways, both on offense and defense. Downward elbows, snap elbows, and spinning elbow attacks are powerful and capable of quick knockouts.</p>
+
+    <h2>Muay Thai in the United States</h2>
+
+    <p>In recent years interest in Muay Thai has risen. In the United States, the main body promoting Muay Thai is the Thai Boxing Association of the USA. Founded by former Thai bantamweight champion Ajarn (master) Surachai Sirisute, the TBA is the largest and oldest in the nation, with headquarters in Carson, CA.</p>
+
+    <p>Sirisute, an accomplished fighter with over 100 fights to his credit, has been teaching the art of Muay Thai in the US since his arrival from Thailand in 1968. He went on to found branches in more than 17 countries worldwide, leaving a lasting mark on the art of Muay Thai in the West.</p>
+
+    <div class="article-note">This article was originally written for a general martial arts audience in 1994, at a time when Muay Thai was still largely unknown in the United States. It is republished here as part of NW Kali's ongoing commitment to documenting the history and lineage of the arts we teach.</div>
+
+  </div>
+
+  <!-- ─── CTA ─────────────────────────────────────────────── -->
+  <div class="article-cta">
+    <span class="eyebrow">Train the Art of Eight Limbs</span>
+    <h2>Muay Thai at NW Kali.</h2>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="/private-training/" class="btn btn--primary">Apply for Private Training</a>
+      <a href="/legacy/" class="btn btn--ghost">Explore Legacy →</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          <a href="tel:8445353254">844-JKD-KALI</a><br>
+          <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/request/">Request Training</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muay Thai: Thailand's Brutal National Sport · NW Kali</title>
+  <meta name="description" content="Thailand's national sport, called Muay Thai or Thai Boxing, is one of the most formidable martial arts in existence. Originally published June/July 1994." />
   <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
   <style>
