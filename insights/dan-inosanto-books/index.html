@@ -5,6 +5,376 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Essential Dan Inosanto Collection: Books That Defined Modern Martial Arts · NW Kali</title>
   <meta name="description" content="Dan Inosanto's published works represent a bridge between traditional systems and what would later become modern cross-training. A guide to the essential collection." />
+  <style>
+    :root {
+      --white:       #FFFFFF;
+      --navy:        #1C1F2E;
+      --linen:       #F7F5F0;
+      --charcoal:    #111111;
+      --crimson:     #8B1A1A;
+      --crimson-mid: #C0392B;
+      --border-light: 1px solid #ddd;
+      --border-dark:  1px solid rgba(255,255,255,0.08);
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    p { font-weight: 300; }
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      color: var(--crimson-mid);
+    }
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    h1 { font-size: 52px; letter-spacing: -2px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 20px; margin-bottom: 0.5rem; }
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 26px;
+      letter-spacing: 0.04em;
+    }
+    .btn--primary:hover { background: #6e1414; }
+    .btn--ghost {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 400;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn--ghost:hover { color: var(--white); }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    header nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a.active { color: var(--crimson); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      white-space: nowrap;
+    }
+
+    /* ─── ARTICLE HERO ────────────────────────────────────── */
+    .article-hero {
+      background: var(--linen);
+      padding: 4rem var(--pad-h) 3.5rem;
+      border-bottom: var(--border-light);
+    }
+    .article-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--charcoal); }
+    .article-hero h1 {
+      font-size: 46px;
+      letter-spacing: -2px;
+      color: var(--charcoal);
+      margin-bottom: 0;
+      line-height: 1.1;
+    }
+
+    /* ─── ARTICLE BODY ────────────────────────────────────── */
+    .article-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem var(--pad-h);
+    }
+    .article-body p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1.6rem;
+    }
+    .article-body h2 {
+      font-size: 26px;
+      color: var(--charcoal);
+      margin: 3rem 0 0.25rem;
+      padding-top: 2rem;
+      border-top: var(--border-light);
+    }
+    .book-meta {
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    /* ─── CTA ─────────────────────────────────────────────── */
+    .article-cta {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 4rem var(--pad-h);
+      text-align: center;
+    }
+    .article-cta .eyebrow { color: var(--crimson-mid); }
+    .article-cta h2 {
+      font-size: 42px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 1024px) {
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
+      .article-hero h1 { font-size: 32px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .nav-links { display: none; }
+      .nav-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/" class="active">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <div class="nav-right">
+          <span class="nav-phone">844-JKD-KALI</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ─── ARTICLE HERO ────────────────────────────────────── -->
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <a href="/insights/" class="back-link">← Insights</a>
+      <span class="eyebrow">Lineage</span>
+      <h1>The Essential Dan Inosanto Collection: Books That Defined Modern Martial Arts Before It Was Modern</h1>
+    </div>
+  </div>
+
+  <!-- ─── ARTICLE BODY ────────────────────────────────────── -->
+  <div class="article-body">
+
+    <p>Long before "mixed martial arts" became a mainstream concept, and well before Filipino Martial Arts gained global visibility, Dan Inosanto was quietly documenting and transmitting a different way of thinking about combat. His published works — limited in number but significant in impact — represent a bridge between traditional systems and what would later become modern cross-training. Today, these books form what can be considered the essential Dan Inosanto collection, not just as instructional manuals, but as early blueprints for how martial arts would evolve.</p>
+
+    <h2>Filipino Martial Arts</h2>
+    <div class="book-meta">First published c. 1980 · Collector copies: up to $120+</div>
+    <p>The most foundational of these is <em>Filipino Martial Arts</em>, first published around 1980. At a time when FMA was largely unknown outside of small circles, this book provided one of the earliest structured presentations of Kali, Eskrima, and Arnis for a broader audience. Inosanto not only documented training methods — flow drills, weapon integration, and coordination — but also delved into the early history of Filipino martial arts in the United States. He discusses the formation of key groups such as the Kali Association of America and highlights figures like Master Juanito LaCosta, noting that these were among the only instructors in the U.S. at the time formally using the term "Kali." He also references the "Bahala Na" group and the contributions of Grandmaster Leo Giron, who established one of the earliest Arnis/Eskrima schools in the United States. This historical inclusion is part of what makes the book unique: it captures both the technical and cultural transmission of the art during a formative period. Today, good used copies typically run up to $120, with higher-end collector copies exceeding that depending on condition.</p>
+
+    <h2>Jeet Kune Do: The Art and Philosophy of Bruce Lee</h2>
+    <div class="book-meta">1975 · Good copies: $15–$40</div>
+    <p><em>Jeet Kune Do: The Art and Philosophy of Bruce Lee</em> (1975) stands as one of the most widely read texts associated with Bruce Lee's ideas, with Dan Inosanto serving as the primary figure in preserving and transmitting those teachings after Lee's passing. Alongside Inosanto, figures such as Taky Kimura of the Seattle Jun Fan Gung Fu Institute played an important role in maintaining continuity, but Inosanto emerged as the central conduit through which JKD concepts were expanded and shared globally. The book emphasizes principles over rigid systems — economy of motion, interception, and adaptability — and presents an approach that, at the time, stood in contrast to traditional martial arts structures. In hindsight, it reads as an early framework for modern MMA thinking, where cross-training and functional efficiency are now standard. Unlike other titles in this collection, this book remains widely available, with good copies typically priced between $15 and $40, and older editions ranging higher depending on print and condition.</p>
+
+    <h2>Absorb What Is Useful</h2>
+    <div class="book-meta">Good copies: $60–$150</div>
+    <p>That philosophy is extended more directly in <em>Absorb What Is Useful</em>. This work moves beyond documentation into interpretation, reinforcing the idea that martial arts should not remain fixed systems but should evolve through experience and adaptation. It articulates a concept-driven training model that predates the rise of MMA by decades, emphasizing integration across disciplines and the elimination of inefficiency. Its relevance today is clear: what was once a progressive idea is now foundational. Due to its more limited availability, good used copies typically fall in the $60 to $150 range, with scarce listings occasionally exceeding that.</p>
+
+    <h2>Guide to Martial Arts Training with Equipment</h2>
+    <div class="book-meta">Good copies: $50–$130</div>
+    <p><em>Guide to Martial Arts Training with Equipment</em> is often overlooked, but it reflects one of the most forward-thinking aspects of Inosanto's approach. At a time when many traditional martial arts did not emphasize equipment-based training, the JKD group was already using focus mitts and even repurposed football blocking pads as kicking shields — adapting tools from other sports to develop timing, impact, and functional striking. This approach mirrored the broader JKD philosophy of using whatever worked, regardless of origin. The book formalizes that mindset, presenting equipment not as supplemental, but as integral to developing real performance under pressure. What is standard today in MMA gyms — pad work, impact training, and hybrid equipment use — was being explored and applied within the JKD community decades earlier. Good used copies of this title typically range from $50 to $130, with higher prices depending on condition and availability.</p>
+
+    <h2>Ahead of Their Time</h2>
+    <p>Taken together, these books were ahead of their time in a way that is only fully visible in retrospect. Inosanto's role in introducing Filipino Martial Arts to a broader audience, integrating multiple systems, and serving as the primary figure preserving and advancing Jeet Kune Do helped shape the environment that allowed MMA to emerge. What is now considered normal — cross-training, adaptability, and functional application — was not standard when these works were published.</p>
+
+    <p>Their collectability today reflects more than scarcity. These books capture a transitional period in martial arts history: the shift from isolated systems to integrated thinking. For practitioners, they offer not nostalgia, but clarity — evidence that the direction modern martial arts has taken was being defined, documented, and applied decades earlier.</p>
+
+  </div>
+
+  <!-- ─── CTA ─────────────────────────────────────────────── -->
+  <div class="article-cta">
+    <span class="eyebrow">Train the Lineage</span>
+    <h2>The Complete Inosanto Method.</h2>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="/private-training/" class="btn btn--primary">Apply for Private Training</a>
+      <a href="/legacy/" class="btn btn--ghost">Explore Legacy →</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          <a href="tel:8445353254">844-JKD-KALI</a><br>
+          <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/request/">Request Training</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Essential Dan Inosanto Collection: Books That Defined Modern Martial Arts · NW Kali</title>
+  <meta name="description" content="Dan Inosanto's published works represent a bridge between traditional systems and what would later become modern cross-training. A guide to the essential collection." />
   <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
   <style>
