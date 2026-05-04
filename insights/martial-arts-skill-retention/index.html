@@ -5,6 +5,389 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skill Is Perishable — What That Means for Your Training · NW Kali</title>
   <meta name="description" content="Every martial artist understands, at least intuitively, that skill fades. What is less commonly understood is why this happens at a neurological level — and how training can be structured to deliberately counteract it." />
+  <style>
+    :root {
+      --white:       #FFFFFF;
+      --navy:        #1C1F2E;
+      --linen:       #F7F5F0;
+      --charcoal:    #111111;
+      --crimson:     #8B1A1A;
+      --crimson-mid: #C0392B;
+      --border-light: 1px solid #ddd;
+      --border-dark:  1px solid rgba(255,255,255,0.08);
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    p { font-weight: 300; }
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      color: var(--crimson-mid);
+    }
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    h1 { font-size: 52px; letter-spacing: -2px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 20px; margin-bottom: 0.5rem; }
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 26px;
+      letter-spacing: 0.04em;
+    }
+    .btn--primary:hover { background: #6e1414; }
+    .btn--ghost {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 400;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn--ghost:hover { color: var(--white); }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    header nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a.active { color: var(--crimson); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      white-space: nowrap;
+    }
+
+    /* ─── ARTICLE HERO ────────────────────────────────────── */
+    .article-hero {
+      background: var(--linen);
+      padding: 4rem var(--pad-h) 3.5rem;
+      border-bottom: var(--border-light);
+    }
+    .article-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--charcoal); }
+    .article-hero h1 {
+      font-size: 46px;
+      letter-spacing: -2px;
+      color: var(--charcoal);
+      margin-bottom: 0;
+      line-height: 1.1;
+    }
+
+    /* ─── ARTICLE BODY ────────────────────────────────────── */
+    .article-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem var(--pad-h);
+    }
+    .article-body p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1.6rem;
+    }
+    .article-body h2 {
+      font-size: 26px;
+      color: var(--charcoal);
+      margin: 2.5rem 0 1rem;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--crimson);
+      padding: 0.5rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 17px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--charcoal);
+      letter-spacing: -0.5px;
+    }
+    .article-bio {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: var(--border-light);
+      font-size: 13px;
+      color: #999;
+      font-style: italic;
+    }
+
+    /* ─── CTA ─────────────────────────────────────────────── */
+    .article-cta {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 4rem var(--pad-h);
+      text-align: center;
+    }
+    .article-cta .eyebrow { color: var(--crimson-mid); }
+    .article-cta h2 {
+      font-size: 42px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 1024px) {
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
+      .article-hero h1 { font-size: 32px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .nav-links { display: none; }
+      .nav-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/" class="active">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <div class="nav-right">
+          <span class="nav-phone">844-JKD-KALI</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ─── ARTICLE HERO ────────────────────────────────────── -->
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <a href="/insights/" class="back-link">← Insights</a>
+      <span class="eyebrow">Training</span>
+      <h1>Skill Is Perishable — What That Means for Your Training</h1>
+    </div>
+  </div>
+
+  <!-- ─── ARTICLE BODY ────────────────────────────────────── -->
+  <div class="article-body">
+
+    <p>Every martial artist understands, at least intuitively, that skill fades. Time away from training leads to slower reactions, degraded timing, and a general loss of sharpness. What is less commonly understood is why this happens at a neurological level — and more importantly, how training can be structured to deliberately counteract it.</p>
+
+    <h2>Why Skill Fades</h2>
+
+    <p>Skill is perishable because it is not stored as a fixed asset. It exists as a network of neural pathways that must be reinforced through repeated use. When you train a movement — whether it is a strike, a defensive response, or a coordinated sequence — you are strengthening connections between neurons that allow that movement to be executed efficiently and under pressure. Over time, with consistent repetition, those pathways become faster and more reliable.</p>
+
+    <p>This is what people commonly call "muscle memory" — but that's actually a misnomer. The muscles themselves don't remember anything. What's really happening is a neurological process called myelination. Myelin is a fatty substance that wraps around nerve fibers like insulation on an electrical wire. The more you repeat a movement with intention, the more myelin your brain lays down along those pathways — and the faster and more reliably those signals travel. A well-trained response isn't stored in your bicep. It's wired into your nervous system. That distinction matters, because it tells you exactly what training is actually building — and what starts to erode when you stop.</p>
+
+    <h2>Use It or Lose It</h2>
+
+    <p>The brain operates on a strict use-it-or-lose-it principle. It is ruthlessly efficient and will not maintain infrastructure it isn't using. When pathways go quiet, the brain begins to deprioritize them — the insulation thins, the signal slows, and what was once fast and automatic starts to require more conscious effort. Timing degrades first, followed by coordination, and then decision-making speed. This is why even experienced practitioners can feel "off" after a short break. The skill isn't gone, but access to it becomes slower and less reliable. Under pressure, where response time matters most, that degradation becomes more pronounced.</p>
+
+    <p>Many practitioners assume that once a skill is learned, it can be maintained with occasional review. In reality, retention requires deliberate reinforcement. Not all repetition is equal, however. Passive drilling may maintain familiarity, but it does not fully preserve the speed and adaptability required in real-world conditions. To counter skill decay, training must include variability, decision-making, and pressure — the conditions that actually stress-test those neural pathways and keep them sharp.</p>
+
+    <h2>Knowledge vs. Performance</h2>
+
+    <blockquote>Knowing how to do something and being able to do it are not the same thing — especially under stress.</blockquote>
+
+    <p>You might be able to describe a technique perfectly. Walk someone through it step by step. But in a real moment, under adrenaline, with no warm-up and no second chance, the question isn't what you know. It's what your nervous system can deliver automatically, right now. That gap — between the skill you think you have and the skill your nervous system can actually produce on demand — is where perishability quietly lives.</p>
+
+    <p>This is particularly relevant for anyone who carries tools — a flashlight, a blade, a firearm. The ability to deploy those tools efficiently is subject to the same principle of decay. Familiarity is not sufficient. Access speed, decision-making, and coordination must be maintained through consistent, deliberate practice. Otherwise, the gap between knowledge and performance widens over time, and it tends to do so without announcement.</p>
+
+    <h2>The Honest Question</h2>
+
+    <p>The honest question worth sitting with is this: if you needed to perform right now — not in a class, not in a drill, but in an actual moment of sudden, unscripted threat — at what level would your skills actually show up? Not the level they were at when you trained most consistently. The level they are at today, given what you have actually been doing recently. Most people, if they're being honest, feel some distance between those two answers. That distance is perishability at work. It's not a failure — it's just an honest accounting of how the nervous system operates. The only response that matters is what you do about it.</p>
+
+    <p>The JKD adage of "process vs. product" can be simplified as this: training is a practice, not an achievement. The martial arts tradition at NW Kali is built on this understanding. Skill isn't a box you check. It isn't something you acquire and then have. It's something you maintain through consistent, honest, quality practice over time. That's not a burden — it is a process and a lifestyle. For people who take their training seriously, it's actually liberating. You don't have to be perfect. You don't have to train every day. You just have to keep showing up — regularly, with intention, with a clear sense of what you're maintaining and why.</p>
+
+  </div>
+
+  <!-- ─── CTA ─────────────────────────────────────────────── -->
+  <div class="article-cta">
+    <span class="eyebrow">Keep the Skill Sharp</span>
+    <h2>Train With Intention.</h2>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="/private-training/" class="btn btn--primary">Apply for Private Training</a>
+      <a href="/praxis/" class="btn btn--ghost">Explore Praxis →</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          <a href="tel:8445353254">844-JKD-KALI</a><br>
+          <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/request/">Request Training</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Is Perishable — What That Means for Your Training · NW Kali</title>
+  <meta name="description" content="Every martial artist understands, at least intuitively, that skill fades. What is less commonly understood is why this happens at a neurological level — and how training can be structured to deliberately counteract it." />
   <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
   <style>
