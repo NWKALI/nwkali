@@ -5,6 +5,405 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Filipino Martial Arts: Weapons of War · NW Kali</title>
   <meta name="description" content="The importance of weapons in combat was extremely evident in the jungles of Southeast Asia, particularly in the Philippines. Originally published January 1994." />
+  <style>
+    :root {
+      --white:       #FFFFFF;
+      --navy:        #1C1F2E;
+      --linen:       #F7F5F0;
+      --charcoal:    #111111;
+      --crimson:     #8B1A1A;
+      --crimson-mid: #C0392B;
+      --border-light: 1px solid #ddd;
+      --border-dark:  1px solid rgba(255,255,255,0.08);
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    p { font-weight: 300; }
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      color: var(--crimson-mid);
+    }
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+    h1 { font-size: 52px; letter-spacing: -2px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 20px; margin-bottom: 0.5rem; }
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 26px;
+      letter-spacing: 0.04em;
+    }
+    .btn--primary:hover { background: #6e1414; }
+    .btn--ghost {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 400;
+      padding: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn--ghost:hover { color: var(--white); }
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    header nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a.active { color: var(--crimson); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      white-space: nowrap;
+    }
+
+    /* ─── ARTICLE HERO ────────────────────────────────────── */
+    .article-hero {
+      background: var(--linen);
+      padding: 4rem var(--pad-h) 3.5rem;
+      border-bottom: var(--border-light);
+    }
+    .article-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 1.5rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--charcoal); }
+    .article-hero h1 {
+      font-size: 46px;
+      letter-spacing: -2px;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+    .article-byline {
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      margin-top: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── ARTICLE BODY ────────────────────────────────────── */
+    .article-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem var(--pad-h);
+    }
+    .article-body p {
+      font-size: 15px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1.6rem;
+    }
+    .article-body h2 {
+      font-size: 26px;
+      color: var(--charcoal);
+      margin: 2.5rem 0 1rem;
+    }
+    .article-note {
+      border-left: 2px solid #ddd;
+      padding: 0.75rem 1.25rem;
+      color: #999;
+      font-size: 13px;
+      margin-top: 3rem;
+      font-style: italic;
+    }
+
+    /* ─── CTA ─────────────────────────────────────────────── */
+    .article-cta {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 4rem var(--pad-h);
+      text-align: center;
+    }
+    .article-cta .eyebrow { color: var(--crimson-mid); }
+    .article-cta h2 {
+      font-size: 42px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta { font-size: 12px; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.45); }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); transition: color 0.15s; }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 1024px) {
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
+      .article-hero h1 { font-size: 32px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .nav-links { display: none; }
+      .nav-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/" class="active">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <div class="nav-right">
+          <span class="nav-phone">844-JKD-KALI</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ─── ARTICLE HERO ────────────────────────────────────── -->
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <a href="/insights/" class="back-link">← Insights</a>
+      <span class="eyebrow">Lineage · Originally published January 1994</span>
+      <h1>Filipino Martial Arts: Weapons of War</h1>
+      <div class="article-byline">— Christopher Clarke</div>
+    </div>
+  </div>
+
+  <!-- ─── ARTICLE BODY ────────────────────────────────────── -->
+  <div class="article-body">
+
+    <p>As long as there has been combat between men, there have been weapons of every imaginable dimension and characteristic. Before there were different styles of combat, even before there were civilizations and organized social structures, weapons existed. Often the weapon was simply what was at hand — a rock, or maybe a sharpened bone or stick. It too was a weapon that many times determined whether you survived in battle or whether you could provide for your family.</p>
+
+    <p>Weaponry was simple at first — crude clubs and rocks, then came the spears and arrow, and finally swords of bronze, iron and steel. Tactics and strategies often decided who survived.</p>
+
+    <h2>The Philippines: A Culture Shaped by Conflict</h2>
+
+    <p>The importance of weapons in combat was extremely evident in the jungles of Southeast Asia, particularly in the Philippines. Filipinos were never really unified and thus were constantly involved in civil wars. Unity ultimately came about through domination by a foreign power — in this case, Spain. In fact, Spain's ability to colonize the northern and central Philippines was due in part to the conquistador's ability to manipulate the Filipino people into warring against each other. However, it should be noted that the Visayan and Tagalog peoples of the North accepted for the most part the Christian Faith and with it Spanish Rule. The southern Philippines, however, where the mother art of Kali originates, is of Muslim faith and vehemently opposed Spain's religion and rule.</p>
+
+    <p>Mindanao and the Sulu archipelago, home to the Tausug, Mindoro, and Magmindanao tribes among others, successfully repelled all foreign invaders for hundreds of years. This was accomplished primarily because of their knowledge of weaponry.</p>
+
+    <h2>The Principle of Motion</h2>
+
+    <p>Equally important is the fact that by training with weaponry the practitioner was gaining additional benefits. The most important being an understanding of motion and how it applies to combat — not just motion of a sword, but of all weaponry in general.</p>
+
+    <p>Most systems have one form for "weapon A," another form for "weapon B," and still a different form for empty hands. The result is a student whose training is compartmentalized and not unified. Also, the training time must be divided between the different areas.</p>
+
+    <p>The Filipinos, however, use the same motion for weaponry as for the empty hand. This allows the student to be proficient with any weapon available — a stick, a knife, an umbrella, a notebook, or a rolled-up newspaper — or when no weapon is available.</p>
+
+    <h2>Enhanced Attributes</h2>
+
+    <p>Another benefit is the enhanced attributes the student develops when training with weapons. An attribute can be defined as a quality such as speed, strength, coordination, timing, rhythm, etc.</p>
+
+    <p>The attribute of speed is a good example. Physics tells us that the tip of a weapon moves faster than the handle, so it can be said the weapon moves more quickly than the hand. The stick in the hands of someone with training has been clocked at speeds up to 150 mph. When training with weapons that travel with such speed, the student is pushed to move more quickly. Hand speed, as well as reaction speed and visual speed, are enhanced.</p>
+
+    <p>Awareness is amplified immensely when dealing with weaponry, particularly the knife. Knife training especially increases hand speed and contact reflex. Although the Filipinos have excellent knife defense techniques, this type of training is done more for the reason of achieving the attributes than for actually trying to defend the knife. Anyone with very little knowledge can defeat 90% of knife defense techniques. So, the best bet when faced with a knife is to have an equal or better weapon, or run. Empty hand versus knife is one of the worst situations to be in — maybe even more so than being unarmed against a firearm.</p>
+
+    <p>Because an armed assailant may have the added range of a weapon, the student must be certain of distances. In order for a punch or kick to injure, it must penetrate into the target. A knife on the other hand only has to graze to injure. Again, the attributes of balance, timing, and foot speed are vital in improving a student's mobility.</p>
+
+    <p>The ability to flow from defense to offense must be extremely efficient and uninterrupted. Also, weapons training can encourage the student to understand zoning and sectoring, and how to fight one side of the body at a time or deal with multiple opponents.</p>
+
+    <p>Of prime importance is body mechanics. The ability to effectively strike with a weapon requires power that is generated through proper body mechanics. The mechanics that are applied to slash or thrust with a kris are the same needed to throw a powerful cross or elbow, or to effectively lock or throw.</p>
+
+    <h2>The Twelve Areas of Study</h2>
+
+    <p>The Filipino martial arts are composed of twelve areas of study. Each category offers a principle by which the specific weapon is employed. For example, the principle of flexible weapons is the same no matter what the specific weapon. It could be a scarf, the sarong (clothing), a piece of chain — the common denominator being flexibility; the object's ability to wrap or tie. Another example is the category of double sticks. The principle by which the student uses two batons is the same regardless if the weapons were two swords, a sword and shield, or two axes. Other areas include single or double knife, sword and dagger, staff and oar, throwing and projectile weapons, and a very comprehensive empty hand method that is subdivided into boxing, kicking, grappling, and locking.</p>
+
+    <h2>Weapons First</h2>
+
+    <p>In many classical systems of karate and kung fu, only senior students are allowed to learn the weapons. Usually even then it is restricted to the practice of forms or katas. The Filipino's method of training is quite unique and contrary to this train of thought.</p>
+
+    <p>Often armed conflict pitted village against village or tribe against tribe. To the Filipinos it made more sense to train a young warrior in the usage of a sword first, before empty hands, because rarely would he be without a weapon. Passage from boyhood to manhood was initiated by the wearing of a sword known as a kris or barong. The constant threat of war supported the viewpoint of teaching weapons first.</p>
+
+    <p>These are only a few reasons that support the idea of training weaponry first. You can now see why training with weapons allows the student to gain valuable benefits that transfer over to the empty hand art. Often the student can jump start his or her progress in the arts and at the same time be better prepared to effectively deal with an armed attacker.</p>
+
+    <div class="article-note">This article was originally written for a general martial arts audience in January 1994, at a time when the Filipino martial arts were still largely unknown outside of specialist circles in the United States. It is republished here as part of NW Kali's ongoing commitment to documenting the history and lineage of the arts we teach.</div>
+
+  </div>
+
+  <!-- ─── CTA ─────────────────────────────────────────────── -->
+  <div class="article-cta">
+    <span class="eyebrow">Train the Complete Art</span>
+    <h2>Learn the System. Not Just the Techniques.</h2>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="/private-training/" class="btn btn--primary">Apply for Private Training</a>
+      <a href="/legacy/" class="btn btn--ghost">Explore Legacy →</a>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          <a href="tel:8445353254">844-JKD-KALI</a><br>
+          <a href="mailto:contact@nwkali.com">contact@nwkali.com</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/request/">Request Training</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filipino Martial Arts: Weapons of War · NW Kali</title>
+  <meta name="description" content="The importance of weapons in combat was extremely evident in the jungles of Southeast Asia, particularly in the Philippines. Originally published January 1994." />
   <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
   <style>
