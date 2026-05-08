@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Martial Arts Instruction Seattle · NW Kali</title>
+  <meta name="description" content="Private martial arts and self-defense instruction in Seattle, Bellevue, Kirkland, and Tacoma. Filipino Martial Arts, JKD, Silat, and Muay Thai — one instructor, one client, by appointment." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "NW Kali — Seattle Private Training",
+        "url": "https://nwkali.com/private-training/seattle/",
+        "telephone": "+18445535254",
+        "email": "training@nwkali.com",
+        "description": "Private martial arts and self-defense instruction in Seattle, Bellevue, Kirkland, and Tacoma. Filipino Martial Arts, JKD, Silat, and Muay Thai.",
+        "areaServed": [
+          {"@type": "City", "name": "Seattle"},
+          {"@type": "City", "name": "Bellevue"},
+          {"@type": "City", "name": "Kirkland"},
+          {"@type": "City", "name": "Tacoma"}
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 47.6062,
+          "longitude": -122.3321
+        },
+        "priceRange": "$$$$",
+        "openingHours": "By Appointment"
+      },
+      {
+        "@type": "Service",
+        "name": "Private Martial Arts Instruction — Seattle",
+        "provider": {"@type": "LocalBusiness", "name": "NW Kali"},
+        "serviceType": "Private Martial Arts Instruction",
+        "description": "One-on-one private instruction in Filipino Martial Arts, Jeet Kune Do, Silat, and Muay Thai. Available in Seattle, Bellevue, Kirkland, and Tacoma by appointment.",
+        "areaServed": "Seattle, WA",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Training Tracks",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Praxis — Applied Self-Defense"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Legacy — The Full Curriculum"}}
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Sifu/Guro Clarke",
+        "jobTitle": "Full Instructor — Inosanto Method FMA / JKD",
+        "description": "Full Instructor under Master Inosanto since 1998. Founder of the first Kali/JKD school in Portland under the Inosanto lineage. 40+ years of instruction experience.",
+        "worksFor": {"@type": "LocalBusiness", "name": "NW Kali"}
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --white:        #FFFFFF;
+      --navy:         #1C1F2E;
+      --linen:        #F7F5F0;
+      --charcoal:     #111111;
+      --crimson:      #8B1A1A;
+      --crimson-mid:  #C0392B;
+      --border-light: 1px solid #ddd;
+      --pad-v: 5rem;
+      --pad-h: 3rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      background: var(--white);
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      color: var(--crimson-mid);
+    }
+    h1, h2, h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -1px;
+      line-height: 1.05;
+    }
+    h1 { font-size: 58px; letter-spacing: -2.5px; }
+    h2 { font-size: 38px; }
+    h3 { font-size: 16px; letter-spacing: -0.3px; }
+    p { font-weight: 300; }
+
+    .btn {
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .btn--primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 13px 28px;
+      width: fit-content;
+    }
+    .btn--primary:hover { background: #6e1414; }
+
+    /* ─── NAV ───────────────────────────────────────────────── */
+    header nav {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0 var(--pad-h);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .nav-links { display: flex; gap: 1.8rem; flex: 1; justify-content: center; }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #555;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--crimson); }
+    .nav-phone {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      margin-left: auto;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .nav-phone:hover { color: var(--crimson); }
+
+    /* ─── BREADCRUMB ────────────────────────────────────────── */
+    .breadcrumb-strip {
+      background: var(--linen);
+      border-bottom: var(--border-light);
+      padding: 0.75rem var(--pad-h);
+    }
+    .breadcrumb-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 11px;
+      color: #999;
+    }
+    .breadcrumb-inner a { color: #999; transition: color 0.15s; }
+    .breadcrumb-inner a:hover { color: var(--crimson); }
+    .breadcrumb-inner .sep { color: #ccc; }
+    .breadcrumb-inner .current { color: var(--charcoal); font-weight: 700; }
+
+    /* ─── HERO ──────────────────────────────────────────────── */
+    #hero {
+      background: var(--white);
+      border-bottom: var(--border-light);
+      padding: 0;
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 58fr 42fr;
+      min-height: 500px;
+    }
+    .hero-text {
+      padding: 5rem 4rem 5rem var(--pad-h);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-rule { display: none; }
+    #hero h1 {
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+      max-width: 520px;
+    }
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 460px;
+    }
+    .hero-watermark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: var(--border-light);
+      background: var(--white);
+      padding: 3rem;
+    }
+    .hero-watermark img {
+      width: 72%;
+      opacity: 0.08;
+    }
+
+    /* ─── LOCAL CONTEXT ─────────────────────────────────────── */
+    #local {
+      background: var(--white);
+      padding: var(--pad-v) var(--pad-h);
+      border-bottom: var(--border-light);
+    }
+    .local-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .local-left h2 { margin-bottom: 1.25rem; }
+    .local-left p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+    .local-left p:last-child { margin-bottom: 0; }
+    .local-right { padding-top: 0.25rem; }
+
+    /* ─── SHARED BULLET LIST ────────────────────────────────── */
+    .bullet-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--crimson-mid);
+      margin-bottom: 1rem;
+    }
+    .bullet-list { display: flex; flex-direction: column; }
+    .bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e8e5e0;
+      font-size: 14px;
+      font-weight: 300;
+      color: #333;
+    }
+    .bullet-item:first-child { border-top: 1px solid #e8e5e0; }
+    .bullet-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--crimson);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .bullet-item strong { font-weight: 700; color: var(--charcoal); }
+
+    /* ─── FORMAT STAT BAR ───────────────────────────────────── */
+    #credentials {
+      background: var(--linen);
+      padding: 2.75rem var(--pad-h);
+      border-bottom: var(--border-light);
+    }
+    .credentials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .stat-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1.5px solid #ddd;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.75rem 1.25rem;
+      border-right: 1px solid #ddd;
+      gap: 0.6rem;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--crimson);
+      border-radius: 50%;
+    }
+    .stat-text {
+      font-size: 13px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.45;
+    }
+
+    /* ─── FORM SECTION ──────────────────────────────────────── */
+    #request {
+      background: var(--white);
+      padding: var(--pad-v) var(--pad-h);
+    }
+    .request-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 36fr 64fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .request-left h2 { margin-bottom: 1rem; }
+    .request-sub {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    /* ─── FORM ──────────────────────────────────────────────── */
+    .form-group { margin-bottom: 1.35rem; }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .form-group .optional {
+      font-weight: 300;
+      text-transform: none;
+      letter-spacing: 0;
+      color: #999;
+      font-size: 11px;
+      margin-left: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--charcoal);
+      background: var(--white);
+      border: 1px solid #ccc;
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--crimson); }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23111' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit-btn {
+      display: inline-block;
+      background: var(--crimson);
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 13px 36px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 0.5rem;
+    }
+    .form-submit-btn:hover { background: #6e1414; }
+    .form-note {
+      font-size: 11px;
+      color: #bbb;
+      margin-top: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ─── LIGHTBOX ──────────────────────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      backdrop-filter: blur(3px);
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: var(--white);
+      max-width: 500px;
+      width: 100%;
+      padding: 3.5rem;
+      position: relative;
+      animation: modalIn 0.22s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .modal-rule { width: 40px; height: 3px; background: var(--crimson); margin-bottom: 1.75rem; }
+    .modal-box h3 { font-size: 30px; letter-spacing: -1px; color: var(--charcoal); margin-bottom: 1rem; }
+    .modal-box p { font-size: 14px; font-weight: 300; color: #555; line-height: 1.8; margin-bottom: 1rem; }
+    .modal-box p:last-of-type { margin-bottom: 2rem; }
+    .modal-close {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      border: 1.5px solid var(--charcoal);
+      padding: 10px 24px;
+      cursor: pointer;
+      background: transparent;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: background 0.15s, color 0.15s;
+    }
+    .modal-close:hover { background: var(--charcoal); color: var(--white); }
+    .modal-x {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ccc;
+      font-size: 22px;
+      line-height: 1;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: color 0.15s;
+    }
+    .modal-x:hover { color: var(--charcoal); }
+
+    /* ─── FOOTER ────────────────────────────────────────────── */
+    footer {
+      background: #1C1C1C;
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem var(--pad-h) 2rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .footer-brand-name {
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -1px;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-meta {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.45);
+    }
+    .footer-brand-meta a { color: rgba(255,255,255,0.45); transition: color 0.15s; }
+    .footer-brand-meta a:hover { color: var(--white); }
+    .footer-nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+    .footer-nav-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+    .footer-nav-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.15s;
+    }
+    .footer-nav-links a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.2); transition: color 0.15s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      :root { --pad-v: 3.5rem; --pad-h: 1.75rem; }
+      h1 { font-size: 40px; letter-spacing: -1.5px; }
+      h2 { font-size: 30px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-watermark { display: none; }
+      .local-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .credentials-inner { width: 100%; }
+      .stat-bar { grid-template-columns: 1fr 1fr; }
+      .stat-item { border-bottom: 1px solid #ddd; }
+      .stat-item:nth-child(2n) { border-right: none; }
+      .request-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-nav-links { align-items: flex-start; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      :root { --pad-h: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .modal-box { padding: 2.5rem 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────────────────── -->
+  <header>
+    <nav>
+      <div class="nav-inner">
+        <img src="/images/american_flag menu.jpeg" alt="American Flag" style="height:24px;" />
+        <a href="/"><img src="/images/NW Kali Logo.jpeg" alt="NW Kali" style="height:52px;" /></a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/legacy/">Legacy</a></li>
+          <li><a href="/praxis/">Praxis</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/gear/">Gear</a></li>
+        </ul>
+        <a href="tel:8445535254" class="nav-phone">844-JKD-KALI</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ─── BREADCRUMB ───────────────────────────────────────── -->
+  <div class="breadcrumb-strip">
+    <div class="breadcrumb-inner">
+      <a href="/">Home</a>
+      <span class="sep">›</span>
+      <a href="/private-training/">Private Training</a>
+      <span class="sep">›</span>
+      <span class="current">Seattle</span>
+    </div>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">Pacific Northwest · Washington</span>
+        <h1>Private Martial Arts Instruction in Seattle.</h1>
+        <p class="hero-sub">One-on-one training in Filipino Martial Arts, JKD, Silat, and Muay Thai — built entirely around your objectives. Available by appointment throughout the greater Seattle area.</p>
+        <a href="#request" class="btn btn--primary">Apply for Training</a>
+      </div>
+      <div class="hero-watermark">
+        <img src="/images/NW Kali Logo.jpeg" alt="NW Kali" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LOCAL CONTEXT ────────────────────────────────────── -->
+  <section id="local">
+    <div class="local-inner">
+      <div class="local-left">
+        <span class="eyebrow">Seattle Region</span>
+        <h2>Private Instruction Across the Greater Seattle Area.</h2>
+        <p>Washington has long been home to a serious martial arts community. Including the origin of Bruce Lee's Jun Fan Gung Fu Institute. Seattle-area students seeking quality Filipino Martial Arts, Jeet Kune Do, or practical self-defense training.</p>
+        <p>NW Kali brings nearly 40 years of Inosanto lineage instruction directly to committed students throughout King and Pierce counties — one client at a time, by appointment, with no compromise on quality or depth.</p>
+        <p>Whether your objective is real-world self-defense capability, a legacy FMA/JKD curriculum, or both — the structure, pace, and content of every session is built around you alone.</p>
+      </div>
+      <div class="local-right">
+        <div class="bullet-label">Service Area</div>
+        <div class="bullet-list">
+          <div class="bullet-item">
+            <span class="bullet-dot"></span>
+            <span><strong>Seattle</strong> · Primary · King County</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-dot"></span>
+            <span><strong>Bellevue</strong> · Eastside · King County</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-dot"></span>
+            <span><strong>Kirkland</strong> · Eastside · King County</span>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-dot"></span>
+            <span><strong>Tacoma</strong> · South Sound · Pierce County</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FORMAT STAT BAR ─────────────────────────────────── -->
+  <section id="credentials">
+    <div class="credentials-inner">
+      <div class="stat-bar">
+        <div class="stat-item">
+          <span class="stat-dot"></span>
+          <span class="stat-text">One instructor<br>one client<br>every session</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-dot"></span>
+          <span class="stat-text">Appointment-based<br>your schedule</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-dot"></span>
+          <span class="stat-text">Praxis track<br>Legacy track<br>or both</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-dot"></span>
+          <span class="stat-text">All experience<br>levels considered</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-dot"></span>
+          <span class="stat-text">Fully private<br>no shared classes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ─── FORM ─────────────────────────────────────────────── -->
+  <section id="request">
+    <div class="request-inner">
+      <div class="request-left">
+        <span class="eyebrow">Limited Availability</span>
+        <h2>Request Seattle Training.</h2>
+        <p class="request-sub">NW Kali accepts a limited number of private clients at any time. Submissions are reviewed before any response is issued. If there is availability and alignment, you will hear back directly.</p>
+        <div class="bullet-list">
+          <div class="bullet-item"><span class="bullet-dot"></span>No commitment required to inquire</div>
+          <div class="bullet-item"><span class="bullet-dot"></span>All experience levels considered</div>
+          <div class="bullet-item"><span class="bullet-dot"></span>Fully private — your training is your business</div>
+          <div class="bullet-item"><span class="bullet-dot"></span>Seattle · Bellevue · Kirkland · Tacoma</div>
+        </div>
+      </div>
+
+      <div class="form-wrapper">
+        <form id="training-request-form" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="462dda14-d41c-4bf3-b1ad-5b367cc78719" />
+          <input type="hidden" name="subject" value="New Private Training Request — Seattle" />
+          <input type="checkbox" name="botcheck" style="display:none;" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required placeholder="Your phone number" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your email address" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="location">Nearest Location</label>
+              <select id="location" name="location" required>
+                <option value="" disabled selected>Select your area</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Bellevue">Bellevue</option>
+                <option value="Kirkland">Kirkland</option>
+                <option value="Tacoma">Tacoma</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="track">Track Interest</label>
+              <select id="track" name="track" required>
+                <option value="" disabled selected>Select a track</option>
+                <option value="Praxis">Praxis — Applied Self-Defense</option>
+                <option value="Legacy">Legacy — The Full Curriculum</option>
+                <option value="Not Sure">Not Sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="background">Martial Arts Background <span class="optional">optional</span></label>
+            <input type="text" id="background" name="background" placeholder="Styles trained, years of experience" />
+          </div>
+
+          <div class="form-group">
+            <label for="goals">Training Goals</label>
+            <textarea id="goals" name="goals" required placeholder="Describe what you want to develop through training."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="availability">Availability <span class="optional">optional</span></label>
+            <input type="text" id="availability" name="availability" placeholder="Days and times generally available" />
+          </div>
+
+          <button type="submit" class="form-submit-btn">Submit Request</button>
+          <p class="form-note">Serious inquiries only.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">NW KALI</div>
+        <div class="footer-brand-meta">
+          Private Instruction · Inosanto FMA Lineage · Since 1987<br>
+          <a href="tel:8445535254">844-JKD-KALI</a><br>
+          <a href="mailto:training@nwkali.com">training@nwkali.com</a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-nav-label">Site</div>
+        <nav class="footer-nav-links">
+          <a href="/">Home</a>
+          <a href="/legacy/">Legacy</a>
+          <a href="/praxis/">Praxis</a>
+          <a href="/about/">About</a>
+          <a href="/insights/">Insights</a>
+          <a href="/gear/">Gear</a>
+          <a href="/private-training/">Private Training</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NW Kali · All Rights Reserved</span>
+      <a href="/privacy/">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- ─── LIGHTBOX ─────────────────────────────────────────── -->
+  <div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-x" id="modal-x" aria-label="Close">&times;</button>
+      <div class="modal-rule"></div>
+      <h3 id="modal-title">Request Received.</h3>
+      <p>Your request has been received and will be reviewed. If there is availability and alignment, you will hear back directly at the contact information provided.</p>
+      <p>NW Kali accepts a limited number of private clients — serious inquiries receive a personal response.</p>
+      <button class="modal-close" id="modal-close-btn">Close</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const track = params.get('track');
+      if (track) {
+        const select = document.getElementById('track');
+        const match = Array.from(select.options).find(o => o.value.toLowerCase() === track.toLowerCase());
+        if (match) select.value = match.value;
+      }
+    })();
+
+    const form = document.getElementById('training-request-form');
+    const modal = document.getElementById('success-modal');
+    const modalClose = document.getElementById('modal-close-btn');
+    const modalX = document.getElementById('modal-x');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          form.reset();
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        } else {
+          alert('There was a problem submitting your request. Please try again or contact us directly at training@nwkali.com.');
+        }
+      })
+      .catch(() => {
+        alert('There was a problem submitting your request. Please try again or contact us directly at training@nwkali.com.');
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalX.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  </script>
+
+</body>
+</html>

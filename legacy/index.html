@@ -250,36 +250,15 @@
       
     }
     .discipline-photo {
-      overflow: hidden;
       height: 500px;
+      overflow: hidden;
     }
     .discipline-photo img {
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: cover;
       object-position: center;
-    }
-    #sec6 .discipline-photo img {
-      object-position: center;
-    }
-    /* Per-image position overrides */
-    #sec7 .discipline-photo {
-      height: 850px;
-    }
-    #sec7 .discipline-photo img {
-      object-fit: contain;
-      background-color: white;
-      object-position: center;
-    }
-    #sec8 .discipline-photo img {
-      object-position: center top;
-    }
-    #sec9 .discipline-photo img {
-      object-position: center top;
-    }
-    #sec9.discipline-row {
-      padding-bottom: 3rem;
+      display: block;
     }
     .discipline-content {
       padding: 3.5rem 3rem;
@@ -468,7 +447,7 @@
       #sec2 h2 { font-size: 36px; }
       .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .discipline-row { grid-template-columns: 1fr; }
-      .discipline-photo { height: auto; }
+      .discipline-photo { height: 280px; }
       .phase-track { flex-direction: column; align-items: center; gap: 2rem; }
       .phase-track::before { display: none; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -527,7 +506,7 @@
       <p class="sec2-lead">Foundational principles to advanced concepts, movement, traditions and philosophy.</p>
       <p>Presented as it was learned, in-depth, with the spirit and culture that embody the techniques. Filipino Martial Arts, Jun Fan / JKD, Maphilindo Silat, and Muay Thai — taught in sequence, with depth, with philosophy and culture alongside every technique.</p>
       <div class="btn-group">
-        <a href="/request/?track=legacy" class="btn btn--primary">Apply for Legacy Training</a>
+        <a href="/private-training/?track=legacy" class="btn btn--primary">Apply for Legacy Training</a>
         <a href="#sec4" class="btn btn--ghost">Explore the Disciplines →</a>
       </div>
       <p class="sec2-footnote">Structured progression. Authentic lineage.</p>
@@ -571,7 +550,7 @@
   </section>
 
 <!-- ─── SEC 5 — KALI ───────────────────────────────────── -->
-<div class="discipline-row" id="sec5">
+<div class="discipline-row">
   <div class="discipline-photo">
     <img src="/images/Legacy Kali image.jpg" alt="Kali Eskrima Training" />
   </div>
@@ -585,7 +564,7 @@
 </div>
 
 <!-- ─── SEC 6 — JUN FAN ─────────────────────────────────── -->
-<div class="discipline-row" id="sec6">
+<div class="discipline-row">
   <div class="discipline-content">
     <span class="eyebrow">Jun Fan Martial Arts</span>
     <h2>Jun Fan Gung Fu</h2>
@@ -599,9 +578,9 @@
 </div>
 
 <!-- ─── SEC 7 — MUAY THAI ───────────────────────────────── -->
-<div class="discipline-row" id="sec7">
-  <div class="discipline-photo">
-    <img src="/images/Legacy Muay Thai Image.jpeg" alt="Muay Thai Training" />
+<div class="discipline-row">
+  <div class="discipline-photo" style="height:900px;">
+    <img src="/images/Legacy Muay Thai Image.jpeg" alt="Muay Thai Training" style="object-position: top center;" />
   </div>
   <div class="discipline-content">
     <span class="eyebrow">Thai Martial Arts</span>
@@ -613,7 +592,7 @@
 </div>
 
 <!-- ─── SEC 8 — SILAT ───────────────────────────────────── -->
-<div class="discipline-row" id="sec8">
+<div class="discipline-row">
   <div class="discipline-content">
     <span class="eyebrow">Maphilindo Martial Arts</span>
     <h2>Silat</h2>
@@ -627,7 +606,7 @@
 </div>
 
 <!-- ─── SEC 9 — PANANTUKAN ──────────────────────────────── -->
-<div class="discipline-row" id="sec9" style="padding-bottom: 3rem;">
+<div class="discipline-row">
   <div class="discipline-photo">
     <img src="/images/Legacy Panantukan.jpg" alt="Panantukan Filipino Boxing" />
   </div>
@@ -681,7 +660,7 @@
       <span class="eyebrow eyebrow--dark">Legacy Track</span>
       <h2>The Art Is Here. The Question Is Whether You Are.</h2>
       <p>Authentic lineage instruction in Filipino Martial Arts, JKD, Silat, and Muay Thai — taught privately from foundations to Instructor level. NW Kali accepts a limited number of Legacy students at any time.</p>
-      <a href="/request/?track=legacy" class="btn btn--primary">Apply for Legacy Training</a>
+      <a href="/private-training/?track=legacy" class="btn btn--primary">Apply for Legacy Training</a>
       <p class="cta-footnote">Serious students only.</p>
     </div>
   </section>
@@ -705,7 +684,7 @@
           <a href="/about/">About</a>
           <a href="/insights/">Insights</a>
           <a href="/gear/">Gear</a>
-          <a href="/request/">Request Training</a>
+          <a href="/private-training/">Request Training</a>
         </nav>
       </div>
     </div>
